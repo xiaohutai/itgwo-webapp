@@ -26,7 +26,7 @@
 
 
                 if (!$scope.entries) {
-                    $scope.loadEntries();
+                    $scope.loadEntries($scope, $http);
                 }
 
             }

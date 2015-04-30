@@ -1,0 +1,24 @@
+---
+name: nieuws
+url: /nieuws
+controller: NewsController
+title: Nieuwsoverzicht
+
+---
+
+<br><br>
+<h2>Nieuws</h2>
+
+<div class="grid-block medium-up-3">
+    <div class="grid-content" ng-repeat="bericht in berichten">
+        <div class="card">
+            	<img src="{{ bericht.image.thumbnail }}">
+            <div class="card-divider">
+            <a href="/#!/bericht/{{bericht.id}}">
+               {{ bericht.title }}</a>
+            </div>
+            <div class="card-section" ng-bind-html='bericht.teaser | html '>
+            </div>
+        </div>
+    </div>
+</div>

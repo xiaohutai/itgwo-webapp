@@ -20,7 +20,7 @@
         $urlProvider.otherwise('/');
 
         $locationProvider.html5Mode({
-            enabled: true,
+            enabled: false,
             requireBase: false
         });
 
@@ -35,7 +35,6 @@
     app.filter('html', function($sce) {
         return $sce.trustAsHtml; }
     );
-
 
 })();
 
