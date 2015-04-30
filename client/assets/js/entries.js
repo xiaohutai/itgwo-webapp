@@ -14,7 +14,7 @@
 
                 $scope.loadEntries = function() {
                     $http
-                    .get("http://bob.biz.tm/json/entries")
+                    .get("http://www.intothegreatwideopen.nl/json/berichten")
                     .then(function(result){
                         $scope.entries = result.data.entries;
                     }).catch(function(e) {

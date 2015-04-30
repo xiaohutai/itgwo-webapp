@@ -15,13 +15,12 @@
                 $scope.loadBerichten = function() {
                     console.log('load berichten');
 
-                    $http.get("http://bob.biz.tm/json/entries")
+                    $http.get("http://www.intothegreatwideopen.nl/json/berichten")
                         .then(function(result){
 
-                            $scope.berichten = result.data.entries;
-
+                            $scope.berichten = result.data.berichten;
                         }).catch(function(e) {
-                            console.log("Could not fetch Entries");
+                            console.log("Could not fetch berichten");
                             console.log(e);
                         });
 
@@ -38,7 +37,7 @@
                 // Als we op een specifiek nieuwsbericht zijn.
                 if ($stateParams.id) {
 
-                    $http.get("http://bob.biz.tm/json/entries/" + $stateParams.id)
+                    $http.get("http://www.intothegreatwideopen.nl/json/berichten/" + $stateParams.id)
                         .then(function(result){
 
                             $scope.bericht = result.data;

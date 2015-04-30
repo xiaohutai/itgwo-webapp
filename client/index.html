@@ -15,18 +15,20 @@
         <section class="block-list">
             <header>Menu</header>
         <ul class="menu-bar vertical">
-            <li ui-sref-active="is-active"><a ui-sref="home">Home</a></li>
-            <li ui-sref-active="is-active"><a ui-sref="faq">FAQ</a></li>
-            <li ui-sref-active="is-active"><a ui-sref="entries">Entries</a></li>
+            <li ui-sref-active="is-active"><a ui-sref="home" zf-toggle="main-menu">Home</a></li>
+            <li ui-sref-active="is-active"><a ui-sref="faq" zf-toggle="main-menu">FAQ</a></li>
+            <li ui-sref-active="is-active"><a ui-sref="entries" zf-toggle="main-menu">Entries</a></li>
+            <li ui-sref-active="is-active"><a ui-sref="nieuws" zf-toggle="main-menu">Nieuws</a></li>
         </ul>
         </section>
     </zf-offcanvas>
 <div class="grid-frame vertical">
       <div class="grid-content shrink" style="padding: 0;">
         <ul class="dark condense menu-bar">
-          <li><a ui-sref="home"><strong>Foundation for Apps</strong></a></li>
-          <li><a href="#" zf-toggle="main-menu">|||</a></li>
-          <li><a href="#" zf-toggle="signup-modal">Signup</a></li>
+
+          <li><a href="#" zf-toggle="main-menu">☰ Menu</a></li>
+          <li><a ui-sref="home"><strong>HCTS '15</strong></a></li>
+          <li><a href="#" zf-toggle="signup-modal">Feedback?</a></li>
         </ul>
       </div>
       <div class="grid-content">
