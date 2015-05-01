@@ -1,0 +1,18 @@
+
+<br><br>
+<h2>Nieuws</h2>
+
+<div class="grid-block medium-up-3">
+    <div class="grid-content" ng-repeat="bericht in berichten">
+        <div class="card">
+            	<img src="{{ bericht.image.thumbnail }}">
+            <div class="card-divider">
+            <a ui-sref="bericht({id: bericht.id})"">
+               {{ bericht.title }}</a>
+            </div>
+            <div class="card-section">
+            {{ bericht.excerpt }}
+            </div>
+        </div>
+    </div>
+</div>
