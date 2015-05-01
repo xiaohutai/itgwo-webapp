@@ -14,10 +14,11 @@ title: Nieuwsoverzicht
         <div class="card">
             	<img src="{{ bericht.image.thumbnail }}">
             <div class="card-divider">
-            <a href="/#!/bericht/{{bericht.id}}">
+            <a ui-sref="bericht({id: bericht.id})"">
                {{ bericht.title }}</a>
             </div>
-            <div class="card-section" ng-bind-html='bericht.teaser | html '>
+            <div class="card-section">
+            {{ bericht.excerpt }}
             </div>
         </div>
     </div>
