@@ -343,8 +343,8 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #000;
-  color: #ffcc00;
+  background: #fff;
+  color: #222;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -1804,8 +1804,8 @@ input[type="range"] {
     color: transparent;
     border: 0;
     overflow: visible;
-    border-top: 0.25rem solid #000;
-    border-bottom: 0.25rem solid #000; }
+    border-top: 0.25rem solid #fff;
+    border-bottom: 0.25rem solid #fff; }
   input[type="range"]::-ms-thumb {
     background: #00558b;
     width: 1.5rem;
@@ -5712,7 +5712,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #ffcc00;
+  color: #222;
   border-bottom: 1px dotted #ddd;
   cursor: help; }
 
@@ -6144,3 +6144,6 @@ blockquote, blockquote p {
 
 .float-none {
   float: none; }
+
+h1 {
+  background-color: #FF8 !important; }
