@@ -6164,7 +6164,7 @@ h1, h2, h3, h4, h5 {
 
 .mediacontainer {
   margin-right: 1rem;
-  margin-top: .3rem; }
+  margin-top: .25rem; }
   .mediacontainer img {
     width: 100%;
     display: inline-block; }
@@ -6177,3 +6177,9 @@ h1, h2, h3, h4, h5 {
 
 .grid-block.itemlist {
   margin-bottom: 1rem; }
+
+iframe {
+  border: none;
+  width: 100%;
+  min-height: 38rem;
+  overflow: hidden; }
