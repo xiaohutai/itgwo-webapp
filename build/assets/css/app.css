@@ -6146,11 +6146,25 @@ blockquote, blockquote p {
   float: none; }
 
 body {
-  font-family: Georgia, serif; }
+  font-family: Georgia, serif;
+  background: #ffffba; }
+
+p {
+  line-height: 1.3; }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  line-height: 1.3; }
 
-.mediacontainer img {
-  width: 100%;
-  display: inline-block; }
+.mediacontainer {
+  margin-right: 1rem;
+  margin-top: .3rem; }
+  .mediacontainer img {
+    width: 100%;
+    display: inline-block; }
+
+.grid-content {
+  padding: 0 1.5rem; }
+
+.off-canvas ~ .grid-frame {
+  background: transparent; }
