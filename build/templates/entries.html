@@ -1,0 +1,15 @@
+
+<br><br>
+
+<div class="grid-block medium-up-3">
+    <div class="grid-content" ng-repeat="entry in entries">
+        <div class="card">
+            	<img src="{{ entry.image.thumbnail }}">
+            <div class="card-divider">
+               {{ entry.title }}
+            </div>
+            <div class="card-section" ng-bind-html='entry.teaser | html '>
+            </div>
+        </div>
+    </div>
+</div>

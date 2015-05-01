@@ -1,0 +1,22 @@
+
+      
+<div class="grid-block" ng-repeat="bericht in berichten">
+
+        <header class="header">
+            <h2><a ui-sref="bericht({id: bericht.id})">{{ bericht.title }}</a></h2>
+        </header>
+        
+
+        <div class="small-3">
+            <div class="mediacontainer">
+        	    <img src="{{ bericht.image.thumbnail }}">
+            </div>
+        </div>
+    
+        <div class="small-9">
+            <p>{{ bericht.excerpt }}</p>
+        </div> 
+
+
+</div>
+
