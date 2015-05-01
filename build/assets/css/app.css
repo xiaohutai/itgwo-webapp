@@ -343,8 +343,8 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #fff;
-  color: #222;
+  background: #000;
+  color: #ffcc00;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -1804,8 +1804,8 @@ input[type="range"] {
     color: transparent;
     border: 0;
     overflow: visible;
-    border-top: 0.25rem solid #fff;
-    border-bottom: 0.25rem solid #fff; }
+    border-top: 0.25rem solid #000;
+    border-bottom: 0.25rem solid #000; }
   input[type="range"]::-ms-thumb {
     background: #00558b;
     width: 1.5rem;
@@ -5712,7 +5712,7 @@ dl dd {
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
-  color: #222;
+  color: #ffcc00;
   border-bottom: 1px dotted #ddd;
   cursor: help; }
 
