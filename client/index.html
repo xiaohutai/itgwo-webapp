@@ -27,7 +27,9 @@
 
           <li><a href="#" zf-toggle="main-menu">☰ Menu</a></li>
           <li><a ui-sref="home"><strong>HCTS '15</strong></a></li>
-          <li><a href="#" zf-toggle="signup-modal">Feedback?</a></li>
+          <li ui-sref-active="is-active">
+             <a ui-sref="feedback">Feedback?</a>
+            </li>
         </ul>
       </div>
       <div class="grid-content">
@@ -37,44 +39,5 @@
       </div>
     </div>
 
-
-
-
-    <zf-modal overlay-close="true" id="signup-modal">
-        <div class="grid-block medium-up-2">
-            <div class="grid-content">
-                <h4>Sign up</h4>
-                <form>
-                    <label>
-                        Username
-                        <input type="text" />
-                    <label>
-                    <label>
-                        Password
-                        <input type="password" />
-                    </label>
-                    <label>
-                        Password Again
-                        <input type="password" />
-                    </label>
-                </form>
-                <a class="button" ui-sref="dashboard" zf-close>Sign up</a>
-            </div>
-            <div class="grid-content">
-                <h4>Sign In</h4>
-                <form>
-                    <label>
-                        Username
-                        <input type="text" />
-                    <label>
-                    <label>
-                        Password
-                        <input type="password" />
-                    </label>
-                </form>
-                <a class="button" ui-sref="dashboard" zf-close>Sign In</a>
-            </div>
-        </div>
-    </zf-modal>
   </body>
 </html>
