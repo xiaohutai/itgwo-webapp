@@ -1,12 +1,12 @@
 
-<br><br>
+<br>
 <h2>Programma</h2>
 
 
 <table>
 
     <tr ng-repeat="tijd in speeltijden">
-        <td>
+        <td style="min-width: 80px;" valign="top">
             {{ tijd.starttijd | date:'EEE HH:mm' }}
         </td>
         <td>
@@ -14,7 +14,7 @@
                 <b>{{ tijd.title }}</b>
             </a>
         </td>
-        <td>
+        <td style="min-width: 100px;" valign="top">
             {{ tijd.speellokatie }}
         </td>
     </tr>

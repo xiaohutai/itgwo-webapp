@@ -6183,3 +6183,6 @@ iframe {
   width: 100%;
   min-height: 38rem;
   overflow: hidden; }
+
+td {
+  padding-top: 16px; }
