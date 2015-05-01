@@ -7,22 +7,18 @@ title: Nieuwsoverzicht
 ---
 
       
-<div class="grid-block article-list" ng-repeat="bericht in berichten">
-
+<div class="grid-block itemlist" ng-repeat="bericht in berichten">
     <header class="small-12 header">
-        <h4><a ui-sref="bericht({id: bericht.id})">{{ bericht.title }}</a></h4>
+        <h3><a ui-sref="bericht({id: bericht.id})"> {{ bericht.title }}</a></h3>
     </header>
-    
 
-    <div class="small-3">
+    <div class="small-4">
         <div class="mediacontainer">
-    	    <img src="{{ bericht.image.thumbnail }}">
+    	    <a ui-sref="bericht({id: bericht.id})"> <img src="{{ bericht.image.thumbnail }}"></a>
         </div>
     </div>
 
-    <div class="small-9">
-        <p>{{ bericht.excerpt }}</p>
+    <div class="small-8">
+        <p><a ui-sref="bericht({id: bericht.id})"> {{ bericht.excerpt }}</a></p>
     </div>
-
 </div>
-
