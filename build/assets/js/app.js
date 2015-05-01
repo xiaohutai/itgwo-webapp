@@ -169,15 +169,15 @@ angular.module('application').controller('ProgrammaController',
             }
 
             // Als we op een specifiek programma-item zijn.
-            if ($stateParams.id) {
+            if ($stateParams.slug) {
 
-                $http.get("http://programma.greatwideopen.nl/json/speeltijden/" + $stateParams.id)
+                $http.get("http://programma.greatwideopen.nl/json/programmaonderdelen/" + $stateParams.slug)
                     .then(function(result){
-                        console.log('load item', $stateParams.id);
-                        $scope.bericht = result.data;
-
+                        console.log('load item', $stateParams.slug);
+                        $scope.act = result.data;
+                        console.log($scope.act);
                     }).catch(function(e) {
-                        console.log("Could not fetch entry " + $stateParams.id );
+                        console.log("Could not fetch entry " + $stateParams.slug );
                         console.log(e);
                     });
 
