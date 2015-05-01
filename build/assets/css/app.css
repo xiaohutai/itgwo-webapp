@@ -6145,5 +6145,12 @@ blockquote, blockquote p {
 .float-none {
   float: none; }
 
-h1 {
-  background-color: #FF8 !important; }
+body {
+  font-family: Georgia, serif; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+
+.mediacontainer img {
+  width: 100%;
+  display: inline-block; }

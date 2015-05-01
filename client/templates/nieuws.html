@@ -6,20 +6,24 @@ title: Nieuwsoverzicht
 
 ---
 
-<br><br>
-<h2>Nieuws</h2>
+      
+<div class="grid-block" ng-repeat="bericht in berichten">
 
-<div class="grid-block medium-up-3">
-    <div class="grid-content" ng-repeat="bericht in berichten">
-        <div class="card">
-            	<img src="{{ bericht.image.thumbnail }}">
-            <div class="card-divider">
-            <a ui-sref="bericht({id: bericht.id})"">
-               {{ bericht.title }}</a>
-            </div>
-            <div class="card-section">
-            pompidom: {{ bericht.excerpt }}
+        <header class="header">
+            <h2><a ui-sref="bericht({id: bericht.id})">{{ bericht.title }}</a></h2>
+        </header>
+        
+
+        <div class="small-3">
+            <div class="mediacontainer">
+        	    <img src="{{ bericht.image.thumbnail }}">
             </div>
         </div>
-    </div>
+    
+        <div class="small-9">
+            <p>{{ bericht.excerpt }}</p>
+        </div> 
+
+
 </div>
+
