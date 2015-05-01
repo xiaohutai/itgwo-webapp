@@ -8,15 +8,22 @@ controller: ProgrammaController
 <br><br>
 <h2>Programma</h2>
 
-<section class="grid-content" ng-repeat="tijd in speeltijden">
 
-<strong>
-    <a ui-sref="act({id: tijd.id})">
-        {{ tijd.title }} - {{ tijd.starttijd }} - {{ tijd.speellokatie }}
-    </a>
-</strong>
+<table>
 
+    <tr ng-repeat="tijd in speeltijden">
+        <td>
+            {{ tijd.starttijd | date:'EEE HH:mm' }}
+        </td>
+        <td>
+            <a ui-sref="act({ slug: tijd.slug })">
+                {{ tijd.title }}
+            </a>
+        </td>
+        <td>
+            {{ tijd.speellokatie }}
+        </td>
+    </tr>
 
-</section>
-
+</table>
 

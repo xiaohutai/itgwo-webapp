@@ -33,8 +33,20 @@
 
     //
     app.filter('html', function($sce) {
-        return $sce.trustAsHtml; }
-    );
+        return $sce.trustAsHtml;
+    });
+
+    // app.filter('datum', function($sce) {
+    //     console.log('date', $date);
+    // });
+
+//     myApp.controller('TimestampCtrl', ['$scope', function($scope) {
+//   $scope.toTimestamp = function(date) {
+//     var dateSplitted = date.split('-'); // date must be in DD-MM-YYYY format
+//     var formattedDate = dateSplitted[1]+'/'+dateSplitted[0]+'/'+dateSplitted[2];
+//     return new Date(formattedDate).getTime();
+//   };
+// }]);
 
 })();
 
