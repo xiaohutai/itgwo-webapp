@@ -12,9 +12,10 @@ angular.module('application').controller('ProgrammaController',
             $scope.loadProgramma = function() {
                 console.log('load programma');
 
-                $http.get("http://programma.greatwideopen.nl/json/speeltijden")
+                $http.get("http://programma.greatwideopen.nl/json/speeltijden?sort=title&page[size]=10")
                     .then(function(result){
-                        $scope.speeltijden = result.data.speeltijden;
+                        // $scope.speeltijden = result.data.speeltijden;
+                        console.log(result);
                     }).catch(function(e) {
                         console.log("Could not fetch programma");
                         console.log(e);
