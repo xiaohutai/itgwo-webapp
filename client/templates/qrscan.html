@@ -1,0 +1,26 @@
+---
+name: qr
+url: /qr
+controller: itgwo.controller.qrscan
+title: Scan QR code
+---
+
+<div class="grid-content">
+    <header class="pageheader">
+    <h1>Scan een QR Code</h1>
+    </header>
+</div>
+
+counter :     <div>{{counter}}</div>
+
+<div class="grid-content">
+
+    <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
+    </div>
+    <p><a href="#" class="topcoat-button" id="scan" ng-click="scan()">SCAN</a></p>
+    <p><a href="#" class="topcoat-button" id="encode">ENCODE</a></p>
+    <p id="info"></p>
+
+</div>

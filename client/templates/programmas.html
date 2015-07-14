@@ -1,0 +1,48 @@
+---
+name: programma
+url: /programma
+controller: itgwo.controller.programmas
+title: Programma
+---
+
+
+<div class="grid-block">
+    <div class="grid-container page-programma">
+
+        <!-- grid for navigation -->
+        <div class="grid-block small-up-2 medium-up-3 large-up-3">
+
+            <div class="grid-content content-act" ng-repeat="speeltijd in speeltijden">
+                <a ui-sref="bericht({ id: bericht.id })">
+                    <article class="thema thema-{{ bericht.id }}">
+
+                        <!-- <img src="{{ bericht.attributes.image.thumbnail }}" width="100" height="100"> -->
+                        <h2>{{ speeltijd.attributes.starttijd | date : 'EEE H:mm' }} - {{ speeltijd.attributes.speellokatie }}</h2>
+                        <h1 class="">{{ speeltijd.attributes.title }}</h1>
+                    </article>
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="grid-block small-up-1 medium-up-2 large-up-4">
+    <div class="grid-content programma" ng-repeat="programma in programmas" style="display:block;">
+        <a ui-sref="programmaItem({ id: programma.attributes.slug })">
+            <div class="card dark">
+                <img ng-src="{{ programma.attributes.image.thumbnail }}">
+                <div class="card-divider">
+                    <span class="label dark">{{ programma.attributes.programmedate|date:"medium" }}</span>
+                    <span class="label dark">{{ programma.attributes.programmelocation }}</span>
+                    <br>
+                    <h3>{{ programma.attributes.title }}</h3>
+                </div>
+                <div class="card-section" ng-bind-html='programma.attributes.teaser'>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

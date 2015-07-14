@@ -1,8 +1,8 @@
 ---
-name: bericht
-url: /bericht/:id?p=
-controller: itgwo.controller.berichten
-title: Nieuws
+name: thema
+url: /thema/:id?p=
+controller: itgwo.controller.themas
+title: Themas
 ---
 
 <div class="grid-block" ng-if="thema">
@@ -51,6 +51,14 @@ title: Nieuws
 
         </div>
 
+
+         <!-- QR knop -->
+         <div class="grid-content content-actie">
+            <a class="button" ui-sref="#">
+                Scan QR code
+            </a><br />
+            <a>Hoe gebruik je deze app?</a>
+        </div>
 
     </div>
 </div>

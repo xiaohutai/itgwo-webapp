@@ -1,6 +1,8 @@
 .DS_Store
+._*
+.AppleDouble
 node_modules
 npm-debug.log
 bower_components
-# build
+html
 .sass-cache

@@ -1,52 +1,41 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    var app = angular.module('application', [
-        'ui.router',
-        'ngAnimate',
+  angular.module('application', [
+    'ui.router',
+    'ngAnimate',
+    'ngSanitize',
+    // 'ngResource',
 
-        //foundation
-        'foundation',
-        'foundation.dynamicRouting',
-        'foundation.dynamicRouting.animations'
-    ])
-        .config(config)
-        .run(run)
-    ;
+    //foundation
+    'foundation',
+    'foundation.dynamicRouting',
+    'foundation.dynamicRouting.animations',
 
-    config.$inject = ['$urlRouterProvider', '$locationProvider'];
+    // custom
+    'itgwo'
+  ])
+    .config(config)
+    .run(run)
+  ;
 
-    function config($urlProvider, $locationProvider) {
-        $urlProvider.otherwise('/');
+  config.$inject = ['$urlRouterProvider', '$locationProvider', '$httpProvider'];
 
-        $locationProvider.html5Mode({
-            enabled: false,
-            requireBase: false
-        });
+  function config($urlProvider, $locationProvider, $httpProvider) {
+    $urlProvider.otherwise('/');
 
-        $locationProvider.hashPrefix('!');
-    }
-
-    function run() {
-        FastClick.attach(document.body);
-    }
-
-    //
-    app.filter('html', function($sce) {
-        return $sce.trustAsHtml;
+    $locationProvider.html5Mode({
+      enabled: false,
+      requireBase: false
     });
 
-    // app.filter('datum', function($sce) {
-    //     console.log('date', $date);
-    // });
+    $locationProvider.hashPrefix('!');
 
-//     myApp.controller('TimestampCtrl', ['$scope', function($scope) {
-//   $scope.toTimestamp = function(date) {
-//     var dateSplitted = date.split('-'); // date must be in DD-MM-YYYY format
-//     var formattedDate = dateSplitted[1]+'/'+dateSplitted[0]+'/'+dateSplitted[2];
-//     return new Date(formattedDate).getTime();
-//   };
-// }]);
+    $httpProvider.interceptors.push('itgwo.service.httpInterceptor');
+  }
+
+  function run() {
+    FastClick.attach(document.body);
+  }
 
 })();
-
