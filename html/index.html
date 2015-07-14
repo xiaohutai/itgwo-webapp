@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="nl-NL" ng-app="application">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title ng-bind="title + ' | ' + config.site.title">200 Jaar Staten-Generaal</title>
+    <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
+    <script src="./assets/js/foundation.js"></script>
+    <script src="./assets/js/templates.js"></script>
+    <script src="./assets/js/routes.js"></script>
+    <script src="./assets/js/app.js"></script>
+<!--    <script type="text/javascript" src="cordova.js"></script> -->
+<!--    <script type="text/javascript" src="barcodescanner.js"></script> -->
+  </head>
+  <body zf-esc-close>
+
+    <zf-notification-set id="notifications" position="top-left">
+    </zf-notification-set>
+
+    <zf-offcanvas id="menu" position="left" class="detached">
+      <div class="grid-content shrink" style="padding: 0;">
+        <!-- <a zf-close="" class="close-button">×</a> -->
+        <ul class="vertical menu-bar">
+          <!-- todo: inject menu -->
+          <img src="assets/img/logo-itgwo-wit.svg" alt="ITGWO 2015" id="logo">
+          <li ui-sref-active="is-active"><a zf-toggle="menu" ui-sref="home">Home</a></li>
+          <li ui-sref-active="is-active"><a zf-toggle="menu" ui-sref="programma">Programma</a></li>
+          <li ui-sref-active="is-active"><a zf-toggle="menu" ui-sref="Blokkenschema">Blokkenschema</a></li>
+          <li ui-sref-active="is-active"><a zf-toggle="menu" ui-sref="Plattegrond">Plattegrond</a></li>
+        </ul>
+      </div>
+    </zf-offcanvas>
+
+    <div class="grid-frame vertical" style="min-height:100vh; height: auto;">
+
+      <a zf-close="menu" class="offcanvas-exit"></a>
+
+      <div class="loader" ng-show="isLoading()">
+        <div class="spinner"></div>
+      </div>
+      <div class="grid-content shrink" style="padding: 0;">
+        <div class="dark title-bar">
+          <span class="left"><a zf-toggle="menu">☰ Menu</a></span>
+          <span class="title center">{{ title }}</span>
+          <span class="right"><a ui-sref="tijdlijn">&nbsp;</a></span>
+        </div>
+      </div>
+
+      <div ui-view class="grid-block">
+      </div>
+
+<!--       <div class="grid-block shrink" ng-if="title == 'Tijdlijn'"  >
+        <div class="grid-content" style="padding: 0;">
+          <ul class="dark menu-bar">
+            <li><a tijlijn-scroll data-from="1815" data-to="1848">1815<span class="show-for-medium"> - 1848</span></a></li><!-- speciale show-for-medium inline versie maken voor display: inline - ->
+            <li><a tijlijn-scroll data-from="1848" data-to="1917">1848<span class="show-for-medium"> - 1917</span></a></li>
+            <li><a tijlijn-scroll data-from="1917" data-to="1945">1917<span class="show-for-medium"> - 1945</span></a></li>
+            <li><a tijlijn-scroll data-from="1945" data-to="2015">1945<span class="show-for-medium"> - Heden</span></a></li>
+            <li><a tijlijn-scroll data-from="2015" data-to="9999">Toekomst</a></li>
+          </ul>
+        </div>
+      </div> -->
+
+    </div>
+
+  </body>
+</html>

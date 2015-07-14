@@ -1,0 +1,39 @@
+<!--
+Deze page is nog echt heel simplistisch. flinke todo!
+-->
+<div class="grid-block small-up-1 medium-up-2 large-up-4">
+
+    <div class="grid-content">
+        <form ng-submit="onFormSubmit(searchform)" name="searchform">
+            <input type="text" name="query" ng-model="query" value="{{ query }}">
+            <input type="submit">
+        </form>
+    </div>
+
+    <div class="grid-content" ng-show="!zoekresultaten.length && q">
+        Geen zoekresultaten gevonden voor "{{ q }}".
+    </div>
+
+    <div class="grid-content" ng-repeat="zoekresultaat in zoekresultaten" style="display:block;">
+        <a ng-href="{{ $state.href(contenttypeToRoute(zoekresultaat.type), { id: zoekresultaat.attributes.slug }) }}">
+            <div class="card dark">
+                <img ng-src="{{ zoekresultaat.attributes.image.thumbnail }}">
+                <div class="card-divider">
+                    <span class="dark label">{{ contenttypeToSingular(zoekresultaat.type) }}</span>
+                    <h3>{{ zoekresultaat.attributes.title }}</h3>
+                </div>
+                <div class="card-section" ng-bind-html='zoekresultaat.attributes.teaser'>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div ng-show="numPages > 0">
+        <ul class="pagination">
+             <li ng-repeat="index in range(1, numPages)">
+                <a ng-if="index != p" ui-sref="zoeken({ q: q, p: index })"><span>{{ index }}</span></a>
+                <span  ng-if="index == p">{{ index }}</span>
+            </li>
+        </ul>
+    </div>
+</div>
