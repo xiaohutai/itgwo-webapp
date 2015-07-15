@@ -23,6 +23,9 @@
       } else {
 
         // --[ fetch programmas ]-----------------------------------------------
+
+        // update bolt_speeltijden AS s SET s.image = (select p.image from bolt_programmaonderdelen as p where p.id = s.programmaonderdelen)
+
         $http
         .get(config.api.url + 'speeltijden?' + jQuery.param({ 'page[size]': 1000, 'sort': 'title' }), { cache: true })
         .then(function(result){

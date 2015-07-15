@@ -176,8 +176,10 @@ div.grid-content {
     .content-act {
 
         article {
-            height: 130px;
-            background-color: #F00;
+            height: 140px;
+            background-color: #888;
+            bottom: 0;
+            margin-bottom: 6px;
         }
 
         img {
@@ -185,19 +187,33 @@ div.grid-content {
             margin-right: 0.5em;
         }
 
+        .caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        span {
+            color: rgba(0, 0, 0, 0);
+        }
 
         h1 {
-            font-size: 1em;
-            margin-top: 0;
-            line-height: 1.3em;
+            font-size: 0.85em;
+            margin: 0;
+            line-height: 1.2em;
+            color: #FFF;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         h2 {
             font-size: 0.8em;
-            line-height: 1.5em;
-            text-transform: uppercase;
-            margin-bottom: 0;
-            color: #777;
+            letter-spacing: -0.5px;
+            line-height: 1.2em;
+            margin: 0;
+            color: #EEE;
         }
 
     }
