@@ -25,14 +25,28 @@ body {
  * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
   display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-audio, canvas, progress, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
@@ -50,7 +64,8 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-[hidden], template {
+[hidden],
+template {
   display: none; }
 
 /* Links
@@ -64,7 +79,8 @@ a {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0; }
 
 /* Text-level semantics
@@ -78,7 +94,8 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-b, strong {
+b,
+strong {
   font-weight: bold; }
 
 /**
@@ -111,7 +128,8 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -161,7 +179,10 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, monospace;
   font-size: 1em; }
 
@@ -177,7 +198,11 @@ code, kbd, pre, samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: inherit;
   /* 1 */
   font: inherit;
@@ -197,7 +222,8 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button, select {
+button,
+select {
   text-transform: none; }
 
 /**
@@ -207,7 +233,9 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button,
+html input[type="button"], input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -216,13 +244,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -240,7 +270,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -251,7 +282,8 @@ input[type="checkbox"], input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
@@ -270,7 +302,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -313,7 +346,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-td, th {
+td,
+th {
   padding: 0; }
 
 meta.foundation-version {
@@ -365,7 +399,12 @@ img {
 a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
   cursor: pointer; }
 
-#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object {
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
   max-width: none !important; }
 
 .padding {
@@ -782,9 +821,9 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
       float: right;
       pointer-events: none;
       margin-top: -0.25em; }
-      @media screen and (min-width: 0\0) {
+      @media screen and (min-width: 0 \0) {
         .block-list li > input[type="checkbox"]:checked + label::before, .block-list li > input[type="radio"]:checked + label::before {
-          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAdlJREFUeNrMl0FugzAQRY3TRZeoFyhVL0BOkGTXJezaHZwguUnECaCrdFd6gqQnCN11Uyk5QekNOlONJWMVGMCgfGlkEIY3HnsG2xFM3d96PjQB2AJsWdPtAPYOln+dTwXnuw4DHEGzBvNFN6EDCTiS9XIAwB40acNoucKoxODIie0AwAOCu8KOSnIiNx/MakK+A7sW9oTferxx3fP3T1nURoBG/irGVahHwjHm/Ggx7E3TMVdrQmoP0gngghhpZQ3QvG/EdPLUelARWI8Aycjq9Md0qMIdbcNhjmOKLoY7quk3l1Rebeqg4AwFkmq7LWGOh1pmNY0etZAWSq0OX8HoS4JvWuCopbSY26EGR/CW86K0BF+pwkLwlPuyHJhOCl5oe4ZtF++vOqST+GdOYwO+71pN2VNAjmQGPCe42weuHDg0PI8olUwnYrXTGQJH9gxq8l1LKvrQx4O6/YY32Kp/ugb3ey7gZ4xAzuhYiYTxB/UHZFAuaREVXZ2g6yFlvEC2yoKEmbsRZYNgVLk2JeaOaG+xLHN+WCszDWMqLGOrJFa1DlApjSdwoHJGqGzLIb0+cas0wh5Bh780ngswx8GJD7h8sHg2wLA/mfDLPZpdxOF0quP5rwADAAFIzSRvu1m5AAAAAElFTkSuQmCC'); } }
+          background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAdlJREFUeNrMl0FugzAQRY3TRZeoFyhVL0BOkGTXJezaHZwguUnECaCrdFd6gqQnCN11Uyk5QekNOlONJWMVGMCgfGlkEIY3HnsG2xFM3d96PjQB2AJsWdPtAPYOln+dTwXnuw4DHEGzBvNFN6EDCTiS9XIAwB40acNoucKoxODIie0AwAOCu8KOSnIiNx/MakK+A7sW9oTferxx3fP3T1nURoBG/irGVahHwjHm/Ggx7E3TMVdrQmoP0gngghhpZQ3QvG/EdPLUelARWI8Aycjq9Md0qMIdbcNhjmOKLoY7quk3l1Rebeqg4AwFkmq7LWGOh1pmNY0etZAWSq0OX8HoS4JvWuCopbSY26EGR/CW86K0BF+pwkLwlPuyHJhOCl5oe4ZtF++vOqST+GdOYwO+71pN2VNAjmQGPCe42weuHDg0PI8olUwnYrXTGQJH9gxq8l1LKvrQx4O6/YY32Kp/ugb3ey7gZ4xAzuhYiYTxB/UHZFAuaREVXZ2g6yFlvEC2yoKEmbsRZYNgVLk2JeaOaG+xLHN+WCszDWMqLGOrJFa1DlApjSdwoHJGqGzLIb0+cas0wh5Bh780ngswx8GJD7h8sHg2wLA/mfDLPZpdxOF0quP5rwADAAFIzSRvu1m5AAAAAElFTkSuQmCC"); } }
   .block-list .with-dropdown {
     color: inherit; }
     .block-list .with-dropdown select {
@@ -1320,7 +1359,7 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
       background: #dc750f;
       color: #fff; }
     .button-group > li.warning > a:hover, .button-group > li.warning > a:focus, .button-group > li.warning > label:hover, .button-group > li.warning > label:focus, .button-group > li.warning > button:hover, .button-group > li.warning > button:focus {
-      border-color: #c2670d; }
+      border-color: #c2680d; }
     .button-group > li.warning > a .iconic *, .button-group > li.warning > label .iconic *, .button-group > li.warning > button .iconic * {
       fill: #fff;
       stroke: #fff; }
@@ -1356,13 +1395,17 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
         .button-group.segmented > li > a .iconic *.iconic-property-accent, .button-group.segmented > li > label .iconic *.iconic-property-accent, .button-group.segmented > li > button .iconic *.iconic-property-accent {
           fill: #00558b;
           stroke: #00558b; }
-    .button-group.segmented > li.is-active > a, .button-group.segmented > li.is-active > a:hover, .button-group.segmented > li > input:checked + label, .button-group.segmented > li > input:checked + label:hover {
+    .button-group.segmented > li.is-active > a,
+    .button-group.segmented > li.is-active > a:hover,
+    .button-group.segmented > li > input:checked + label, .button-group.segmented > li > input:checked + label:hover {
       background: #00558b;
       color: #fff; }
-    .button-group.segmented > li.is-active > a .iconic *, .button-group.segmented > li > input:checked + label .iconic * {
+    .button-group.segmented > li.is-active > a .iconic *,
+    .button-group.segmented > li > input:checked + label .iconic * {
       fill: #fff;
       stroke: #fff; }
-      .button-group.segmented > li.is-active > a .iconic *.iconic-property-accent, .button-group.segmented > li > input:checked + label .iconic *.iconic-property-accent {
+      .button-group.segmented > li.is-active > a .iconic *.iconic-property-accent,
+      .button-group.segmented > li > input:checked + label .iconic *.iconic-property-accent {
         fill: #fff;
         stroke: #fff; }
     .button-group.segmented.secondary {
@@ -1379,13 +1422,17 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
           .button-group.segmented.secondary > li > a .iconic *.iconic-property-accent, .button-group.segmented.secondary > li > label .iconic *.iconic-property-accent, .button-group.segmented.secondary > li > button .iconic *.iconic-property-accent {
             fill: #f1f1f1;
             stroke: #f1f1f1; }
-      .button-group.segmented.secondary > li.is-active > a, .button-group.segmented.secondary > li.is-active > a:hover, .button-group.segmented.secondary > li > input:checked + label, .button-group.segmented.secondary > li > input:checked + label:hover {
+      .button-group.segmented.secondary > li.is-active > a,
+      .button-group.segmented.secondary > li.is-active > a:hover,
+      .button-group.segmented.secondary > li > input:checked + label, .button-group.segmented.secondary > li > input:checked + label:hover {
         background: #f1f1f1;
         color: #000; }
-      .button-group.segmented.secondary > li.is-active > a .iconic *, .button-group.segmented.secondary > li > input:checked + label .iconic * {
+      .button-group.segmented.secondary > li.is-active > a .iconic *,
+      .button-group.segmented.secondary > li > input:checked + label .iconic * {
         fill: #000;
         stroke: #000; }
-        .button-group.segmented.secondary > li.is-active > a .iconic *.iconic-property-accent, .button-group.segmented.secondary > li > input:checked + label .iconic *.iconic-property-accent {
+        .button-group.segmented.secondary > li.is-active > a .iconic *.iconic-property-accent,
+        .button-group.segmented.secondary > li > input:checked + label .iconic *.iconic-property-accent {
           fill: #000;
           stroke: #000; }
     .button-group.segmented.success {
@@ -1402,13 +1449,17 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
           .button-group.segmented.success > li > a .iconic *.iconic-property-accent, .button-group.segmented.success > li > label .iconic *.iconic-property-accent, .button-group.segmented.success > li > button .iconic *.iconic-property-accent {
             fill: #43AC6A;
             stroke: #43AC6A; }
-      .button-group.segmented.success > li.is-active > a, .button-group.segmented.success > li.is-active > a:hover, .button-group.segmented.success > li > input:checked + label, .button-group.segmented.success > li > input:checked + label:hover {
+      .button-group.segmented.success > li.is-active > a,
+      .button-group.segmented.success > li.is-active > a:hover,
+      .button-group.segmented.success > li > input:checked + label, .button-group.segmented.success > li > input:checked + label:hover {
         background: #43AC6A;
         color: #fff; }
-      .button-group.segmented.success > li.is-active > a .iconic *, .button-group.segmented.success > li > input:checked + label .iconic * {
+      .button-group.segmented.success > li.is-active > a .iconic *,
+      .button-group.segmented.success > li > input:checked + label .iconic * {
         fill: #fff;
         stroke: #fff; }
-        .button-group.segmented.success > li.is-active > a .iconic *.iconic-property-accent, .button-group.segmented.success > li > input:checked + label .iconic *.iconic-property-accent {
+        .button-group.segmented.success > li.is-active > a .iconic *.iconic-property-accent,
+        .button-group.segmented.success > li > input:checked + label .iconic *.iconic-property-accent {
           fill: #fff;
           stroke: #fff; }
     .button-group.segmented.warning {
@@ -1425,13 +1476,17 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
           .button-group.segmented.warning > li > a .iconic *.iconic-property-accent, .button-group.segmented.warning > li > label .iconic *.iconic-property-accent, .button-group.segmented.warning > li > button .iconic *.iconic-property-accent {
             fill: #F08A24;
             stroke: #F08A24; }
-      .button-group.segmented.warning > li.is-active > a, .button-group.segmented.warning > li.is-active > a:hover, .button-group.segmented.warning > li > input:checked + label, .button-group.segmented.warning > li > input:checked + label:hover {
+      .button-group.segmented.warning > li.is-active > a,
+      .button-group.segmented.warning > li.is-active > a:hover,
+      .button-group.segmented.warning > li > input:checked + label, .button-group.segmented.warning > li > input:checked + label:hover {
         background: #F08A24;
         color: #fff; }
-      .button-group.segmented.warning > li.is-active > a .iconic *, .button-group.segmented.warning > li > input:checked + label .iconic * {
+      .button-group.segmented.warning > li.is-active > a .iconic *,
+      .button-group.segmented.warning > li > input:checked + label .iconic * {
         fill: #fff;
         stroke: #fff; }
-        .button-group.segmented.warning > li.is-active > a .iconic *.iconic-property-accent, .button-group.segmented.warning > li > input:checked + label .iconic *.iconic-property-accent {
+        .button-group.segmented.warning > li.is-active > a .iconic *.iconic-property-accent,
+        .button-group.segmented.warning > li > input:checked + label .iconic *.iconic-property-accent {
           fill: #fff;
           stroke: #fff; }
     .button-group.segmented.alert {
@@ -1448,13 +1503,17 @@ a, [ui-sref], [zf-open], [zf-close], [zf-toggle] {
           .button-group.segmented.alert > li > a .iconic *.iconic-property-accent, .button-group.segmented.alert > li > label .iconic *.iconic-property-accent, .button-group.segmented.alert > li > button .iconic *.iconic-property-accent {
             fill: #F04124;
             stroke: #F04124; }
-      .button-group.segmented.alert > li.is-active > a, .button-group.segmented.alert > li.is-active > a:hover, .button-group.segmented.alert > li > input:checked + label, .button-group.segmented.alert > li > input:checked + label:hover {
+      .button-group.segmented.alert > li.is-active > a,
+      .button-group.segmented.alert > li.is-active > a:hover,
+      .button-group.segmented.alert > li > input:checked + label, .button-group.segmented.alert > li > input:checked + label:hover {
         background: #F04124;
         color: #fff; }
-      .button-group.segmented.alert > li.is-active > a .iconic *, .button-group.segmented.alert > li > input:checked + label .iconic * {
+      .button-group.segmented.alert > li.is-active > a .iconic *,
+      .button-group.segmented.alert > li > input:checked + label .iconic * {
         fill: #fff;
         stroke: #fff; }
-        .button-group.segmented.alert > li.is-active > a .iconic *.iconic-property-accent, .button-group.segmented.alert > li > input:checked + label .iconic *.iconic-property-accent {
+        .button-group.segmented.alert > li.is-active > a .iconic *.iconic-property-accent,
+        .button-group.segmented.alert > li > input:checked + label .iconic *.iconic-property-accent {
           fill: #fff;
           stroke: #fff; }
   .button-group.tiny {
@@ -1663,9 +1722,18 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 input[type="search"] {
   box-sizing: border-box; }
 
-input.disabled, input[disabled], input[readonly], fieldset[disabled] input {
-  cursor: false; }
-  input.disabled, input.disabled:hover, input[disabled], input[disabled]:hover, input[readonly], input[readonly]:hover, fieldset[disabled] input, fieldset[disabled] input:hover {
+input.disabled,
+input[disabled],
+input[readonly],
+fieldset[disabled] input {
+  cursor: not-allowed; }
+  input.disabled,
+  input.disabled:hover,
+  input[disabled],
+  input[disabled]:hover,
+  input[readonly],
+  input[readonly]:hover,
+  fieldset[disabled] input, fieldset[disabled] input:hover {
     background-color: #f2f2f2; }
 
 label {
@@ -1724,7 +1792,10 @@ input[type="checkbox"], input[type="radio"] {
       border-right: 0; }
     .inline-label > .form-label:last-child {
       border-left: 0; }
-  .inline-label > a, .inline-label > button, .inline-label > input[type="button"], .inline-label > input[type="submit"] {
+  .inline-label > a,
+  .inline-label > button,
+  .inline-label > input[type="button"],
+  .inline-label > input[type="submit"] {
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -1835,20 +1906,28 @@ progress, meter {
 
 progress::-webkit-progress-bar {
   background: #ccc; }
+
 progress::-webkit-progress-value {
   background: #00558b; }
+
 progress::-moz-progress-bar {
   background: #00558b; }
+
 progress.high::-webkit-progress-value {
   background: #43AC6A; }
+
 progress.high::-moz-progress-bar {
   background: #43AC6A; }
+
 progress.medium::-webkit-progress-value {
   background: #e7cf00; }
+
 progress.medium::-moz-progress-bar {
   background: #e7cf00; }
+
 progress.low::-webkit-progress-value {
   background: #F04124; }
+
 progress.low::-moz-progress-bar {
   background: #F04124; }
 
@@ -2110,6 +2189,7 @@ meter {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch; }
+
 .small-vertical.grid-frame, .small-vertical.grid-block, .small-vertical.small-grid-block, .small-vertical.medium-grid-block, .small-vertical.large-grid-block {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
@@ -2117,10 +2197,12 @@ meter {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch; }
+
 .small-horizontal.grid-frame, .small-horizontal.grid-block, .small-horizontal.small-grid-block, .small-horizontal.medium-grid-block, .small-horizontal.large-grid-block {
   -webkit-flex-flow: row wrap;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap; }
+
 @media only screen and (min-width: 40em) {
   .medium-vertical.grid-frame, .medium-vertical.grid-block, .medium-vertical.small-grid-block, .medium-vertical.medium-grid-block, .medium-vertical.large-grid-block {
     -webkit-flex-flow: column nowrap;
@@ -2133,6 +2215,7 @@ meter {
     -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap; } }
+
 @media only screen and (min-width: 75em) {
   .large-vertical.grid-frame, .large-vertical.grid-block, .large-vertical.small-grid-block, .large-vertical.medium-grid-block, .large-vertical.large-grid-block {
     -webkit-flex-flow: column nowrap;
@@ -2145,22 +2228,27 @@ meter {
     -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap; } }
+
 .align-right.grid-frame, .align-right.grid-block, .align-right.small-grid-block, .align-right.medium-grid-block, .align-right.large-grid-block {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end; }
+
 .align-center.grid-frame, .align-center.grid-block, .align-center.small-grid-block, .align-center.medium-grid-block, .align-center.large-grid-block {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
+
 .align-justify.grid-frame, .align-justify.grid-block, .align-justify.small-grid-block, .align-justify.medium-grid-block, .align-justify.large-grid-block {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
 .align-spaced.grid-frame, .align-spaced.grid-block, .align-spaced.small-grid-block, .align-spaced.medium-grid-block, .align-spaced.large-grid-block {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around; }
+
 .wrap.grid-frame, .wrap.grid-block, .wrap.small-grid-block, .wrap.medium-grid-block, .wrap.large-grid-block {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
@@ -2173,6 +2261,7 @@ meter {
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto; }
+
 .noscroll.grid-block, .noscroll.grid-content, .noscroll.small-grid-block, .noscroll.small-grid-content, .noscroll.medium-grid-block, .noscroll.medium-grid-content, .noscroll.large-grid-block, .noscroll.large-grid-content {
   overflow: hidden; }
 
@@ -4322,11 +4411,9 @@ meter {
   0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
     -webkit-transform: translateX(7%);
             transform: translateX(7%); }
-
   5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
     -webkit-transform: translateX(-7%);
             transform: translateX(-7%); }
-
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
@@ -4335,11 +4422,9 @@ meter {
   0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
     -webkit-transform: translateX(7%);
             transform: translateX(7%); }
-
   5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
     -webkit-transform: translateX(-7%);
             transform: translateX(-7%); }
-
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
@@ -4348,7 +4433,6 @@ meter {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
-
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
@@ -4357,7 +4441,6 @@ meter {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
-
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
@@ -4366,7 +4449,6 @@ meter {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
-
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
@@ -4375,7 +4457,6 @@ meter {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg); }
-
   100% {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
@@ -4384,11 +4465,9 @@ meter {
   40%, 50%, 60% {
     -webkit-transform: rotate(7deg);
             transform: rotate(7deg); }
-
   35%, 45%, 55%, 65% {
     -webkit-transform: rotate(-7deg);
             transform: rotate(-7deg); }
-
   0%, 30%, 70%, 100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
@@ -4397,11 +4476,9 @@ meter {
   40%, 50%, 60% {
     -webkit-transform: rotate(7deg);
             transform: rotate(7deg); }
-
   35%, 45%, 55%, 65% {
     -webkit-transform: rotate(-7deg);
             transform: rotate(-7deg); }
-
   0%, 30%, 70%, 100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
@@ -4409,7 +4486,8 @@ meter {
 /*
     Transitions
   */
-.slideInDown.ng-enter, .slideInDown.ng-hide-remove {
+.slideInDown.ng-enter,
+.slideInDown.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4419,11 +4497,14 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%); }
-.slideInDown.ng-enter.ng-enter-active, .slideInDown.ng-hide-remove.ng-hide-remove-active {
+
+.slideInDown.ng-enter.ng-enter-active,
+.slideInDown.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
 
-.slideInLeft.ng-enter, .slideInLeft.ng-hide-remove {
+.slideInLeft.ng-enter,
+.slideInLeft.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4433,11 +4514,14 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateX(100%);
           transform: translateX(100%); }
-.slideInLeft.ng-enter.ng-enter-active, .slideInLeft.ng-hide-remove.ng-hide-remove-active {
+
+.slideInLeft.ng-enter.ng-enter-active,
+.slideInLeft.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
 
-.slideInUp.ng-enter, .slideInUp.ng-hide-remove {
+.slideInUp.ng-enter,
+.slideInUp.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4447,11 +4531,14 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateY(100%);
           transform: translateY(100%); }
-.slideInUp.ng-enter.ng-enter-active, .slideInUp.ng-hide-remove.ng-hide-remove-active {
+
+.slideInUp.ng-enter.ng-enter-active,
+.slideInUp.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
 
-.slideInRight.ng-enter, .slideInRight.ng-hide-remove {
+.slideInRight.ng-enter,
+.slideInRight.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4461,11 +4548,14 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%); }
-.slideInRight.ng-enter.ng-enter-active, .slideInRight.ng-hide-remove.ng-hide-remove-active {
+
+.slideInRight.ng-enter.ng-enter-active,
+.slideInRight.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
 
-.slideOutBottom.ng-leave, .slideOutBottom.ng-hide-add {
+.slideOutBottom.ng-leave,
+.slideOutBottom.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4475,11 +4565,14 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
-.slideOutBottom.ng-leave.ng-leave-active, .slideOutBottom.ng-hide-add.ng-hide-add-active {
+
+.slideOutBottom.ng-leave.ng-leave-active,
+.slideOutBottom.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateY(100%);
           transform: translateY(100%); }
 
-.slideOutRight.ng-leave, .slideOutRight.ng-hide-add {
+.slideOutRight.ng-leave,
+.slideOutRight.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4489,11 +4582,14 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
-.slideOutRight.ng-leave.ng-leave-active, .slideOutRight.ng-hide-add.ng-hide-add-active {
+
+.slideOutRight.ng-leave.ng-leave-active,
+.slideOutRight.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateX(100%);
           transform: translateX(100%); }
 
-.slideOutUp.ng-leave, .slideOutUp.ng-hide-add {
+.slideOutUp.ng-leave,
+.slideOutUp.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4503,11 +4599,14 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
-.slideOutUp.ng-leave.ng-leave-active, .slideOutUp.ng-hide-add.ng-hide-add-active {
+
+.slideOutUp.ng-leave.ng-leave-active,
+.slideOutUp.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%); }
 
-.slideOutLeft.ng-leave, .slideOutLeft.ng-hide-add {
+.slideOutLeft.ng-leave,
+.slideOutLeft.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4517,29 +4616,38 @@ meter {
           backface-visibility: hidden;
   -webkit-transform: translateX(0) translateY(0);
           transform: translateX(0) translateY(0); }
-.slideOutLeft.ng-leave.ng-leave-active, .slideOutLeft.ng-hide-add.ng-hide-add-active {
+
+.slideOutLeft.ng-leave.ng-leave-active,
+.slideOutLeft.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%); }
 
-.fadeIn.ng-enter, .fadeIn.ng-hide-remove {
+.fadeIn.ng-enter,
+.fadeIn.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
   transition-property: opacity;
   opacity: 0; }
-.fadeIn.ng-enter.ng-enter-active, .fadeIn.ng-hide-remove.ng-hide-remove-active {
+
+.fadeIn.ng-enter.ng-enter-active,
+.fadeIn.ng-hide-remove.ng-hide-remove-active {
   opacity: 1; }
 
-.fadeOut.ng-leave, .fadeOut.ng-hide-add {
+.fadeOut.ng-leave,
+.fadeOut.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
   transition-property: opacity;
   opacity: 1; }
-.fadeOut.ng-leave.ng-leave-active, .fadeOut.ng-hide-add.ng-hide-add-active {
+
+.fadeOut.ng-leave.ng-leave-active,
+.fadeOut.ng-hide-add.ng-hide-add-active {
   opacity: 0; }
 
-.hingeInFromTop.ng-enter, .hingeInFromTop.ng-hide-remove {
+.hingeInFromTop.ng-enter,
+.hingeInFromTop.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4550,12 +4658,15 @@ meter {
   -webkit-transform-origin: top;
           transform-origin: top;
   opacity: 0; }
-.hingeInFromTop.ng-enter.ng-enter-active, .hingeInFromTop.ng-hide-remove.ng-hide-remove-active {
+
+.hingeInFromTop.ng-enter.ng-enter-active,
+.hingeInFromTop.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   opacity: 1; }
 
-.hingeInFromRight.ng-enter, .hingeInFromRight.ng-hide-remove {
+.hingeInFromRight.ng-enter,
+.hingeInFromRight.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4566,12 +4677,15 @@ meter {
   -webkit-transform-origin: right;
           transform-origin: right;
   opacity: 0; }
-.hingeInFromRight.ng-enter.ng-enter-active, .hingeInFromRight.ng-hide-remove.ng-hide-remove-active {
+
+.hingeInFromRight.ng-enter.ng-enter-active,
+.hingeInFromRight.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   opacity: 1; }
 
-.hingeInFromBottom.ng-enter, .hingeInFromBottom.ng-hide-remove {
+.hingeInFromBottom.ng-enter,
+.hingeInFromBottom.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4582,12 +4696,15 @@ meter {
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
   opacity: 0; }
-.hingeInFromBottom.ng-enter.ng-enter-active, .hingeInFromBottom.ng-hide-remove.ng-hide-remove-active {
+
+.hingeInFromBottom.ng-enter.ng-enter-active,
+.hingeInFromBottom.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   opacity: 1; }
 
-.hingeInFromLeft.ng-enter, .hingeInFromLeft.ng-hide-remove {
+.hingeInFromLeft.ng-enter,
+.hingeInFromLeft.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4598,12 +4715,15 @@ meter {
   -webkit-transform-origin: left;
           transform-origin: left;
   opacity: 0; }
-.hingeInFromLeft.ng-enter.ng-enter-active, .hingeInFromLeft.ng-hide-remove.ng-hide-remove-active {
+
+.hingeInFromLeft.ng-enter.ng-enter-active,
+.hingeInFromLeft.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   opacity: 1; }
 
-.hingeInFromMiddleX.ng-enter, .hingeInFromMiddleX.ng-hide-remove {
+.hingeInFromMiddleX.ng-enter,
+.hingeInFromMiddleX.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4614,12 +4734,15 @@ meter {
   -webkit-transform-origin: center;
           transform-origin: center;
   opacity: 0; }
-.hingeInFromMiddleX.ng-enter.ng-enter-active, .hingeInFromMiddleX.ng-hide-remove.ng-hide-remove-active {
+
+.hingeInFromMiddleX.ng-enter.ng-enter-active,
+.hingeInFromMiddleX.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   opacity: 1; }
 
-.hingeInFromMiddleY.ng-enter, .hingeInFromMiddleY.ng-hide-remove {
+.hingeInFromMiddleY.ng-enter,
+.hingeInFromMiddleY.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4630,12 +4753,15 @@ meter {
   -webkit-transform-origin: center;
           transform-origin: center;
   opacity: 0; }
-.hingeInFromMiddleY.ng-enter.ng-enter-active, .hingeInFromMiddleY.ng-hide-remove.ng-hide-remove-active {
+
+.hingeInFromMiddleY.ng-enter.ng-enter-active,
+.hingeInFromMiddleY.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
   opacity: 1; }
 
-.hingeOutFromTop.ng-leave, .hingeOutFromTop.ng-hide-add {
+.hingeOutFromTop.ng-leave,
+.hingeOutFromTop.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4646,12 +4772,15 @@ meter {
   -webkit-transform-origin: top;
           transform-origin: top;
   opacity: 1; }
-.hingeOutFromTop.ng-leave.ng-leave-active, .hingeOutFromTop.ng-hide-add.ng-hide-add-active {
+
+.hingeOutFromTop.ng-leave.ng-leave-active,
+.hingeOutFromTop.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   opacity: 0; }
 
-.hingeOutFromRight.ng-leave, .hingeOutFromRight.ng-hide-add {
+.hingeOutFromRight.ng-leave,
+.hingeOutFromRight.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4662,12 +4791,15 @@ meter {
   -webkit-transform-origin: right;
           transform-origin: right;
   opacity: 1; }
-.hingeOutFromRight.ng-leave.ng-leave-active, .hingeOutFromRight.ng-hide-add.ng-hide-add-active {
+
+.hingeOutFromRight.ng-leave.ng-leave-active,
+.hingeOutFromRight.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   opacity: 0; }
 
-.hingeOutFromBottom.ng-leave, .hingeOutFromBottom.ng-hide-add {
+.hingeOutFromBottom.ng-leave,
+.hingeOutFromBottom.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4678,12 +4810,15 @@ meter {
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
   opacity: 1; }
-.hingeOutFromBottom.ng-leave.ng-leave-active, .hingeOutFromBottom.ng-hide-add.ng-hide-add-active {
+
+.hingeOutFromBottom.ng-leave.ng-leave-active,
+.hingeOutFromBottom.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(2000px) rotateX(90deg);
           transform: perspective(2000px) rotateX(90deg);
   opacity: 0; }
 
-.hingeOutFromLeft.ng-leave, .hingeOutFromLeft.ng-hide-add {
+.hingeOutFromLeft.ng-leave,
+.hingeOutFromLeft.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4694,12 +4829,15 @@ meter {
   -webkit-transform-origin: left;
           transform-origin: left;
   opacity: 1; }
-.hingeOutFromLeft.ng-leave.ng-leave-active, .hingeOutFromLeft.ng-hide-add.ng-hide-add-active {
+
+.hingeOutFromLeft.ng-leave.ng-leave-active,
+.hingeOutFromLeft.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(2000px) rotateY(90deg);
           transform: perspective(2000px) rotateY(90deg);
   opacity: 0; }
 
-.hingeOutFromMiddleX.ng-leave, .hingeOutFromMiddleX.ng-hide-add {
+.hingeOutFromMiddleX.ng-leave,
+.hingeOutFromMiddleX.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4710,12 +4848,15 @@ meter {
   -webkit-transform-origin: center;
           transform-origin: center;
   opacity: 1; }
-.hingeOutFromMiddleX.ng-leave.ng-leave-active, .hingeOutFromMiddleX.ng-hide-add.ng-hide-add-active {
+
+.hingeOutFromMiddleX.ng-leave.ng-leave-active,
+.hingeOutFromMiddleX.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   opacity: 0; }
 
-.hingeOutFromMiddleY.ng-leave, .hingeOutFromMiddleY.ng-hide-add {
+.hingeOutFromMiddleY.ng-leave,
+.hingeOutFromMiddleY.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4726,12 +4867,15 @@ meter {
   -webkit-transform-origin: center;
           transform-origin: center;
   opacity: 1; }
-.hingeOutFromMiddleY.ng-leave.ng-leave-active, .hingeOutFromMiddleY.ng-hide-add.ng-hide-add-active {
+
+.hingeOutFromMiddleY.ng-leave.ng-leave-active,
+.hingeOutFromMiddleY.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   opacity: 0; }
 
-.zoomIn.ng-enter, .zoomIn.ng-hide-remove {
+.zoomIn.ng-enter,
+.zoomIn.ng-hide-remove {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4740,12 +4884,15 @@ meter {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   opacity: 0; }
-.zoomIn.ng-enter.ng-enter-active, .zoomIn.ng-hide-remove.ng-hide-remove-active {
+
+.zoomIn.ng-enter.ng-enter-active,
+.zoomIn.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 1; }
 
-.zoomOut.ng-leave, .zoomOut.ng-hide-add {
+.zoomOut.ng-leave,
+.zoomOut.ng-hide-add {
   transition-duration: 500ms;
   transition-timing-function: ease;
   transition-delay: 0;
@@ -4754,51 +4901,65 @@ meter {
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
   opacity: 1; }
-.zoomOut.ng-leave.ng-leave-active, .zoomOut.ng-hide-add.ng-hide-add-active {
+
+.zoomOut.ng-leave.ng-leave-active,
+.zoomOut.ng-hide-add.ng-hide-add-active {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 0; }
 
-.spinIn.ng-enter, .spinIn.ng-hide-remove {
+.spinIn.ng-enter,
+.spinIn.ng-hide-remove {
   transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   -webkit-transform: rotate(-270deg);
           transform: rotate(-270deg);
   opacity: 0; }
-.spinIn.ng-enter.ng-enter-active, .spinIn.ng-hide-remove.ng-hide-remove-active {
+
+.spinIn.ng-enter.ng-enter-active,
+.spinIn.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
 
-.spinOut.ng-leave, .spinOut.ng-hide-add {
+.spinOut.ng-leave,
+.spinOut.ng-hide-add {
   transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   -webkit-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
-.spinOut.ng-leave.ng-leave-active, .spinOut.ng-hide-add.ng-hide-add-active {
+
+.spinOut.ng-leave.ng-leave-active,
+.spinOut.ng-hide-add.ng-hide-add-active {
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
   opacity: 0; }
 
-.spinInCCW.ng-enter, .spinInCCW.ng-hide-remove {
+.spinInCCW.ng-enter,
+.spinInCCW.ng-hide-remove {
   transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
   opacity: 0; }
-.spinInCCW.ng-enter.ng-enter-active, .spinInCCW.ng-hide-remove.ng-hide-remove-active {
+
+.spinInCCW.ng-enter.ng-enter-active,
+.spinInCCW.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
 
-.spinOutCCW.ng-leave, .spinOutCCW.ng-hide-add {
+.spinOutCCW.ng-leave,
+.spinOutCCW.ng-hide-add {
   transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   -webkit-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
-.spinOutCCW.ng-leave.ng-leave-active, .spinOutCCW.ng-hide-add.ng-hide-add-active {
+
+.spinOutCCW.ng-leave.ng-leave-active,
+.spinOutCCW.ng-hide-add.ng-hide-add-active {
   -webkit-transform: rotate(-270deg);
           transform: rotate(-270deg);
   opacity: 0; }
@@ -4904,43 +5065,94 @@ meter {
 /*
     Animation modifiers
   */
-.shake.infinite, .spin-cw.infinite, .spin-ccw.infinite, .wiggle.infinite {
+.shake.infinite,
+.spin-cw.infinite,
+.spin-ccw.infinite,
+.wiggle.infinite {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite; }
-.shake.linear, .spin-cw.linear, .spin-ccw.linear, .wiggle.linear {
+
+.shake.linear,
+.spin-cw.linear,
+.spin-ccw.linear,
+.wiggle.linear {
   -webkit-animation-timing-function: linear !important;
           animation-timing-function: linear !important; }
-.shake.ease, .spin-cw.ease, .spin-ccw.ease, .wiggle.ease {
+
+.shake.ease,
+.spin-cw.ease,
+.spin-ccw.ease,
+.wiggle.ease {
   -webkit-animation-timing-function: ease !important;
           animation-timing-function: ease !important; }
-.shake.easeIn, .spin-cw.easeIn, .spin-ccw.easeIn, .wiggle.easeIn {
+
+.shake.easeIn,
+.spin-cw.easeIn,
+.spin-ccw.easeIn,
+.wiggle.easeIn {
   -webkit-animation-timing-function: ease-in !important;
           animation-timing-function: ease-in !important; }
-.shake.easeOut, .spin-cw.easeOut, .spin-ccw.easeOut, .wiggle.easeOut {
+
+.shake.easeOut,
+.spin-cw.easeOut,
+.spin-ccw.easeOut,
+.wiggle.easeOut {
   -webkit-animation-timing-function: ease-out !important;
           animation-timing-function: ease-out !important; }
-.shake.easeInOut, .spin-cw.easeInOut, .spin-ccw.easeInOut, .wiggle.easeInOut {
+
+.shake.easeInOut,
+.spin-cw.easeInOut,
+.spin-ccw.easeInOut,
+.wiggle.easeInOut {
   -webkit-animation-timing-function: ease-in-out !important;
           animation-timing-function: ease-in-out !important; }
-.shake.bounceIn, .spin-cw.bounceIn, .spin-ccw.bounceIn, .wiggle.bounceIn {
+
+.shake.bounceIn,
+.spin-cw.bounceIn,
+.spin-ccw.bounceIn,
+.wiggle.bounceIn {
   -webkit-animation-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important;
           animation-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important; }
-.shake.bounceOut, .spin-cw.bounceOut, .spin-ccw.bounceOut, .wiggle.bounceOut {
+
+.shake.bounceOut,
+.spin-cw.bounceOut,
+.spin-ccw.bounceOut,
+.wiggle.bounceOut {
   -webkit-animation-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important;
           animation-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important; }
-.shake.bounceInOut, .spin-cw.bounceInOut, .spin-ccw.bounceInOut, .wiggle.bounceInOut {
+
+.shake.bounceInOut,
+.spin-cw.bounceInOut,
+.spin-ccw.bounceInOut,
+.wiggle.bounceInOut {
   -webkit-animation-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important;
           animation-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important; }
-.shake.slow, .spin-cw.slow, .spin-ccw.slow, .wiggle.slow {
+
+.shake.slow,
+.spin-cw.slow,
+.spin-ccw.slow,
+.wiggle.slow {
   -webkit-animation-duration: 750ms !important;
           animation-duration: 750ms !important; }
-.shake.fast, .spin-cw.fast, .spin-ccw.fast, .wiggle.fast {
+
+.shake.fast,
+.spin-cw.fast,
+.spin-ccw.fast,
+.wiggle.fast {
   -webkit-animation-duration: 250ms !important;
           animation-duration: 250ms !important; }
-.shake.delay, .spin-cw.delay, .spin-ccw.delay, .wiggle.delay {
+
+.shake.delay,
+.spin-cw.delay,
+.spin-ccw.delay,
+.wiggle.delay {
   -webkit-animation-delay: 300ms !important;
           animation-delay: 300ms !important; }
-.shake.long-delay, .spin-cw.long-delay, .spin-ccw.long-delay, .wiggle.long-delay {
+
+.shake.long-delay,
+.spin-cw.long-delay,
+.spin-ccw.long-delay,
+.wiggle.long-delay {
   -webkit-animation-delay: 700ms !important;
           animation-delay: 700ms !important; }
 
@@ -5577,7 +5789,25 @@ meter {
    - Acronyms
 */
 /* Typography resets */
-div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
   margin: 0;
   padding: 0; }
 
@@ -5588,7 +5818,8 @@ a {
   line-height: inherit; }
   a[ui-sref] {
     cursor: pointer; }
-  a:hover, a:focus {
+  a:hover,
+  a:focus {
     color: #004978; }
   a img {
     border: none; }
@@ -5657,11 +5888,13 @@ hr {
   height: 0; }
 
 /* Helpful Typography Defaults */
-em, i {
+em,
+i {
   font-style: italic;
   line-height: inherit; }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
   line-height: inherit; }
 
@@ -5671,7 +5904,7 @@ small {
   line-height: inherit; }
 
 code {
-  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: normal;
   color: #464646;
   background-color: #fbfbfb;
@@ -5681,7 +5914,9 @@ code {
   padding: 0.125rem 0.3125rem 0.0625rem; }
 
 /* Lists */
-ul, ol, dl {
+ul,
+ol,
+dl {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -5691,7 +5926,9 @@ ul, ol, dl {
 /* Lists */
 ul, ol {
   margin-left: 1.1rem; }
-  ul li ul, ul li ol, ol li ul, ol li ol {
+  ul li ul,
+  ul li ol, ol li ul,
+  ol li ol {
     margin-left: 1.25rem;
     margin-bottom: 0; }
 
@@ -5705,11 +5942,13 @@ ul.no-bullet {
 dl dt {
   margin-bottom: 0.3rem;
   font-weight: bold; }
+
 dl dd {
   margin-bottom: 0.75rem; }
 
 /* Abbreviations */
-abbr, acronym {
+abbr,
+acronym {
   text-transform: uppercase;
   font-size: 90%;
   color: #222;
@@ -5730,10 +5969,12 @@ blockquote {
     color: #555555; }
     blockquote cite:before {
       content: "\2014 \0020"; }
-    blockquote cite a, blockquote cite a:visited {
+    blockquote cite a,
+    blockquote cite a:visited {
       color: #555555; }
 
-blockquote, blockquote p {
+blockquote,
+blockquote p {
   line-height: 1.6;
   color: #6f6f6f; }
 
@@ -5839,6 +6080,7 @@ blockquote, blockquote p {
 .hide-for-small:not(.ng-hide) {
   display: block !important;
   display: none !important; }
+
 .hide-for-small[class*="grid-block"]:not(.ng-hide) {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -5848,6 +6090,7 @@ blockquote, blockquote p {
 .show-for-small:not(.ng-hide) {
   display: none !important;
   display: block !important; }
+
 .show-for-small[class*="grid-block"]:not(.ng-hide) {
   display: none !important;
   display: -webkit-flex !important;
@@ -5859,6 +6102,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 0em) and (max-width: 39.9375rem) {
     .hide-for-small-only:not(.ng-hide) {
       display: none !important; } }
+
 .hide-for-small-only[class*="grid-block"]:not(.ng-hide) {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -5872,6 +6116,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 0em) and (max-width: 39.9375rem) {
     .show-for-small-only:not(.ng-hide) {
       display: block !important; } }
+
 .show-for-small-only[class*="grid-block"]:not(.ng-hide) {
   display: none !important; }
   @media only screen and (min-width: 0em) and (max-width: 39.9375rem) {
@@ -5885,6 +6130,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 40em) {
     .hide-for-medium:not(.ng-hide) {
       display: none !important; } }
+
 .hide-for-medium[class*="grid-block"]:not(.ng-hide) {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -5898,6 +6144,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 40em) {
     .show-for-medium:not(.ng-hide) {
       display: block !important; } }
+
 .show-for-medium[class*="grid-block"]:not(.ng-hide) {
   display: none !important; }
   @media only screen and (min-width: 40em) {
@@ -5911,6 +6158,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 40em) and (max-width: 74.9375rem) {
     .hide-for-medium-only:not(.ng-hide) {
       display: none !important; } }
+
 .hide-for-medium-only[class*="grid-block"]:not(.ng-hide) {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -5924,6 +6172,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 40em) and (max-width: 74.9375rem) {
     .show-for-medium-only:not(.ng-hide) {
       display: block !important; } }
+
 .show-for-medium-only[class*="grid-block"]:not(.ng-hide) {
   display: none !important; }
   @media only screen and (min-width: 40em) and (max-width: 74.9375rem) {
@@ -5937,6 +6186,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 75em) {
     .hide-for-large:not(.ng-hide) {
       display: none !important; } }
+
 .hide-for-large[class*="grid-block"]:not(.ng-hide) {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -5950,6 +6200,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 75em) {
     .show-for-large:not(.ng-hide) {
       display: block !important; } }
+
 .show-for-large[class*="grid-block"]:not(.ng-hide) {
   display: none !important; }
   @media only screen and (min-width: 75em) {
@@ -5963,6 +6214,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 75em) and (max-width: 89.9375rem) {
     .hide-for-large-only:not(.ng-hide) {
       display: none !important; } }
+
 .hide-for-large-only[class*="grid-block"]:not(.ng-hide) {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
@@ -5976,6 +6228,7 @@ blockquote, blockquote p {
   @media only screen and (min-width: 75em) and (max-width: 89.9375rem) {
     .show-for-large-only:not(.ng-hide) {
       display: block !important; } }
+
 .show-for-large-only[class*="grid-block"]:not(.ng-hide) {
   display: none !important; }
   @media only screen and (min-width: 75em) and (max-width: 89.9375rem) {
@@ -6133,6 +6386,7 @@ blockquote, blockquote p {
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
+
 .clearfix:after {
   clear: both; }
 
@@ -6210,7 +6464,8 @@ h1.logo {
 .page-home .pageheader {
   text-align: center; }
 
-.page-home .content-themas article, .page-home .content-programma article {
+.page-home .content-themas article,
+.page-home .content-programma article {
   height: 135px;
   background: #AE9962;
   border-bottom: 1px solid #fff; }
@@ -6227,13 +6482,16 @@ h1.logo {
   height: 105px;
   background: #FFF;
   border-bottom: 1px solid #fff; }
+
 .page-home .content-berichten img {
   float: left;
   margin-right: 0.5em; }
+
 .page-home .content-berichten h1 {
   font-size: 1em;
   margin-top: 0;
   line-height: 1.3em; }
+
 .page-home .content-berichten h2 {
   font-size: 0.8em;
   line-height: 1.5em;
@@ -6285,7 +6543,9 @@ div.grid-content {
   background: rgba(0, 0, 0, 0.8);
   z-index: 1000; }
 
-.spinner:before, .spinner:after, .spinner {
+.spinner:before,
+.spinner:after,
+.spinner {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
@@ -6312,21 +6572,24 @@ div.grid-content {
 .spinner:after {
   left: 3.5em; }
 
-.spinner:before, .spinner:after {
+.spinner:before,
+.spinner:after {
   content: '';
   position: absolute;
   top: 0; }
 
 @-webkit-keyframes load7 {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     box-shadow: 0 2.5em 0 -1.3em #ffffff; }
-
   40% {
     box-shadow: 0 2.5em 0 0 #ffffff; } }
 
 @keyframes load7 {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     box-shadow: 0 2.5em 0 -1.3em #ffffff; }
-
   40% {
     box-shadow: 0 2.5em 0 0 #ffffff; } }

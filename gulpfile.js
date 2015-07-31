@@ -12,6 +12,7 @@ var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
 var phonegapBuild = require('gulp-phonegap-build');
+var minifyCss     = require('gulp-minify-css');
 var exec = require('child_process').exec;
 
 // Check for --production flag
@@ -168,22 +169,22 @@ gulp.task('create-icons', function (cb) {
   });
 })
 
-
 gulp.task('phonegap-build', function () {
   gulp.src('./html/**/*')
     .pipe(phonegapBuild({
-      "appId": "1512930",
+      "appId": "1576214",
       "user": {
         "email": "marcel@twokings.nl",
         "password": "YjxUxesUpA8Ze6u"
       },
       keys: {
-        ios: { "password": "GQakXS4ymW8h4jEZ" },
-        android: { "key_pw": "X8f6WE4GrNGC", "keystore_pw": "X8f6WE4GrNGC" }
+        // ios: { "password": "r5Xb4M4S3rjTA3WL" }, // Production
+        ios: { "password": "GQakXS4ymW8h4jEZ" }, // Development
+        android: { "key_pw": "gRmfh4fRVL5S", "keystore_pw": "gRmfh4fRVL5S" }
       },
       download: {
-        ios: 'dist/statengeneraal.ipa',
-        android: 'dist/statengeneraal.apk'
+        ios: 'dist/itgwo.ipa',
+        android: 'dist/itgwo.apk'
       }
     }));
 });
