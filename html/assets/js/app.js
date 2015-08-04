@@ -352,9 +352,11 @@
 
   var itgwo = angular.module('itgwo');
 
-  itgwo.controller('itgwo.controller.programmas', [
+  itgwo.controller('itgwo.controller.programma', [
     '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
     function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
+
+      $scope.filter = "vr";
 
       if ($state.params.id) {
 

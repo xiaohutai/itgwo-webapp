@@ -1,0 +1,22 @@
+---
+name: programmaItem
+url: /programma/:id?p=
+controller: itgwo.controller.programmas
+title: Programma
+---
+
+<div class="grid-block small-up-1 medium-up-2 large-up-4">
+    <div class="grid-content programma" ng-if="programma" style="display:block;">
+        <div class="card dark">
+            <img ng-src="{{ programma.attributes.image.thumbnail }}">
+            <div class="card-divider">
+                <p><a ui-sref="programma()"><span class="label">Terug naar overzicht</span></a></p>
+                <h3>{{ programma.attributes.title }}</h3>
+                <p>Datum: <span class="label dark">{{ programma.attributes.programmedate|date:"medium" }}</span><br>
+                Locatie: <span class="label dark">{{ programma.attributes.programmelocation }}</span></p>
+            </div>
+            <div class="card-section" ng-bind-html='programma.attributes.teaser'>
+            </div>
+        </div>
+    </div>
+</div>

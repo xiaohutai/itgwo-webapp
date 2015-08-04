@@ -1,22 +1,43 @@
 ---
-name: programmaItem
-url: /programma/:id?p=
-controller: itgwo.controller.programmas
+name: programma
+url: /programma
+controller: itgwo.controller.programma
 title: Programma
 ---
 
-<div class="grid-block small-up-1 medium-up-2 large-up-4">
-    <div class="grid-content programma" ng-if="programma" style="display:block;">
-        <div class="card dark">
-            <img ng-src="{{ programma.attributes.image.thumbnail }}">
-            <div class="card-divider">
-                <p><a ui-sref="programma()"><span class="label">Terug naar overzicht</span></a></p>
-                <h3>{{ programma.attributes.title }}</h3>
-                <p>Datum: <span class="label dark">{{ programma.attributes.programmedate|date:"medium" }}</span><br>
-                Locatie: <span class="label dark">{{ programma.attributes.programmelocation }}</span></p>
-            </div>
-            <div class="card-section" ng-bind-html='programma.attributes.teaser'>
+<div class="grid-block">
+    <div class="grid-container page-programma">
+
+    <center>
+        <ul class="button-group">
+            <li ng-class="{active: filter == 'do'}"><a ui-sref="programma" ng-click="filter='do'">Don</a></li>
+            <li ng-class="{active: filter == 'vr'}"><a ui-sref="programma" ng-click="filter='vr'">Vrij</a></li>
+            <li ng-class="{active: filter == 'za'}"><a ui-sref="programma" ng-click="filter='za'">Zat</a></li>
+            <li ng-class="{active: filter == 'zo'}"><a ui-sref="programma" ng-click="filter='zo'">Zon</a></li>
+            <li ng-class="{active: filter == 'alle'}"><a ui-sref="programma" ng-click="filter='alle'">Alle</a></li>
+        </ul>
+    </center>
+
+        <!-- grid for navigation -->
+        <div class="grid-block small-up-2 medium-up-3 large-up-3">
+            <div class="grid-content content-act {{ speeltijd.attributes.starttijd | date : 'EEE' }}" ng-repeat="speeltijd in speeltijden"
+            ng-if="filter == (speeltijd.attributes.starttijd | date : 'EEE') || filter == 'alle'">
+
+                <a ui-sref="bericht({ id: bericht.id })">
+                    <article class="thema thema-{{ bericht.id }}" style="background: url({{ speeltijd.attributes.image.thumbnail }}); background-size: cover;">
+
+                    <span>Dit moet je hier laten staan, peter.</span>
+                    <div class="caption">
+                        <!-- <img src="{{ bericht.attributes.image.thumbnail }}" width="100" height="100"> -->
+                        <h2>{{ speeltijd.attributes.starttijd | date : 'EEE H:mm' }} - {{ speeltijd.attributes.speellokatie }}</h2>
+                        <h1 class="">{{ speeltijd.attributes.title }}</h1>
+                    </div>
+                    </article>
+                </a>
             </div>
         </div>
+
+
     </div>
 </div>
+
