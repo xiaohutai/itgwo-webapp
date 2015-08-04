@@ -13,10 +13,12 @@
 
         // --[ fetch single programma ]-----------------------------------------
         $http
-        .get(config.api.url + 'programmas/' + $state.params.id, { cache: true })
+        .get(config.api.url + 'programmaonderdelen/' + $state.params.id, { cache: true })
         .then(function(result){
-          $scope.programma = result.data.data;
-          $rootScope.title = result.data.data.attributes.title;
+          $scope.onderdeel = result.data.data;
+          // Larger image..
+          $scope.onderdeel.attributes.image.thumbnail = $scope.onderdeel.attributes.image.thumbnail.replace('240x240', '752x564');
+          $rootScope.title = result.data.data.attributes.name;
         })
         .catch(function(e) {
           itgwoServiceNotification.notification(e.data);
@@ -32,7 +34,7 @@
         .get(config.api.url + 'speeltijden?' + jQuery.param({ 'page[size]': 1000, 'sort': 'title' }), { cache: true })
         .then(function(result){
           $scope.speeltijden = result.data.data;
-          console.log($scope.speeltijden);
+          //console.log($scope.speeltijden);
         })
         .catch(function(e) {
           itgwoServiceNotification.notification(e.data);

@@ -6443,20 +6443,18 @@ article {
     width: 70%; }
     article header.special-header h1, article header.special-header h2 {
       padding: 0.1rem 0.625rem;
-      background: #EC008B;
-      font-size: 1rem;
+      background: rgba(0, 0, 0, 0.2);
       color: #fff;
       margin: 0; }
     article header.special-header h1 {
+      font-size: 1.6rem;
       bottom: 2rem;
-      width: 60%; }
+      width: auto; }
     article header.special-header h2 {
+      font-size: 1rem;
       bottom: 0;
-      background: #b9006d;
-      width: 100%; }
-      article header.special-header h2:after {
-        content: "\003e";
-        font-weight: bold; }
+      background: rgba(0, 0, 0, 0.2);
+      width: auto; }
 
 h1.logo {
   font-size: 1.5em; }

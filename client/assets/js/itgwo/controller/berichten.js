@@ -17,11 +17,13 @@
       //   itgwoServiceNotification.notification(e.data);
       // });
 
-      // --[ fetch thema ]------------------------------------------------------
+      // --[ fetch bericht ]------------------------------------------------------
       $http
       .get(config.api.url + 'berichten/' + $state.params.id, { cache: true })
       .then(function(result){
-        $scope.thema = result.data.data;
+        $scope.bericht = result.data.data;
+        // Larger image..
+        $scope.bericht.attributes.image.thumbnail = $scope.bericht.attributes.image.thumbnail.replace('240x240', '752x564');
         // $rootScope.title = result.data.data.attributes.title;
       })
       .catch(function(e) {

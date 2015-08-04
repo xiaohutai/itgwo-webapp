@@ -31,8 +31,8 @@ li.active a {
             <div class="grid-content content-act {{ speeltijd.attributes.starttijd | date : 'EEE' }}" ng-repeat="speeltijd in speeltijden"
             ng-if="filter == (speeltijd.attributes.starttijd | date : 'EEE') || filter == 'alle'">
 
-                <a ui-sref="bericht({ id: bericht.id })">
-                    <article class="thema thema-{{ bericht.id }}" style="background: url({{ speeltijd.attributes.image.thumbnail }}); background-size: 100%;">
+                <a ui-sref="onderdeel({ id: speeltijd.attributes.programmaonderdelen })">
+                    <article class="thema thema-{{ speeltijd.id }}" style="background: url({{ speeltijd.attributes.image.thumbnail }}); background-size: 100%;">
 
                     <span>Dit moet je hier laten staan, Peter. Ja, echt! Als je dit weghaalt en het is een week later ineens stuk, dan ga ik het niet voor je fixen!</span>
                     <div class="caption">

@@ -19,7 +19,7 @@
                     <article class="thema thema-{{ bericht.id }}">
 
                         <img src="{{ bericht.attributes.image.thumbnail }}" width="100" height="100">
-                        <h2>{{ bericht.attributes.datepublish | date : 'd MMM' }} - {{ bericht.attributes.subtitle }}</h2>
+                        <h2>{{ bericht.attributes.datepublish | date : 'd MMM' }} <span ng-if="bericht.attributes.subtitle != ''">- {{ bericht.attributes.subtitle }}<span></h2>
                         <h1 class="">{{ bericht.attributes.title }}</h1>
                     </article>
                 </a>

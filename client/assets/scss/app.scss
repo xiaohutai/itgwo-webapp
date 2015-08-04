@@ -67,26 +67,23 @@ article {
 
         h1,h2 {
             padding: 0.1rem 0.625rem;
-            background: $ceremonieel-color;
-            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.2);
             color: #fff;
             margin: 0;
         }
 
         h1 {
+            font-size: 1.6rem;
             bottom: 2rem;
-            width: 60%;
+            width: auto;
         }
 
         h2 {
+            font-size: 1rem;
             bottom: 0;
-            background: darken($ceremonieel-color,10%);
-            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            width: auto;
 
-            &:after {
-                content:"\003e";
-                font-weight: bold;
-            }
         }
     }
 }

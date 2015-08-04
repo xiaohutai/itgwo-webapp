@@ -5,16 +5,16 @@ controller: itgwo.controller.berichten
 title: Nieuws
 ---
 
-<div class="grid-block" ng-if="thema">
+<div class="grid-block" ng-if="bericht">
     <div class="grid-container page-home">
 
         <!-- header -->
         <div class="grid-content">
             <article>
-                <img ng-src="{{ thema.attributes.image.thumbnail }}">
+                <img ng-src="{{ bericht.attributes.image.thumbnail }}">
                 <header class="special-header">
-                    <h1>themename</h1>
-                    <h2>subtitle </h2>
+                    <h1>{{ bericht.attributes.title }}</h1>
+                    <h2 ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}</h2>
                 </header>
             </article>
         </div>
@@ -23,31 +23,10 @@ title: Nieuws
         <div class="grid-block small-up-1 medium-up-2 large-up-2">
 
             <div class="grid-content">
-                <div class="body" ng-bind-html='thema.attributes.body'>
+                <div class="body" ng-bind-html='bericht.attributes.body'>
                 </div>
             </div>
 
-            <div class="grid-content">
-
-                <!-- grid voor opsomming onderwerpen -->
-                <div class="grid-block small-up-1 medium-up-1 large-up-1">
-
-                    <div class="grid-content" ng-repeat="onderwerp in onderwerpen">
-                        <a ui-sref="onderwerp({ id: onderwerp.attributes.slug })">
-                            <article>
-                                <img ng-src="{{ onderwerp.attributes.image.thumbnail }}">
-                                <header>
-                                    <h1>{{ onderwerp.attributes.title }}</h1>
-                                    <div ng-bind-html='onderwerp.attributes.teaser'>
-                                    </div>
-                                </header>
-                            </article>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 

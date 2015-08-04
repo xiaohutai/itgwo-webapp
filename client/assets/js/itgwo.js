@@ -8,7 +8,7 @@
   itgwo.constant('config', {
 
     site: {
-      title: 'ITGWO',
+      title: 'ITGWO 2015',
       payoff: 'Into the Great Wide Open 2015'
     },
 
