@@ -11,7 +11,11 @@ templates/onderdeel.html
 templates/plattegrond.html
 templates/programma.html
 assets/css/app.css
+assets/icon/icon-120.png
+assets/icon/icon-152.png
+assets/icon/icon-76.png
 assets/icon/icon.png
+assets/icon/screen-iphone-portrait-2x.png
 assets/img/logo-itgwo-wit.svg
 assets/img/logo-itgwo-zwart.svg
 assets/img/plattegrond.png
@@ -19,49 +23,6 @@ assets/js/app.js
 assets/js/foundation.js
 assets/js/routes.js
 assets/js/templates.js
-assets/icon/android/icon-36-ldpi.png
-assets/icon/android/icon-48-mdpi.png
-assets/icon/android/icon-72-hdpi.png
-assets/icon/android/icon-96-xhdpi.png
-assets/icon/ios/icon-100.png
-assets/icon/ios/icon-114.png
-assets/icon/ios/icon-120.png
-assets/icon/ios/icon-144.png
-assets/icon/ios/icon-152.png
-assets/icon/ios/icon-180.png
-assets/icon/ios/icon-29.png
-assets/icon/ios/icon-40.png
-assets/icon/ios/icon-50.png
-assets/icon/ios/icon-57.png
-assets/icon/ios/icon-58.png
-assets/icon/ios/icon-72.png
-assets/icon/ios/icon-76.png
-assets/icon/ios/icon-80.png
-assets/img/iconic/account.svg
-assets/img/iconic/action.svg
-assets/img/iconic/ban.svg
-assets/img/iconic/bell.svg
-assets/img/iconic/bookmark.svg
-assets/img/iconic/cart.svg
-assets/img/iconic/chevron.svg
-assets/img/iconic/circle-check.svg
-assets/img/iconic/circle-x.svg
-assets/img/iconic/cog.svg
-assets/img/iconic/comment-square.svg
-assets/img/iconic/dashboard.svg
-assets/img/iconic/document.svg
-assets/img/iconic/envelope.svg
-assets/img/iconic/flag.svg
-assets/img/iconic/home.svg
-assets/img/iconic/lock.svg
-assets/img/iconic/magnifying-glass.svg
-assets/img/iconic/person.svg
-assets/img/iconic/reload.svg
-assets/img/iconic/share-boxed.svg
-assets/img/iconic/star.svg
-assets/img/iconic/thumb.svg
-assets/img/iconic/zoom.svg
-assets/screen/ios/screen-iphone-portrait-2x.png
 
 
 NETWORK:
@@ -71,4 +32,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: fd60afa1d3ea5f93c099a4e8a3f36e57104881dda628d65c06326800ef328411
+# hash: b2fbb5a2c4015a193a11908d8adf24de49fac53c7c34f6c7d3983ffe55b02fad

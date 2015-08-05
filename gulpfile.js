@@ -98,9 +98,9 @@ gulp.task('copy:foundation', function(cb) {
   ;
 
   // Iconic SVG icons
-  gulp.src('./bower_components/foundation-apps/iconic/**/*')
-    .pipe(gulp.dest('./html/assets/img/iconic/'))
-  ;
+  // gulp.src('./bower_components/foundation-apps/iconic/**/*')
+  //  .pipe(gulp.dest('./html/assets/img/iconic/'))
+  //;
 
   cb();
 });
