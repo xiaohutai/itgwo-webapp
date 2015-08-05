@@ -11,10 +11,10 @@ usage() { echo "usage: $0 icon colour [dest_dir]"; exit 1; }
 # devices=android,bada,bada-wac,blackberry,ios,webos,windows-phone
 # eval mkdir -p "$3/{icon,screen}/{$devices}"
 
-mkdir -p "$3/icon/android"
-mkdir -p "$3/icon/ios"
-mkdir -p "$3/screen/android"
-mkdir -p "$3/screen/ios"
+mkdir -p "$3/icon/"
+# mkdir -p "$3/icon/ios"
+# mkdir -p "$3/screen/android"
+# mkdir -p "$3/screen/ios"
 
 # Show the user some progress by outputing all commands being run.
 # set -x
