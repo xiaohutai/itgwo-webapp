@@ -11,6 +11,7 @@ var gulp     = require('gulp');
 var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
+var manifest = require('gulp-manifest');
 var phonegapBuild = require('gulp-phonegap-build');
 var minifyCss     = require('gulp-minify-css');
 var exec = require('child_process').exec;
@@ -162,12 +163,24 @@ gulp.task('server', ['build'], function() {
 });
 
 gulp.task('create-icons', function (cb) {
-  exec('sh phonegap-icon-splash-generator.sh icon_splash/icon.png "#FFF" html/assets', function (err, stdout, stderr) {
+  exec('sh phonegap-icon-splash-generator.sh icon_splash/icon.png "#333" html/assets', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
   });
 })
+
+gulp.task('manifest', function(){
+  gulp.src(['html/**/*'])
+    .pipe(manifest({
+      hash: true,
+      preferOnline: true,
+      network: ['*'],
+      filename: 'app.manifest',
+      exclude: 'app.manifest'
+     }))
+    .pipe(gulp.dest('html'));
+});
 
 gulp.task('phonegap-build', function () {
   gulp.src('./html/**/*')
@@ -191,7 +204,7 @@ gulp.task('phonegap-build', function () {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
-  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], 'copy:templates', cb);
+  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], [ 'copy:templates', 'create-icons'], ['manifest'] , cb);
 });
 
 function watch () {

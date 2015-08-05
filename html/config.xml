@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0"
+    id="nl.twokings.itgwo"
+    versionCode="02"
+    version="0.2">
+
+    <name>ITGWO</name>
+
+    <description>
+        Lorum Ipsum
+    </description>
+
+    <author href="http://twokings.nl" email="support@twokings.nl">
+        Two Kings Support
+    </author>
+
+    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="orientation" value="default" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="splash-screen-duration" value="0" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="android-minSdkVersion" value="10" />
+    <preference name="stay-in-webview" value="false" />
+
+    <access origin="*" browserOnly="true" />
+
+    <preference name="permissions" value="none"/>
+
+    <!-- to enable individual permissions use the following examples -->
+    <feature name="http://api.phonegap.com/1.0/network"/>
+
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" />
+
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#404040" />
+
+    <!-- ICONS -->
+
+    <!-- generic -->
+    <icon src="assets/icon/icon.png" />
+
+    <!-- ios -->
+    <icon src="assets/icon/ios/icon-29.png" gap:platform="ios" width="29" height="29" />
+    <icon src="assets/icon/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="assets/icon/ios/icon-50.png" gap:platform="ios" width="50" height="50" />
+    <icon src="assets/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="assets/icon/ios/icon-58.png" gap:platform="ios" width="58" height="58" />
+    <icon src="assets/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="assets/icon/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="assets/icon/ios/icon-80.png" gap:platform="ios" width="80" height="80" />
+    <icon src="assets/icon/ios/icon-100.png" gap:platform="ios" width="100" height="100" />
+    <icon src="assets/icon/ios/icon-114.png" gap:platform="ios" width="114" height="114" />
+    <icon src="assets/icon/ios/icon-120.png" gap:platform="ios" width="120" height="120" />
+    <icon src="assets/icon/ios/icon-144.png" gap:platform="ios" width="144" height="144" />
+    <icon src="assets/icon/ios/icon-152.png" gap:platform="ios" width="152" height="152" />
+    <icon src="assets/icon/ios/icon-180.png" gap:platform="ios" width="180" height="180" />
+
+    <!-- android -->
+    <icon src="assets/icon/android/icon-36-ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="assets/icon/android/icon-48-mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="assets/icon/android/icon-72-hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="assets/icon/android/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+
+
+    <!-- SPLASH -->
+
+    <!-- generic -->
+    <gap:splash src="assets/screen/iPhone 6.png" />
+
+    <!-- ios -->
+    <gap:splash src="assets/screen/ios/iPhone 4 Portrait.png" width="320" height="480" />
+    <gap:splash src="assets/screen/ios/iPhone 4 Portrait.png" width="640" height="960" />
+    <gap:splash src="assets/screen/ios/iPhone 5 Portrait.png" width="640" height="1136" />
+    <gap:splash src="assets/screen/ios/iPhone 6.png" width="750" height="1334" />
+    <gap:splash src="assets/screen/ios/iPhone 6 Plus.png" width="1080" height="1920" />
+    <!--
+    <gap:splash src="assets/screen/ios/Default-Landscape.png" width="1024" height="768" />
+    <gap:splash src="assets/screen/ios/Default-Portrait.png" width="768" height="1024" />
+    -->
+
+    <!-- android -->
+    <!-- <gap:splash src="assets/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:density="ldpi" /> -->
+    <!-- <gap:splash src="assets/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:density="mdpi" /> -->
+    <!-- <gap:splash src="assets/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:density="hdpi" /> -->
+    <!-- <gap:splash src="assets/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" /> -->
+
+    <!-- access -->
+    <access origin="http://twokings.eu" subdomains="true" />
+    <access origin="http://greatwideopen.nl" subdomains="true" />
+    <access origin="http://intothegreatwideopen.nl" subdomains="true" />
+
+    <!--
+    <access origin="http://api.fietsersbond.nl" subdomains="true" />
+    <access origin="http://mqcdn.com" subdomains="true" />
+    <access origin="http://twokings.eu" subdomains="true" />
+    -->
+
+    <!-- gap:plugin name="com.phonegap.plugins.childbrowser" / -->
+    <!-- <gap:plugin name="com.phonegap.plugins.barcodescanner"/> -->
+
+</widget>
