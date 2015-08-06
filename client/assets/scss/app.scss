@@ -160,6 +160,18 @@ div.grid-content {
     padding: 0 0 0 0.5em;
 }
 
+// --[ Plattegrond ] ---------------
+
+body.plattegrond,
+body.plattegrond .grid-block {
+    background-color: #555;
+
+    .panzoom-parent {
+        width: 100%;
+    }
+
+}
+
 
 // --[ Programma ]--------------------------------------------------------------
 

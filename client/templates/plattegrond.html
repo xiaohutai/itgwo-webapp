@@ -5,9 +5,15 @@ controller: itgwo.controller.plattegrond
 title: Plattegrond
 ---
 
-
-<div style="position: relative; border: 1px solid #F00; width: 2000px !important; max-width: 2000px !important;">
-        <img src="./assets/img/plattegrond.png" style="width: 2000px !important; max-width: 2000px !important;">
+<div class="panzoom-parent">
+        <img src="./assets/img/plattegrond.png">
 </div>
 
 
+
+<script>
+$(".panzoom-parent").panzoom({
+    contain: 'invert',
+    minScale: 1
+});
+</script>
