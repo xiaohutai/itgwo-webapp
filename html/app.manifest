@@ -11,11 +11,6 @@ templates/onderdeel.html
 templates/plattegrond.html
 templates/programma.html
 assets/css/app.css
-assets/icon/icon-120.png
-assets/icon/icon-152.png
-assets/icon/icon-76.png
-assets/icon/icon.png
-assets/icon/screen-iphone-portrait-2x.png
 assets/img/logo-itgwo-wit.svg
 assets/img/logo-itgwo-zwart.svg
 assets/img/plattegrond.png
@@ -32,4 +27,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: c0baa087aad0964945c54cb688241a3f073f9423f6ca7755e8f0ddb213060cc5
+# hash: 018655ed0828a72ce47447d04fe940a65033465ba4952e8df2dedd90d634bdb6
