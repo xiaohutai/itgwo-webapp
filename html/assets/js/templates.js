@@ -1,5 +1,3 @@
-angular.module("foundation").run(["$templateCache",function(c){c.put("components/accordion/accordion-item.html",'<div class="accordion-item" ng-class="{\'is-active\': active}">\n  <div class="accordion-title" ng-click="activate()">{{ title }}</div>\n  <div class="accordion-content" ng-transclude></div>\n</div>\n')}]);
-angular.module("foundation").run(["$templateCache",function(n){n.put("components/accordion/accordion.html",'<div class="accordion" ng-transclude>\n</div>\n')}]);
 angular.module("foundation").run(["$templateCache",function(n){n.put("components/actionsheet/actionsheet-button.html",'<div>\n  <a href="#"\n    class="button"\n    ng-if="title.length > 0">{{ title }}</a>\n  <div ng-transclude></div>\n</div>\n')}]);
 angular.module("foundation").run(["$templateCache",function(n){n.put("components/actionsheet/actionsheet-content.html",'<div\n  class="action-sheet {{ position }}"\n  ng-class="{\'is-active\': active}"\n  >\n    <div\n    ng-transclude>\n    </div>\n</div>\n')}]);
 angular.module("foundation").run(["$templateCache",function(n){n.put("components/actionsheet/actionsheet.html",'<div class="action-sheet-container"\n  ng-transclude>\n</div>\n')}]);
@@ -12,4 +10,9 @@ angular.module("foundation").run(["$templateCache",function(n){n.put("components
 angular.module("foundation").run(["$templateCache",function(n){n.put("components/tabs/tab-content.html",'<div class="tab-contents">\n  <div zf-tab-individual\n    class="tab-content"\n    ng-class="{\'is-active\': tab.active}"\n    ng-repeat="tab in tabs"\n    tab="tab">\n  </div>\n</div>\n')}]);
 angular.module("foundation").run(["$templateCache",function(t){t.put("components/tabs/tab.html",'<div class="tab-item"\n  ng-class="{\'is-active\': active}"\n  ng-click="makeActive()">{{ title }}</div>\n')}]);
 angular.module("foundation").run(["$templateCache",function(n){n.put("components/tabs/tabs.html",'<div>\n  <div class="tabs" ng-transclude>\n  </div>\n  <div zf-tab-content\n    target="{{ id }}"\n    ng-if="showTabContent">\n  </div>\n</div>\n')}]);
+<<<<<<< HEAD
 angular.module("foundation").run(["$templateCache",function(n){n.put("components/popup/popup.html",'<div class="popup" ng-class="{\'is-active\': active }" ng-transclude>\n</div>\n')}]);
+=======
+angular.module("foundation").run(["$templateCache",function(c){c.put("components/accordion/accordion-item.html",'<div class="accordion-item" ng-class="{\'is-active\': active}">\n  <div class="accordion-title" ng-click="activate()">{{ title }}</div>\n  <div class="accordion-content" ng-transclude></div>\n</div>\n')}]);
+angular.module("foundation").run(["$templateCache",function(n){n.put("components/accordion/accordion.html",'<div class="accordion" ng-transclude>\n</div>\n')}]);
+>>>>>>> 2a9674017efcf8b7bce9557277dd46f994b60315
