@@ -1,0 +1,31 @@
+CACHE MANIFEST
+
+
+CACHE:
+config.xml
+index.html
+templates/_basis.html
+templates/bericht.html
+templates/blokkenschema.html
+templates/home.html
+templates/onderdeel.html
+templates/plattegrond.html
+templates/programma.html
+assets/css/app.css
+assets/img/logo-itgwo-wit.svg
+assets/img/logo-itgwo-zwart.svg
+assets/img/plattegrond.png
+assets/js/app.js
+assets/js/foundation.js
+assets/js/routes.js
+assets/js/templates.js
+
+
+NETWORK:
+*
+
+
+SETTINGS:
+prefer-online
+
+# hash: 92db63eefd66934a84215d71ae8fdb49ea822cfef8c25224c595154e04b4ed6a
