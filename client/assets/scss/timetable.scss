@@ -1,0 +1,209 @@
+
+
+/* ==========================================================================
+   Timetable
+   ========================================================================== */
+
+#timetable {
+    width: 100%;
+    cursor: hand;
+    overflow: hidden;
+    text-align: center;
+}
+#timetable * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#timetable .container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#timetable .scroll-container {
+    overflow: auto;
+    cursor: move;
+    -webkit-overflow-scrolling: touch;
+}
+#timetable .scroll-container-touch {
+    overflow-x: scroll;
+    cursor: default;
+}
+#timetable .navigation {
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    display: block;
+    width: 100%;
+    background: #fff none;
+    padding: 12px 0;
+}
+#timetable .navigation a {
+    border-radius: 4px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    display: inline-block;
+    padding: 7px 20px;
+    text-decoration: none;
+    color: #838383;
+    background: #CCC;
+    margin-right: 2px;
+}
+#timetable .navigation a:hover {
+    color: #a92355;
+}
+#timetable .navigation a.selected {
+    background: #AAA;
+    color: #000;
+}
+#timetable .locations {
+    position: absolute;
+    top: 20px;
+    z-index: 1010;
+    width: 60px;
+}
+#timetable .locations .location {
+    background-color: #fff;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #233033;
+    border-top: 1px solid #eceef1;
+    border-right: 2px solid #eceef1;
+}
+
+#timetableblocks {
+    z-index: 1000;
+}
+#timetableblocks .timeLayer .hour {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    display: inline-block;
+    height: 20px;
+    text-align: right;
+    font-size: 0.8em;
+    color: #abbec2;
+}
+#timetableblocks .timeLayer .time {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    display: inline-block;
+    width: 50px;
+    position: relative;
+    right: -25px;
+    text-align: center;
+}
+#timetableblocks .row {
+    position: relative;
+    height: 60px;
+}
+#timetableblocks .row:nth-child(even) {
+    background: #ffffff;
+}
+#timetableblocks .row:nth-child(odd) {
+    background: #efefef;
+}
+#timetableblocks .row .hour {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    display: inline-block;
+    border-right: 1px solid #dfdfdf;
+    height: 100%;
+    text-align: right;
+}
+#timetableblocks .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#timetableblocks .act {
+    border-radius: 4px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    position: absolute;
+    display: inline-block;
+    background-color: #666;
+    margin: 0px;
+    height: 56px;
+    color: white;
+    border-collapse: collapse;
+    line-height: 52px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+#timetableblocks .act:hover {
+    background-color: #9ad7e3;
+}
+#timetableblocks .act .spanText {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    display: inline-block;
+    word-wrap: normal;
+    white-space: normal;
+    font-size: 0.7em;
+    text-overflow: ellipsis;
+    text-align: center;
+    overflow: hidden;
+    line-height: 1em;
+    padding: 2px;
+    max-height: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #FFF;
+    overflow:hidden;
+}
+
+#timetableblocks .act.favorite {
+    background-color: #a82254;
+}
+#timetableblocks .act.favorite .spanText {
+  color: #ffffff;
+}
+
+#timetableblocks .act.favorite:hover {
+    background-color: #F071A6;
+}
+
+#timetablePopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 1050;
+}
+

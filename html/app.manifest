@@ -6,14 +6,15 @@ config.xml
 index.html
 templates/_basis.html
 templates/bericht.html
+templates/blokkenschema.html
 templates/home.html
 templates/onderdeel.html
 templates/plattegrond.html
 templates/programma.html
-assets/css/app.css
 assets/img/logo-itgwo-wit.svg
 assets/img/logo-itgwo-zwart.svg
 assets/img/plattegrond.png
+assets/css/app.css
 assets/js/app.js
 assets/js/foundation.js
 assets/js/routes.js
@@ -27,4 +28,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: 018655ed0828a72ce47447d04fe940a65033465ba4952e8df2dedd90d634bdb6
+# hash: fb76f2ffd7b013f439a43404a35372e2fc2b7071dd8917d59899069223830a21
