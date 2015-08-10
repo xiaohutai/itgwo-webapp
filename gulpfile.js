@@ -205,7 +205,7 @@ gulp.task('phonegap-build', function () {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
-  sequence('clean', ['create-icons', 'copy', 'copy:foundation', 'sass', 'uglify'], [ 'copy:templates'], ['manifest'] , cb);
+  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], [ 'copy:templates'], ['manifest'] , cb);
   //, 'create-icons'
 });
 
