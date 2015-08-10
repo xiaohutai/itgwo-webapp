@@ -31,7 +31,7 @@ var utils = function(){
                 start = new Date( Date.parse(data[i].attributes.starttijd) );
                 lower = new Date( Date.parse(config.dates[day-1].starttime) );
                 upper = new Date( Date.parse(config.dates[day-1].endtime) );
-                if (lower < start ) { // && start < upper
+                if (lower < start && start < upper  ) {
                     program.push(data[i].attributes);
                 }
             }
