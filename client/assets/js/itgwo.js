@@ -13,12 +13,87 @@
     },
 
     app: {
-      version: '0.1'
+      version: '0.2'
     },
 
     api: {
       url: 'http://programma.greatwideopen.nl/json/'
-    }
+    },
+
+    dates: [
+      {
+          "day": 1,
+          "date": "2015-09-03",
+          "name": "Donderdag",
+          "shortname": "Don",
+          "starttime": "2015-09-03T17:00:00",
+          "endtime": "2015-09-04T03:00:00"
+      },
+      {
+          "day": 2,
+          "date": "2015-09-04",
+          "name": "Vrijdag",
+          "shortname": "Vrij",
+          "starttime": "2015-09-04T12:00:00",
+          "endtime": "2015-09-05T03:00:00"
+      },
+      {
+          "day": 3,
+          "date": "2015-09-05",
+          "name": "Zaterdag",
+          "shortname": "Zat",
+          "starttime": "2015-09-05T09:00:00",
+          "endtime": "2015-09-06T01:00:00"
+      },
+      {
+          "day": 4,
+          "date": "2015-09-06",
+          "name": "Zondag",
+          "shortname": "Zon",
+          "starttime": "2015-09-06T10:00:00",
+          "endtime": "2015-09-07T03:00:00"
+      }
+    ],
+
+    locations: [
+      {
+          "locationId": "sportveld",
+          "title": "Sportveld",
+          "abbr": "SpVe",
+          "icon": ""
+      },
+      {
+          "locationId": "bospodium",
+          "title": "Bospodium",
+          "abbr": "BosP",
+          "icon": ""
+      },
+      {
+          "locationId": "fortweg",
+          "title": "Fortweg",
+          "abbr": "FortW",
+          "icon": ""
+      },
+      {
+          "locationId": "bolder-zaal",
+          "title": "Bolder Zaal",
+          "abbr": "BolZ",
+          "icon": ""
+      },
+      {
+          "locationId": "Bolder-cafe",
+          "title": "Bolder Cafe",
+          "abbr": "BolC",
+          "icon": ""
+      },
+      {
+          "locationId": "podium-vlieland",
+          "title": "Podium Vlieland",
+          "abbr": "PoVl",
+          "icon": ""
+      }
+    ]
+
 
   });
 

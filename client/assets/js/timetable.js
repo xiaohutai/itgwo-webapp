@@ -6,7 +6,7 @@
 var utils = function(){
 
     // var dataUrl = '/blokkenschema/program.json';
-    var dataUrl = 'http://programma.greatwideopen.nl/json/speeltijden?page[size]=500';
+    var dataUrl = 'http://programma.greatwideopen.nl/json/speeltijden?page[size]=400';
     //var dataUrl = 'program.json';
     var data = null;
 
@@ -19,73 +19,31 @@ var utils = function(){
         })
     }
 
-    function getLocation(id){
-        return Finder.find(data.locations, id, 'locationId');
-    }
 
-    function getAct(id){
-        return Finder.find(data.shows, id, 'showId');
-    }
-
-    function getProgramItem(id, day){
-        if(day){
-            return Finder.find(getProgram(day).items, id, 'programId');
-        } else {
-            for(var dayIndex in data.program){
-                var item = Finder.find(data.program[dayIndex].items, id, 'programId');
-                if(item){
-                    return item;
-                }
-            }
-        }
-        return null;
-    }
-
-    function getProgram(day){
+    function getProgram(day, config){
         day = day || currentDay;
-        console.log('day', dates[day-1]);
 
         var program = [];
 
         for (i=0; i < data.length; i++) {
-            // console.log(i, data[i].attributes.starttijd, dates[day-1]['date']);
             if (data[i].attributes.starttijd) {
 
-                start = new Date(data[i].attributes.starttijd);
-                lower = new Date(dates[day-1].starttime);
-                upper = new Date(dates[day-1].endtime);
-                if (lower < start && start < upper) {
+                start = new Date( Date.parse(data[i].attributes.starttijd) );
+                lower = new Date( Date.parse(config.dates[day-1].starttime) );
+                upper = new Date( Date.parse(config.dates[day-1].endtime) );
+                if (lower < start ) { // && start < upper
                     program.push(data[i].attributes);
                 }
             }
         }
 
-        // console.log(program);
         return program;
 
     }
 
-    function getCookie(name) {
-        var value = "; " + document.cookie;
-        var parts = value.split("; " + name + "=");
-        if (parts.length == 2) return parts.pop().split(";").shift();
-    }
-
-    function setCookie(name, value, expires_seconds) {
-        expires_seconds = expires_seconds || 100 * 24 * 3600;
-        var d = new Date();
-        d = new Date(d.getTime() + 1000 * expires_seconds);
-        document.cookie = name + '=' + value + '; expires=' + d.toGMTString() + ';';
-    }
-
     return {
         loadData : loadData,
-        getLocation : getLocation,
-        getAct : getAct,
-        getProgramItem : getProgramItem,
-        getProgram : getProgram,
-        getCookie: getCookie,
-        setCookie: setCookie
+        getProgram : getProgram
     }
 
 }();
@@ -102,7 +60,6 @@ Finder.find = function (data, id, prop){
     }
 
     for(var o in data){
-        //console.log(data[o][prop] + ' <=> ' + id);
         if(data[o][prop] == id){
             if(!Finder.cache[data]){
                 Finder.cache[data] = {};
@@ -124,78 +81,6 @@ Finder.findBy = function (data, prop, val){
 }
 
 
-var dates = [
-    {
-        "day": 1,
-        "date": "2015-09-03",
-        "name": "Donderdag",
-        "shortname": "Don",
-        "starttime": "2015-09-03 17:00:00",
-        "endtime": "2015-09-04 03:00:00"
-    },
-    {
-        "day": 2,
-        "date": "2015-09-04",
-        "name": "Vrijdag",
-        "shortname": "Vrij",
-        "starttime": "2015-09-04 12:00:00",
-        "endtime": "2015-09-05 03:00:00"
-    },
-    {
-        "day": 3,
-        "date": "2015-09-05",
-        "name": "Zaterdag",
-        "shortname": "Zat",
-        "starttime": "2015-09-05 09:00:00",
-        "endtime": "2015-09-06 01:00:00"
-    },
-    {
-        "day": 4,
-        "date": "2015-09-06",
-        "name": "Zondag",
-        "shortname": "Zon",
-        "starttime": "2015-09-06 10:00:00",
-        "endtime": "2015-09-07 03:00:00"
-    }];
-
-var locationData = [
-    {
-        "locationId": "sportveld",
-        "title": "Sportveld",
-        "abbr": "SpVe",
-        "icon": ""
-    },
-    {
-        "locationId": "bospodium",
-        "title": "Bospodium",
-        "abbr": "BosP",
-        "icon": ""
-    },
-    {
-        "locationId": "fortweg",
-        "title": "Fortweg",
-        "abbr": "FortW",
-        "icon": ""
-    },
-    {
-        "locationId": "bolder-zaal",
-        "title": "Bolder Zaal",
-        "abbr": "BolZ",
-        "icon": ""
-    },
-    {
-        "locationId": "Bolder-cafe",
-        "title": "Bolder Cafe",
-        "abbr": "BolC",
-        "icon": ""
-    },
-    {
-        "locationId": "podium-vlieland",
-        "title": "Podium Vlieland",
-        "abbr": "PoVl",
-        "icon": ""
-    }];
-
 
 var timetable = function(utils){
 
@@ -209,12 +94,16 @@ var timetable = function(utils){
         width: 150 // width of 1 hour
     };
 
+    var config = null
 
 
     var dragging = false;
     var mql = null;
 
-    function init(){
+    function init(gwoconfig){
+
+        config = gwoconfig;
+
         // check for touch devices. On touch devices will not use the jQuery drag
         supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
@@ -236,37 +125,37 @@ var timetable = function(utils){
         root.append(nav);
         root.append(container);
 
-        if(!supportsTouch){
-            // on non touch devices we use jQuery drag
-            blocks.draggable({
-                axis: blocks.height() < $('#timetable').height() ? "x" : "both",
-                start: function() {
-                    blocks.stop();
-                    dragging = true; // prevent accidently clicking on an act when you stop dragging
-                },
-                stop: function() {
-                    // prevent accidently clicking on an act when you stop dragging
-                    setTimeout(function(){
-                        dragging = false;
-                    }, 100)
+        // if(!supportsTouch){
+        //     // on non touch devices we use jQuery drag
+        //     blocks.draggable({
+        //         axis: blocks.height() < $('#timetable').height() ? "x" : "both",
+        //         start: function() {
+        //             blocks.stop();
+        //             dragging = true; // prevent accidently clicking on an act when you stop dragging
+        //         },
+        //         stop: function() {
+        //             // prevent accidently clicking on an act when you stop dragging
+        //             setTimeout(function(){
+        //                 dragging = false;
+        //             }, 100)
 
-                    // check constraints, if the scrollcontainer is out of bounds, animate it back to a better position
-                    if( parseInt(blocks.css('left')) > 10 ){
-                        blocks.animate({left: 0});
-                    } else if( parseInt(blocks.css('left')) < -(blocks.width() - $('#timetable').width()) ){
-                        blocks.animate({left : -(blocks.width() - $('#timetable').width())});
-                    }
-                    if( parseInt(blocks.css('top')) > 10 ){
-                        blocks.animate({top: 0});
-                    } else if( parseInt(blocks.css('top')) < -(blocks.height() - $('#timetable').height()) ){
-                        blocks.animate({top: -(blocks.height() - $('#timetable').height())});
-                    }
-                }
-            });
-        } else {
-            // on touch devices we need to add some extra styles to make the scrollbar visible
-            scrollcontainer.addClass('scroll-container-touch');
-        }
+        //             // check constraints, if the scrollcontainer is out of bounds, animate it back to a better position
+        //             if( parseInt(blocks.css('left')) > 10 ){
+        //                 blocks.animate({left: 0});
+        //             } else if( parseInt(blocks.css('left')) < -(blocks.width() - $('#timetable').width()) ){
+        //                 blocks.animate({left : -(blocks.width() - $('#timetable').width())});
+        //             }
+        //             if( parseInt(blocks.css('top')) > 10 ){
+        //                 blocks.animate({top: 0});
+        //             } else if( parseInt(blocks.css('top')) < -(blocks.height() - $('#timetable').height()) ){
+        //                 blocks.animate({top: -(blocks.height() - $('#timetable').height())});
+        //             }
+        //         }
+        //     });
+        // } else {
+        //     // on touch devices we need to add some extra styles to make the scrollbar visible
+        //     scrollcontainer.addClass('scroll-container-touch');
+        // }
 
         // handle different sized screens using media queries
         if(window.matchMedia){
@@ -289,7 +178,6 @@ var timetable = function(utils){
     }
 
     function setup(day, time){
-        console.log('setup');
         day = day || currentDay;
         currentDay = day;
 
@@ -302,11 +190,11 @@ var timetable = function(utils){
 
         // setup navigation links with the days of the week
         nav.empty();
-        for(var index in dates){
-            var dayId = dates[index].shortname;
+        for(var index in config.dates){
+            var dayId = config.dates[index].shortname;
             var link = $('<a></a>');
             link.click(onSwitchDay);
-            link.html( dates[index].shortname );
+            link.html( config.dates[index].shortname );
             link.attr({
                 'href' : '#',
                 'data-day' : 1 + parseInt(index)
@@ -315,21 +203,17 @@ var timetable = function(utils){
                 link.addClass('selected');
             }
             nav.append(link);
-            // console.log(link.html());
         }
 
         // get all the right sizes for the buildup
         size = sizes();
 
         // get program and start time of current day
-        dayData = utils.getProgram( day );
-        dayStartTime = new Date( dates[day-1]['starttime'] );
-        dayEndTime = new Date( dates[day-1]['endtime'] );
+        dayData = utils.getProgram(day, config);
+        dayStartTime = new Date( config.dates[day-1]['starttime'] );
+        dayEndTime = new Date( config.dates[day-1]['endtime'] );
         totalHours = Math.ceil( (dayEndTime - dayStartTime) / 3600000 );
         totalWidth = totalHours * size.hour;
-
-
-        console.log("daydata", dayData);
 
         // add a 'nice' fadeout effect on the currently visible blocks
         blocks.fadeOut(200, function(){
@@ -354,13 +238,10 @@ var timetable = function(utils){
             }
             blocks.append( timeLayer );
 
-            console.log(locationData);
-
             // loop over all locations
-            for(var index in locationData){
+            for(var index in config.locations){
                 // get the current location
-                locData = locationData[index];
-                // console.log(locData);
+                locData = config.locations[index];
                 // the row will contain all the acts and the background
                 row = $('<div class="row"></div>');
                 row.css({
@@ -380,7 +261,6 @@ var timetable = function(utils){
 
                 // find acts for this location on the current day and add them to the top layer
                 actsOnLocation = Finder.findBy(dayData, 'speellokatie', locData.locationId)
-                // console.log('actsOnLocation', actsOnLocation);
                 for(var i = 0, l = actsOnLocation.length; i < l; i++){
                     actData = actsOnLocation[i];
 
@@ -390,9 +270,7 @@ var timetable = function(utils){
                     endTime = new Date();
                     endTime.setTime( startTime.getTime() + (actData.lengte * 60000) );
 
-                    // console.log('startTime - endTime', startTime, endTime);
-
-                    act = $('<div class="act"></div>')
+                    act = $('<a class="act"></a>')
                     act.css({
                         // offset left is the numbers of minutes from day start time times the size per minute
                         left: ( (startTime - dayStartTime) / 60000 ) * size.minute,
@@ -400,11 +278,12 @@ var timetable = function(utils){
                         width: ( (endTime - startTime) / 60000 ) * size.minute
                     });
                     act.attr({
-                        'data-act' :  actData.contentId,
-                        'data-programmaonderdelen' :  actData.programId,
-                        title : actData.title
+                        'data-programmaonderdelen' :  actData.programmaonderdelen,
+                        'title' : actData.title,
+                        'href' : '#!/onderdeel/' + actData.programmaonderdelen,
+                        'ui-sref': "onderdeel({ id: " + actData.programmaonderdelen + " })"
                     });
-                    act.click(onShowProgramItem);
+                    // act.click(onShowProgramItem);
 
                     // we pack the name of the act in yet another div, for alignment
                     name = $('<div class="spanText"></div>');
@@ -417,7 +296,9 @@ var timetable = function(utils){
                     // if(favorites.indexOf(actData.programId) > -1){
                     //     act.addClass('favorite');
                     // }
-
+                    if (actData.class) {
+                        act.addClass(actData.class);
+                    }
                     act.append( name );
                     actsLayer.append( act );
 
@@ -446,11 +327,12 @@ var timetable = function(utils){
         e.preventDefault();
         if(dragging) return;
         //showProgramItem( parseInt( $(this).attr('data-act') ) );
-        showProgramItem( parseInt( $(this).attr('data-program') ) );
+        console.log('this', $(this).attr('data-programmaonderdelen'));
+        // showProgramItem( parseInt( $(this).attr('data-programmaonderdelen') ) );
     }
 
     function showProgramItem(id){
-        timetablePopup.show( id );
+        console.log('id', id);
     }
 
     function onSwitchDay(e){

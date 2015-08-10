@@ -8,7 +8,7 @@
     function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
 
       // Toon het blokkenschema
-      timetable.init();
+      timetable.init(config);
 
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
