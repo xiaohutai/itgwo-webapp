@@ -48,7 +48,8 @@ var paths = {
     'bower_components/foundation-apps/js/angular/**/*.js',
     // 'bower_components/angular-i18n/angular-locale_en-gb.js',
     'bower_components/angular-i18n/angular-locale_nl-nl.js', // determine what the best way is to dynamically load locales files.
-    '!bower_components/foundation-apps/js/angular/app.js'
+    '!bower_components/foundation-apps/js/angular/app.js',
+    'bower_components/angular-piwik/angular-piwik.js'
   ],
   // These files are for your app's JavaScript
   appJS: [
@@ -163,7 +164,7 @@ gulp.task('server', ['build'], function() {
 });
 
 gulp.task('create-icons', function (cb) {
-  exec('sh phonegap-icon-splash-generator.sh icon_splash/icon.png "#333" html/assets', function (err, stdout, stderr) {
+  exec('sh phonegap-icon-splash-generator.sh icon_splash/icon.png "#333" client/assets', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
