@@ -4,8 +4,8 @@
   var itgwo = angular.module('itgwo');
 
   itgwo.controller('itgwo.controller.programma', [
-    '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
-    function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
+    '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
+    function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
 
       $scope.filter = "vr";
 
@@ -23,6 +23,15 @@
         .catch(function(e) {
           itgwoServiceNotification.notification(e.data);
         });
+
+        $scope.onderdeelVideo = function() {
+          return $sce.trustAsHtml($scope.onderdeel.attributes.video.responsive);
+        };
+
+        $scope.onderdeelEmbed = function() {
+          return $sce.trustAsHtml($scope.onderdeel.attributes.embed);
+        };
+
 
       } else {
 
