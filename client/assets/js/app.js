@@ -13,7 +13,8 @@
     'foundation.dynamicRouting.animations',
 
     // custom
-    'itgwo'
+    'itgwo',
+    'piwik'
   ])
     .config(config)
     .run(run)

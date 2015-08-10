@@ -5,12 +5,19 @@
 
   // Use this controller to set the title and config on every page.
   itgwo.controller('itgwo.controller.base', [
-    '$http', '$scope', '$state', '$stateParams', '$controller', '$location', '$rootScope', 'config', 'FoundationApi', 'itgwo.service.notification', 'itgwo.service.httpInterceptor',
-    function ($http, $scope, $state, $stateParams, $controller, $location, $rootScope, config, FoundationApi, itgwoServiceNotification, itgwoServiceHttpInterceptor) {
+    '$http', '$scope', '$state', '$stateParams', '$controller', '$location', '$rootScope', 'config', 'FoundationApi', 'itgwo.service.notification', 'itgwo.service.httpInterceptor', 'Piwik',
+    function ($http, $scope, $state, $stateParams, $controller, $location, $rootScope, config, FoundationApi, itgwoServiceNotification, itgwoServiceHttpInterceptor, Piwik) {
 
+      // Set the title based on the route, otherwise overridde this in the
+      // extending controller.
       $rootScope.title = $state.current.data.vars.title;
       $rootScope.config = config;
+      $rootScope.isHomepage = false;
 
+      // Piwik tracking..
+      var DocumentTitle = $state.current.data.vars.title;
+      var CustomUrl = $location.path();
+      Piwik.trackPageView([DocumentTitle]);
       // --[ isLoading ]--------------------------------------------------------
 
       $rootScope.isLoading = function() {
