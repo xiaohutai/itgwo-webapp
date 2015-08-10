@@ -426,8 +426,8 @@ $dark-color: #232323;
 // - - - - - - - - - - - - - - -
 
 // $menubar-fontsize: 1rem;
-// $menubar-background: #fff;
-// $menubar-background-hover: smartscale($menubar-background, 7%);
+$menubar-background: rgba(254,254,189,1);
+$menubar-background-hover: smartscale($menubar-background, 7%);
 // $menubar-background-active: $menubar-background-hover;
 // $menubar-color: isitlight($menubar-background);
 // $menubar-color-hover: $menubar-color;
@@ -443,7 +443,7 @@ $dark-color: #232323;
 // $modal-background: #fff;
 // $modal-border: 0;
 // $modal-radius: 0px;
-// $modal-shadow: none;
+$modal-shadow: none;
 // $modal-zindex: 1000;
 // $modal-sizes: (
 //   tiny: 300px,
