@@ -6,15 +6,17 @@
 @import "font-awesome.scss";
 
 
-.off-canvas ~ .grid-frame {
-    background: rgba(254,254,189,1);
 
-}
 
 // --[ off-canvas exit overlay ]------------------------------------------------
 // Functionality inspired from Foundation 5. Shows when opening the off-canvas
 // menu. User is then always forced to close it. Also easier to hit than the
 // tiny close button
+
+.off-canvas {
+    background: #000;
+}
+
 
 .offcanvas-exit {
     visibility:hidden;
@@ -29,18 +31,23 @@
 }
 
 .off-canvas.is-active + div > .offcanvas-exit {
-    background: rgba(255, 255, 200, 0.5);
+    background: url(../img/offcanvas.jpg);
+    background-size: cover;
     display: block;
     visibility: visible;
-    opacity: 1;
+    opacity: 0.6;
     cursor: pointer;
     transition-delay: 0s;
-    // transition: opacity 0.5s ease-in;
 }
 
-.off-canvas {
-    background: #000;
+.off-canvas ~ .grid-frame {
+    background: rgba(254,254,189,1);
 }
+
+.off-canvas.is-active ~ .grid-frame {
+    filter: blur(1px);
+}
+
 
 .menu-bar {
     background: #000;
