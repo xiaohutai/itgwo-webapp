@@ -2,11 +2,7 @@
 @import "foundation";
 @import "variables";
 @import "timetable";
-
 @import "font-awesome.scss";
-
-
-
 
 // --[ off-canvas exit overlay ]------------------------------------------------
 // Functionality inspired from Foundation 5. Shows when opening the off-canvas
@@ -55,7 +51,7 @@
     li > a {
         color: #FFF;
         font-weight: bold;
-        font-family: 'Oswald', sans-serif;
+        font-family: $font;
         letter-spacing: 1.5px;
         text-transform: uppercase;
     }
@@ -68,18 +64,15 @@
 
 h1 {
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-family: 'Oswald', sans-serif;
+    font-family: $font;
 }
 
 h2 {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 0.5px;
+    font-family: $font;
 }
 
 h3 {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 0.5px;
+    font-family: $font;
     text-transform: uppercase;
 }
 
@@ -90,7 +83,7 @@ p {
 .title-bar.dark,
 .title-bar {
     border-bottom: 0px;
-    font-family: 'Oswald', sans-serif;
+    font-family: $font;
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
@@ -271,17 +264,15 @@ body.plattegrond .grid-block {
             color: #FFF;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-family: 'Oswald', sans-serif;
+            font-family: $font;
         }
 
         h2 {
             font-size: 0.9em;
-            letter-spacing: 0.5px;
             line-height: 1.2em;
             margin: 0 2px;
             color: #EEE;
-            font-family: 'Oswald', sans-serif;
+            font-family: $font;
         }
 
     }
