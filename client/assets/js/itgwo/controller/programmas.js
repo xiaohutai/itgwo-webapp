@@ -17,7 +17,7 @@
         .then(function(result){
           $scope.onderdeel = result.data.data;
           // Larger image..
-          $scope.onderdeel.attributes.image.thumbnail = $scope.onderdeel.attributes.image.thumbnail.replace('240x240', '752x564');
+          $scope.onderdeel.attributes.image.thumbnail = $scope.onderdeel.attributes.image.thumbnail.replace('240x180', '752x564');
           $rootScope.title = result.data.data.attributes.name;
         })
         .catch(function(e) {
