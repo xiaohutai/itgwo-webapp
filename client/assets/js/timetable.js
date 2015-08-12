@@ -91,7 +91,7 @@ var timetable = function(utils){
     var supportsTouch = false;
 
     var options = {
-        width: 150 // width of 1 hour
+        width: 180 // width of 1 hour
     };
 
     var config = null
@@ -245,7 +245,7 @@ var timetable = function(utils){
                 // the row will contain all the acts and the background
                 row = $('<div class="row"></div>');
                 row.css({
-                    width: totalWidth
+                    width: totalWidth + size.hour
                 });
 
                 // these layers will be on top of each other
@@ -254,7 +254,7 @@ var timetable = function(utils){
 
                 // add a div for each hour; draw the background dynamically
                 time = new Date(dayStartTime.getTime());
-                for(var i = 0; i < totalHours; i++){
+                for(var i = 0; i <= totalHours; i++){
                     time.setHours( time.getHours() + 1 );
                     backgroundLayer.append( $('<div class="hour"></div>').css({ width : size.hour }) );
                 }
@@ -299,6 +299,10 @@ var timetable = function(utils){
                     if (actData.class) {
                         act.addClass(actData.class);
                     }
+
+                    // Voeg de slug als extra class toe.
+                    act.addClass('act-' + actData.slug);
+
                     act.append( name );
                     actsLayer.append( act );
 

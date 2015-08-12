@@ -16,15 +16,13 @@ li.active a {
 <div class="grid-block">
     <div class="grid-container page-programma">
 
-    <center>
-        <ul class="button-group">
-            <li ng-class="{active: filter == 'do'}"><a ui-sref="programma" ng-click="filter='do'">Don</a></li>
-            <li ng-class="{active: filter == 'vr'}"><a ui-sref="programma" ng-click="filter='vr'">Vrij</a></li>
-            <li ng-class="{active: filter == 'za'}"><a ui-sref="programma" ng-click="filter='za'">Zat</a></li>
-            <li ng-class="{active: filter == 'zo'}"><a ui-sref="programma" ng-click="filter='zo'">Zon</a></li>
-            <li ng-class="{active: filter == 'alle'}"><a ui-sref="programma" ng-click="filter='alle'">Alle</a></li>
-        </ul>
-    </center>
+        <div class="navigation">
+            <a ng-class="{active: filter == 'do'}" ui-sref="programma" ng-click="filter='do'">Don</a>
+            <a ng-class="{active: filter == 'vr'}" ui-sref="programma" ng-click="filter='vr'">Vrij</a>
+            <a ng-class="{active: filter == 'za'}" ui-sref="programma" ng-click="filter='za'">Zat</a>
+            <a ng-class="{active: filter == 'zo'}" ui-sref="programma" ng-click="filter='zo'">Zon</a>
+            <a ng-class="{active: filter == 'alle'}" ui-sref="programma" ng-click="filter='alle'">Alle</a>
+        </div>
 
         <!-- grid for navigation -->
         <div class="grid-block small-up-2 medium-up-3 large-up-3">
