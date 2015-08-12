@@ -178,6 +178,7 @@ gulp.task('manifest', function(){
       hash: true,
       preferOnline: true,
       network: ['*'],
+      basePath: 'html/',
       filename: 'app.manifest',
       exclude: 'app.manifest'
      }))
