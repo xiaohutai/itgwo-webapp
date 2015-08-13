@@ -71,6 +71,7 @@
     height: 60px;
     width: 60px;
     line-height: 60px;
+    font-family: $font;
     font-size: 24px;
     text-align: center;
     font-weight: bold;
@@ -88,6 +89,7 @@
         height: 20px;
         padding-top: 2px;
         text-align: right;
+        font-family: $font;
         font-size: 0.8em;
         color: #999;
     }
@@ -159,10 +161,11 @@
 
     .act-de-staat-1 {
         transform: rotate(-3deg);
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     }
 
     .act-meindert-talma {
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
 
     .act:hover {
@@ -174,6 +177,7 @@
         vertical-align: middle;
         word-wrap: normal;
         white-space: normal;
+        font-family: $font;
         font-size: 0.85em;
         text-overflow: ellipsis;
         text-align: center;
