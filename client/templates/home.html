@@ -19,24 +19,16 @@ title: ITGWO 2015
 
         <!-- grid for navigation -->
         <div class="grid-block small-up-1 medium-up-2 large-up-2">
-
             <div class="grid-content content-berichten" ng-repeat="bericht in berichten">
                 <a ui-sref="bericht({ id: bericht.id })">
                     <article class="thema thema-{{ bericht.id }}">
-
-                        <img src="{{ bericht.attributes.image.thumbnail }}" width="100" height="75">
-                        <h2><!-- {{ bericht.attributes.datepublish | date : 'd MMM' }} --> <span ng-if="bericht.attributes.subtitle != ''">- {{ bericht.attributes.subtitle }}<span></h2>
+                        <img src="{{ bericht.attributes.image.thumbnail }}" width="90" height="60">
+                        <h2><!-- {{ bericht.attributes.datepublish | date : 'd MMM' }} --> <span ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}<span></h2>
                         <h1 class="">{{ bericht.attributes.title }}</h1>
                     </article>
                 </a>
             </div>
-
-            <p>&nbsp;</p>
-
         </div>
-
-
-
     </div>
 </div>
 
@@ -47,3 +39,4 @@ title: ITGWO 2015
 <!-- todo: Programma -->
 
 <!-- todo: QR thing -->
+<!-- QR thing?!  -->

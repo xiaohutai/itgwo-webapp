@@ -70,7 +70,7 @@
 }
 
 h1 {
-
+    text-transform: uppercase;
     font-family: $font;
 }
 
@@ -102,6 +102,7 @@ p {
     
     .title {
         font-weight: normal;
+        letter-spacing: -.03rem;
     }
 }
 
@@ -289,7 +290,7 @@ body.plattegrond .grid-block {
         }
 
         .caption {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
             bottom: 0;
             position: absolute;
             width: 100%;
@@ -301,19 +302,19 @@ body.plattegrond .grid-block {
 
         h1 {
             font-size: 0.9em;
-            margin: 2px;
+            margin: 2px 4px 4px 4px;
             line-height: 1.2em;
-            color: #FFF;
+            color: $itgwo-bg;
             font-weight: bold;
             text-transform: uppercase;
             font-family: $font;
         }
 
         h2 {
-            font-size: 0.85em;
+            font-size: 0.75em;
             line-height: 1.2em;
-            margin: 0 2px;
-            color: #EEE;
+            margin: 4px 4px 0 4px;
+            color: $itgwo-bg;
             font-family: $font;
         }
 
