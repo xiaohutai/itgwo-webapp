@@ -70,7 +70,7 @@
 }
 
 h1 {
-    text-transform: uppercase;
+
     font-family: $font;
 }
 
@@ -93,11 +93,15 @@ p {
     font-family: $font;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background: transparent;
+    background: rgba(0, 0, 0, .1);
     color: #000;
     
     a {
         color: #000;
+    }
+    
+    .title {
+        font-weight: normal;
     }
 }
 
@@ -129,13 +133,12 @@ article {
     position: relative;
 
     header.special-header {
-        position: absolute;
-        bottom: 1.5rem;
-        left: 1rem; //24px
+
 
         h1,h2 {
             padding: 0.1rem 0.8rem;
-            background: transparentize(darken($itgwo-bg, 10), 0.3);
+            /* background: transparentize(darken($itgwo-bg, 10), 0.3); */
+            background: transparent;
             color: #000;
             margin: 0;
         }
@@ -159,7 +162,8 @@ article {
 // --[ homepage ]-----------------------------------------------------------------
 
 h1.logo {
-    font-size: 1.5em;
+    font-size: 1.25em;
+    padding: 1rem 0;
 }
 
 .page-home .pageheader {
@@ -190,7 +194,7 @@ h1.logo {
 
     h2 {
         font-size: 0.8em;
-        line-height: 1.5em;
+        line-height: 1.2em;
         margin-bottom: 0;
         color: #000;
     }
@@ -208,6 +212,19 @@ body.plattegrond .grid-block {
         width: 100%;
     }
 
+}
+
+// --[ Bericht item ]--------------------------------------------------------------
+
+.body.ng-binding {
+    
+    p {
+        
+        a {
+            text-decoration: underline;
+        }
+        
+    }
 }
 
 

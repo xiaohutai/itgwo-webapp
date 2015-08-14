@@ -2,7 +2,7 @@
 name: bericht
 url: /bericht/:id?p=
 controller: itgwo.controller.berichten
-title: Nieuws
+title: Berichten
 ---
 
 <div class="grid-block" ng-if="bericht">
@@ -12,10 +12,6 @@ title: Nieuws
         <div class="grid-headerimage">
             <article>
                 <img ng-src="{{ bericht.attributes.image.thumbnail }}" width="752" height="564">
-                <header class="special-header">
-                    <h1>{{ bericht.attributes.title }}</h1>
-                    <h2 ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}</h2>
-                </header>
             </article>
         </div>
 
@@ -23,6 +19,11 @@ title: Nieuws
         <div class="grid-block small-up-1 medium-up-2 large-up-2">
 
             <div class="grid-content main">
+                <header class="special-header">
+                    <h1>{{ bericht.attributes.title }}</h1>
+                    <h2 ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}</h2>
+                </header>
+
                 <div class="body" ng-bind-html='bericht.attributes.body'>
                 </div>
             </div>
