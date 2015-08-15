@@ -11,6 +11,8 @@
       $http
       .get(config.api.url + 'berichten?' + jQuery.param({ 'page[size]': 10 }), { cache: true })
       .then(function(result){
+        $scope.addLog('Get berichten');
+
         $scope.berichten = result.data.data;
         // console.log(result.data.data);
       })

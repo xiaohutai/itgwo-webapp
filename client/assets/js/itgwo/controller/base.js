@@ -59,6 +59,33 @@
         return input;
       };
 
+
+      $scope.debuglog = "";
+
+      $scope.loadData = function() {
+
+        $scope.addLog("Init");
+
+      }
+
+      $scope.getData = function() {
+
+        $scope.addLog("Log");
+      }
+
+      $scope.addLog = function(line) {
+
+        var time = Date.create().format('{yy}-{MM}-{dd} {HH}:{mm}');
+        var line = "[" + time + "] " + line + "\n";
+
+        $scope.debuglog += line;
+        console.log(line);
+
+
+      }
+
+
+
       return $scope;
     }
   ]);

@@ -11,6 +11,24 @@
 
 .off-canvas {
     background: #000;
+
+    // Het hoofdmenu
+    .grid-content {
+        padding: 0;
+        top: 0;
+        width: 100%;
+        position: absolute;
+    }
+
+    .offcanvas-footer {
+        top: 0;
+        height: 98vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        position: absolute;
+    }
+
 }
 
 .offcanvas-exit {
@@ -322,6 +340,23 @@ body.plattegrond .grid-block {
     }
 
 }
+
+// --[ Styles for 'debuglog' ]--------------------------------------------------
+
+.debuglink {
+    color: #555;
+    font-size: 0.8em;
+    padding-left: 8px;
+}
+
+.debuglog {
+    font-family: "Menlo", monospaced;
+    font-size: 0.8em;
+    width: 100%;
+    height: 500px;
+
+}
+
 
 // --[ Styles for 'responsive video embeds' ]-----------------------------------
 

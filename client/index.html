@@ -25,8 +25,14 @@
     <zf-notification-set id="notifications" position="top-left">
     </zf-notification-set>
 
+
     <zf-offcanvas id="menu" position="left" class="detached">
-      <div class="grid-content shrink" style="padding: 0;">
+
+      <div class="offcanvas-footer">
+          <a ui-sref="debug" zf-toggle="menu" class="debuglink">debug</a>
+      </div>
+
+      <div class="grid-content shrink">
         <!-- <a zf-close="" class="close-button">×</a> -->
         <ul class="vertical menu-bar">
           <!-- todo: inject menu -->
@@ -59,6 +65,7 @@
           </li>
         </ul>
       </div>
+
     </zf-offcanvas>
 
     <div class="grid-frame vertical" style="min-height:100vh; height: auto;">
