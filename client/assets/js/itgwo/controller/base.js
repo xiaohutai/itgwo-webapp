@@ -20,9 +20,9 @@
       Piwik.trackPageView([DocumentTitle]);
       // --[ isLoading ]--------------------------------------------------------
 
-      $rootScope.isLoading = function() {
-        return itgwoServiceHttpInterceptor.isLoading();
-      }
+      // $rootScope.isLoading = function() {
+      //   return itgwoServiceHttpInterceptor.isLoading();
+      // }
 
       // --[ contenttype to route ]---------------------------------------------
 
@@ -60,9 +60,6 @@
       };
 
       // http://html5demos.com/storage#view-source
-
-      console.log('clear');
-
       $scope.loadData = function() {
 
         $scope.addLog("Init");
@@ -75,7 +72,7 @@
         // Stringify the data..
         value = JSON.stringify(value);
 
-        $scope.addLog("Store " + key);
+        $scope.addLog("LocalStorage Store " + key);
 
         localStorage.setItem(key, value);
 
@@ -85,10 +82,10 @@
 
         if (localStorage.getItem(key)) {
           var value = JSON.parse(localStorage.getItem(key));
-          $scope.addLog("Get HIT " + key);
+          $scope.addLog("LocalStorage Get HIT " + key);
           return value;
         } else {
-          $scope.addLog("Get MISS " + key);
+          $scope.addLog("LocalStorage Get MISS " + key);
           return false;
         }
 

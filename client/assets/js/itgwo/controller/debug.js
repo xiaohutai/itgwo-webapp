@@ -11,8 +11,7 @@
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
 
-      $scope.loadData();
-      $scope.getData();
+      $scope.getData('test');
 
     }
   ]);
