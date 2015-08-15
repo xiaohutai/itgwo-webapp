@@ -125,38 +125,6 @@ var timetable = function(utils){
         root.append(nav);
         root.append(container);
 
-        // if(!supportsTouch){
-        //     // on non touch devices we use jQuery drag
-        //     blocks.draggable({
-        //         axis: blocks.height() < $('#timetable').height() ? "x" : "both",
-        //         start: function() {
-        //             blocks.stop();
-        //             dragging = true; // prevent accidently clicking on an act when you stop dragging
-        //         },
-        //         stop: function() {
-        //             // prevent accidently clicking on an act when you stop dragging
-        //             setTimeout(function(){
-        //                 dragging = false;
-        //             }, 100)
-
-        //             // check constraints, if the scrollcontainer is out of bounds, animate it back to a better position
-        //             if( parseInt(blocks.css('left')) > 10 ){
-        //                 blocks.animate({left: 0});
-        //             } else if( parseInt(blocks.css('left')) < -(blocks.width() - $('#timetable').width()) ){
-        //                 blocks.animate({left : -(blocks.width() - $('#timetable').width())});
-        //             }
-        //             if( parseInt(blocks.css('top')) > 10 ){
-        //                 blocks.animate({top: 0});
-        //             } else if( parseInt(blocks.css('top')) < -(blocks.height() - $('#timetable').height()) ){
-        //                 blocks.animate({top: -(blocks.height() - $('#timetable').height())});
-        //             }
-        //         }
-        //     });
-        // } else {
-        //     // on touch devices we need to add some extra styles to make the scrollbar visible
-        //     scrollcontainer.addClass('scroll-container-touch');
-        // }
-
         // handle different sized screens using media queries
         if(window.matchMedia){
             mql = window.matchMedia("(min-width: 880px)");
@@ -238,6 +206,8 @@ var timetable = function(utils){
             }
             blocks.append( timeLayer );
 
+            locations.html('');
+
             // loop over all locations
             for(var index in config.locations){
                 // get the current location
@@ -261,6 +231,8 @@ var timetable = function(utils){
 
                 // find acts for this location on the current day and add them to the top layer
                 actsOnLocation = Finder.findBy(dayData, 'speellokatie', locData.locationId)
+
+                console.log("Acts: ", actsOnLocation, locData.locationId);
                 for(var i = 0, l = actsOnLocation.length; i < l; i++){
                     actData = actsOnLocation[i];
 
@@ -315,12 +287,14 @@ var timetable = function(utils){
                     title : locData.title
                 });
 
-                //locationsLayer.append(location);
 
-                row.append(backgroundLayer);
-                row.append(actsLayer);
-                blocks.append( row );
-                locations.append(location);
+                if (actsOnLocation.length) {
+                    // Er zijn acts. Toon ze..
+                    row.append(backgroundLayer);
+                    row.append(actsLayer);
+                    blocks.append( row );
+                    locations.append(location);
+                }
             }
 
             blocks.fadeIn(400);
