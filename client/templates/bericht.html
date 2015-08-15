@@ -11,7 +11,7 @@ title: Berichten
         <!-- header -->
         <div class="grid-headerimage">
             <article>
-                <img ng-src="{{ bericht.attributes.image.thumbnail }}" width="752" height="564">
+                <img ng-src="{{ bericht.image.thumbnail }}" width="752" height="564">
             </article>
         </div>
 
@@ -20,11 +20,11 @@ title: Berichten
 
             <div class="grid-content main">
                 <header class="special-header">
-                    <h1>{{ bericht.attributes.title }}</h1>
-                    <h2 ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}</h2>
+                    <h1>{{ bericht.title }}</h1>
+                    <h2 ng-if="bericht.subtitle != ''">{{ bericht.subtitle }}</h2>
                 </header>
 
-                <div class="body" ng-bind-html='bericht.attributes.body'>
+                <div class="body" ng-bind-html='bericht.body'>
                 </div>
             </div>
 

@@ -21,9 +21,19 @@
       $http
       .get(config.api.url + 'berichten/' + $state.params.id, { cache: true })
       .then(function(result){
-        $scope.bericht = result.data.data;
+        var bericht = result.data.data.attributes;
+
         // Larger image..
-        $scope.bericht.attributes.image.thumbnail = $scope.bericht.attributes.image.thumbnail.replace('240x180', '752x564');
+        bericht.image.thumbnail = bericht.image.thumbnail.replace('240x180', '752x564');
+
+        // Replace '/files/' for a thumbnail.
+
+        bericht.body = bericht.body.replace(/\/files\//g, 'http://www.intothegreatwideopen.nl/thumbs/576x576r/');
+
+        console.log(bericht.body);
+
+        $scope.bericht = bericht;
+
         // $rootScope.title = result.data.data.attributes.title;
       })
       .catch(function(e) {
