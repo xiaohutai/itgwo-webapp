@@ -81,7 +81,7 @@
           "icon": ""
       },
       {
-          "locationId": "Bolder-cafe",
+          "locationId": "bolder-cafe",
           "title": "Bolder Cafe",
           "abbr": "BolC",
           "icon": ""
@@ -91,9 +91,26 @@
           "title": "Podium Vlieland",
           "abbr": "PoVl",
           "icon": ""
+      },
+      {
+          "locationId": "strandtuin",
+          "title": "Strandtuin Weltevree",
+          "abbr": "StWe",
+          "icon": ""
+      },
+      {
+          "locationId": "voetbalkooi",
+          "title": "Voetbalkooi",
+          "abbr": "VoKo",
+          "icon": ""
+      },
+      {
+          "locationId": "dorpsstraat",
+          "title": "Dorpsstraat",
+          "abbr": "DoSt",
+          "icon": ""
       }
     ]
-
 
   });
 
