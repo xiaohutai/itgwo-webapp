@@ -59,8 +59,9 @@
         return input;
       };
 
+      // http://html5demos.com/storage#view-source
 
-      $scope.debuglog = "";
+      console.log('clear');
 
       $scope.loadData = function() {
 
@@ -68,19 +69,41 @@
 
       }
 
-      $scope.getData = function() {
 
-        $scope.addLog("Log");
+      $scope.storeData = function(key, value) {
+
+        // Stringify the data..
+        value = JSON.stringify(value);
+
+        $scope.addLog("Store " + key);
+
+        localStorage.setItem(key, value);
+
       }
+
+      $scope.getData = function(key) {
+
+        if (localStorage.getItem(key)) {
+          var value = JSON.parse(localStorage.getItem(key));
+          $scope.addLog("Get HIT " + key);
+          return value;
+        } else {
+          $scope.addLog("Get MISS " + key);
+          return false;
+        }
+
+      }
+
 
       $scope.addLog = function(line) {
 
-        var time = Date.create().format('{yy}-{MM}-{dd} {HH}:{mm}');
+        var time = Date.create().format('{yy}-{MM}-{dd} {HH}:{mm}:{ss}');
         var line = "[" + time + "] " + line + "\n";
 
-        $scope.debuglog += line;
-        console.log(line);
+        globalDebugLog += line;
 
+        $scope.debuglog = globalDebugLog;
+        console.log(line);
 
       }
 

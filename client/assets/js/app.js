@@ -1,3 +1,5 @@
+var globalDebugLog = "";
+
 (function() {
   'use strict';
 
