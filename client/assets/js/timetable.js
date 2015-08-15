@@ -13,10 +13,27 @@ var utils = function(){
 
 
     function loadData(callback){
-        $.getJSON(dataUrl, null, function(json, status){
-            data = json.data;
-            callback(json, status);
-        })
+
+        if (localStorage.getItem('speeltijden')) {
+            data = JSON.parse(localStorage.getItem('speeltijden'));
+            console.log('speeltijden uit cache.');
+            callback(data, 'success');
+        } else {
+            $.getJSON(dataUrl, null, function(json, status){
+                data = json.data;
+
+                // Store data in localStorage..
+                if (status == 'success') {
+                    localStorage.setItem('speeltijden', JSON.stringify(data));
+                }
+
+                console.log('speeltijden opgehaald.');
+
+                // Callback..
+                callback(data, status);
+
+            });
+        }
     }
 
 
@@ -134,10 +151,10 @@ var timetable = function(utils){
         utils.loadData(onLoadDataResult);
     }
 
-    function onLoadDataResult(json, status){
+    function onLoadDataResult(data, status){
         if(status == 'success'){
-            data = json.data;
-            modificationDate = json.modificationDate;
+            data = data;
+            // modificationDate = json.modificationDate;
 
             setup( getDay() );
         } else {
@@ -232,7 +249,7 @@ var timetable = function(utils){
                 // find acts for this location on the current day and add them to the top layer
                 actsOnLocation = Finder.findBy(dayData, 'speellokatie', locData.locationId)
 
-                console.log("Acts: ", actsOnLocation, locData.locationId);
+                // console.log("Acts: ", actsOnLocation, locData.locationId);
                 for(var i = 0, l = actsOnLocation.length; i < l; i++){
                     actData = actsOnLocation[i];
 
@@ -305,7 +322,7 @@ var timetable = function(utils){
         e.preventDefault();
         if(dragging) return;
         //showProgramItem( parseInt( $(this).attr('data-act') ) );
-        console.log('this', $(this).attr('data-programmaonderdelen'));
+        // console.log('this', $(this).attr('data-programmaonderdelen'));
         // showProgramItem( parseInt( $(this).attr('data-programmaonderdelen') ) );
     }
 

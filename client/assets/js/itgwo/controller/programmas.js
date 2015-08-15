@@ -42,8 +42,9 @@
         $http
         .get(config.api.url + 'speeltijden?' + jQuery.param({ 'page[size]': 1000, 'sort': 'title' }), { cache: true })
         .then(function(result){
+          $scope.addLog('HTTP Get speeltijden');
           $scope.speeltijden = result.data.data;
-          //console.log($scope.speeltijden);
+          $scope.storeData('speeltijden', $scope.speeltijden);
         })
         .catch(function(e) {
           itgwoServiceNotification.notification(e.data);
@@ -53,6 +54,9 @@
 
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
+
+      // Haal de versie uit localstorage op.
+      $scope.berichten = $scope.getData('speeltijden');
 
     }
   ]);
