@@ -32,7 +32,7 @@
 
         console.log(bericht.body);
 
-        $scope.bericht = bericht;
+        // $scope.bericht = bericht;
 
         // $rootScope.title = result.data.data.attributes.title;
       })
