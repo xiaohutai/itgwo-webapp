@@ -95,11 +95,11 @@ p {
     text-transform: uppercase;
     background: rgba(0, 0, 0, .1);
     color: #000;
-    
+
     a {
         color: #000;
     }
-    
+
     .title {
         font-weight: normal;
         letter-spacing: -.03rem;
@@ -218,13 +218,13 @@ body.plattegrond .grid-block {
 // --[ Bericht item ]--------------------------------------------------------------
 
 .body.ng-binding {
-    
+
     p {
-        
+
         a {
             text-decoration: underline;
         }
-        
+
     }
 }
 
@@ -240,20 +240,21 @@ body.plattegrond .grid-block {
 
 
     .navigation {
-        display: inline-block;
-        vertical-align: middle;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         width: 100%;
         padding: 12px 0 12px 8px;
     }
+
     .navigation a {
         display: inline-block;
         vertical-align: middle;
-        padding: 7px 9px;
+        text-align: center;
+        padding: 7px 0px;
         text-decoration: none;
         color: #000;
         background: rgba(0,0,0,.2);
-
         width: 18%;
         font-size: 0.8em;
         text-transform: uppercase;
@@ -266,7 +267,7 @@ body.plattegrond .grid-block {
         background: rgba(0,0,0,1);
         color: #fff;
     }
-    
+
     .fa {
         font-size: .7rem;
     }

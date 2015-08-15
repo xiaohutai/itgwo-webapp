@@ -9,75 +9,79 @@
     cursor: hand;
     overflow: hidden;
     text-align: center;
-}
-#timetable * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-#timetable .container {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-#timetable .scroll-container {
-    overflow: auto;
-    cursor: move;
-    -webkit-overflow-scrolling: touch;
-    background-color: desaturate(darken($itgwo-bg, 10), 20);
-}
-#timetable .scroll-container-touch {
-    overflow-x: scroll;
-    cursor: default;
-}
 
-#timetable .navigation {
-    display: inline-block;
-    vertical-align: middle;
-    display: block;
-    width: 100%;
-    padding: 12px 0;
-}
-#timetable .navigation a {
-    border-radius: 4px;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 7px 20px;
-    text-decoration: none;
-    color: #444;
-    background: #BBB;
-    margin-right: 2px;
-    width: 23%;
-}
-#timetable .navigation a:hover {
-    background: #888;
-    color: #000;
-}
-#timetable .navigation a.selected {
-    background: #888;
-    color: #000;
-}
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .scroll-container {
+        overflow: auto;
+        cursor: move;
+        -webkit-overflow-scrolling: touch;
+        background-color: desaturate(darken($itgwo-bg, 10), 20);
+    }
+    .scroll-container-touch {
+        overflow-x: scroll;
+        cursor: default;
+    }
 
-#timetable .locations {
-    position: absolute;
-    top: 20px;
-    z-index: 10;
-    width: 60px;
-}
-#timetable .locations .location {
-    background-color: #fff;
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-    font-family: $font;
-    font-size: 24px;
-    text-align: center;
-    font-weight: bold;
-    color: #233033;
-    border-top: 1px solid #eceef1;
-    border-right: 2px solid #eceef1;
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 12px 8px 12px 8px;
+    }
+
+    .navigation a {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        padding: 7px 0px;
+        text-decoration: none;
+        color: #000;
+        background: rgba(0,0,0,.2);
+        width: 22%;
+        font-size: 0.8em;
+        text-transform: uppercase;
+    }
+    .navigation a:hover {
+        background: rgba(0,0,0,.4);
+        color: #000;
+    }
+    .navigation a.selected {
+        background: rgba(0,0,0,1);
+        color: #fff;
+    }
+
+    .locations {
+        position: absolute;
+        top: 20px;
+        z-index: 10;
+        width: 60px;
+    }
+    .locations .location {
+        background-color: #fff;
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        font-family: $font;
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+        color: #233033;
+        border-top: 1px solid #eceef1;
+        border-right: 2px solid #eceef1;
+    }
+
 }
 
 #timetableblocks {
