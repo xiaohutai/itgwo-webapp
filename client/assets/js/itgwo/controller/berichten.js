@@ -30,9 +30,9 @@
 
         bericht.body = bericht.body.replace(/\/files\//g, 'http://www.intothegreatwideopen.nl/thumbs/576x576r/');
 
-        console.log(bericht.body);
+        // console.log(bericht.body);
 
-        // $scope.bericht = bericht;
+        $scope.bericht = bericht;
 
         // $rootScope.title = result.data.data.attributes.title;
       })
