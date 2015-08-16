@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl-NL" ng-app="application" manifest="app.manifest">
+<html lang="nl-NL" ng-app="application" maxnifest="app.manifest">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -78,7 +78,7 @@
       <div class="grid-content shrink" style="padding: 0;">
         <div class="dark title-bar">
           <span class="left"><a zf-toggle="menu"><i class="fa fa-navicon"></i>&nbsp;</a></span>
-          <span class="title center">{{ title }}</span>
+          <span class="title center">{{ title | limitTo : 28 }}{{ title.length > 28 ? '…' : '' }}</span>
           <span class="right">&nbsp;</span>
         </div>
       </div>

@@ -60,12 +60,6 @@
       };
 
       // http://html5demos.com/storage#view-source
-      $scope.loadData = function() {
-
-        $scope.addLog("Init");
-
-      }
-
 
       $scope.storeData = function(key, value) {
 

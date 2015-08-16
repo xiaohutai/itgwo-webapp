@@ -14,10 +14,7 @@
       .then(function(result){
         $scope.addLog('HTTP Get berichten');
         $scope.berichten = result.data.data;
-
         $scope.storeData('berichten', $scope.berichten);
-
-        // console.log(result.data.data);
       })
       .catch(function(e) {
         itgwoServiceNotification.notification(e.data);

@@ -7,21 +7,41 @@
     '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
     function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
 
-      // --[ fetch onderwerpen ]------------------------------------------------
-      // $http
-      // .get(config.api.url + 'onderwerpen?' + jQuery.param({ 'filter[themas]': $state.params.id }), { cache: true })
-      // .then(function(result){
-      //   $scope.onderwerpen = result.data.data;
-      // })
-      // .catch(function(e) {
-      //   itgwoServiceNotification.notification(e.data);
-      // });
 
       // --[ fetch bericht ]------------------------------------------------------
       $http
-      .get(config.api.url + 'berichten/' + $state.params.id, { cache: true })
+      .get(config.api.url + 'berichten?' + jQuery.param({ 'page[size]': 10 }), { cache: true })
       .then(function(result){
-        var bericht = result.data.data.attributes;
+
+        $scope.addLog('HTTP Get berichten');
+        $scope.berichten = result.data.data;
+        $scope.storeData('berichten', $scope.berichten);
+
+        var bericht = findBericht($state.params.id, $scope.berichten);
+
+        console.log(bericht);
+
+        $scope.bericht = fixBericht(bericht);
+
+        $rootScope.title = bericht.title;
+      })
+      .catch(function(e) {
+        itgwoServiceNotification.notification(e.data);
+      });
+
+      // --[ extend base controller ]-------------------------------------------
+      angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
+
+
+      if ($scope.getData('berichten')) {
+        console.log('joe!');
+      } else {
+        console.log('no');
+      }
+
+
+      // Clean up 'bericht'..
+      function fixBericht(bericht) {
 
         // Larger image..
         bericht.image.thumbnail = bericht.image.thumbnail.replace('240x180', '752x564');
@@ -32,16 +52,26 @@
 
         // console.log(bericht.body);
 
-        $scope.bericht = bericht;
+        return bericht;
 
-        // $rootScope.title = result.data.data.attributes.title;
-      })
-      .catch(function(e) {
-        itgwoServiceNotification.notification(e.data);
-      });
+      }
 
-      // --[ extend base controller ]-------------------------------------------
-      angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
+
+      function findBericht(id, berichten) {
+
+        var i=0;
+
+        for (i=0; i < berichten.length; i++) {
+          console.log(berichten[i].id);
+          if (berichten[i].id == id) {
+            berichten[i].attributes.id = id;
+            return berichten[i].attributes;
+          }
+        }
+
+      }
+
+
     }
   ]);
 
