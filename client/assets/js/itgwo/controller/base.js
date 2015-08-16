@@ -18,6 +18,15 @@
       var DocumentTitle = $state.current.data.vars.title;
       var CustomUrl = $location.path();
       Piwik.trackPageView([DocumentTitle]);
+
+      var routeName = $state.current.name;
+      console.log("routename " , routeName);
+      if (routeName == 'bericht' || routeName == 'onderdeel') {
+        $rootScope.showBackButton = true;
+      } else {
+        $rootScope.showBackButton = false;
+      }
+
       // --[ isLoading ]--------------------------------------------------------
 
       // $rootScope.isLoading = function() {

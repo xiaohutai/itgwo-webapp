@@ -77,7 +77,8 @@
       </div>
       <div class="grid-content shrink" style="padding: 0;">
         <div class="dark title-bar">
-          <span class="left"><a zf-toggle="menu"><i class="fa fa-navicon"></i>&nbsp;</a></span>
+          <span class="left" ng-if="showBackButton"><a back-button><i class="fa fa-chevron-left"></i> Terug</a></span>
+          <span class="left" ng-if="!showBackButton"><a zf-toggle="menu"><i class="fa fa-navicon"></i> Menu</a></span>
           <span class="title center">{{ title | limitTo : 28 }}{{ title.length > 28 ? '…' : '' }}</span>
           <span class="right">&nbsp;</span>
         </div>
