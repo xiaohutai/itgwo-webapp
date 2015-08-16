@@ -7,38 +7,46 @@
     '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
     function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
 
-
-      // --[ fetch bericht ]------------------------------------------------------
-      $http
-      .get(config.api.url + 'berichten?' + jQuery.param({ 'page[size]': 10 }), { cache: true })
-      .then(function(result){
-
-        $scope.addLog('HTTP Get berichten');
-        $scope.berichten = result.data.data;
-        $scope.storeData('berichten', $scope.berichten);
-
-        var bericht = findBericht($state.params.id, $scope.berichten);
-
-        console.log(bericht);
-
-        $scope.bericht = fixBericht(bericht);
-
-        $rootScope.title = bericht.title;
-      })
-      .catch(function(e) {
-        itgwoServiceNotification.notification(e.data);
-      });
-
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
-
       if ($scope.getData('berichten')) {
-        console.log('joe!');
+        getCachedBericht();
       } else {
-        console.log('no');
+        fetchRemoteBericht();
       }
 
+
+
+      // Haal een bericht op uit de cache.
+      function getCachedBericht() {
+        $scope.berichten = $scope.getData('berichten');
+
+        var bericht = findBericht($state.params.id, $scope.berichten);
+        $scope.bericht = fixBericht(bericht);
+        $rootScope.title = bericht.title;
+      }
+
+      // Haal een bericht op, als we 'm nog niet in de cache hebben.
+      function fetchRemoteBericht() {
+
+        $http
+        .get(config.api.url + 'berichten?' + jQuery.param({ 'page[size]': 10 }), { cache: true })
+        .then(function(result){
+
+          $scope.addLog('HTTP Get berichten');
+          $scope.berichten = result.data.data;
+          $scope.storeData('berichten', $scope.berichten);
+
+          var bericht = findBericht($state.params.id, $scope.berichten);
+          $scope.bericht = fixBericht(bericht);
+          $rootScope.title = bericht.title;
+        })
+        .catch(function(e) {
+          itgwoServiceNotification.notification(e.data);
+        });
+
+      }
 
       // Clean up 'bericht'..
       function fixBericht(bericht) {
@@ -49,6 +57,7 @@
         // Replace '/files/' for a thumbnail.
 
         bericht.body = bericht.body.replace(/\/files\//g, 'http://www.intothegreatwideopen.nl/thumbs/576x576r/');
+        bericht.body = bericht.body.replace(/\/programmaonderdeel\//g, 'http://www.intothegreatwideopen.nl/programmaonderdeel/');
 
         // console.log(bericht.body);
 
@@ -56,13 +65,12 @@
 
       }
 
-
+      // Filter een array met "berichten", en geef het bericht met de juiste id terug.
       function findBericht(id, berichten) {
 
         var i=0;
 
         for (i=0; i < berichten.length; i++) {
-          console.log(berichten[i].id);
           if (berichten[i].id == id) {
             berichten[i].attributes.id = id;
             return berichten[i].attributes;
