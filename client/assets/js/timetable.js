@@ -10,8 +10,6 @@ var utils = function(){
     //var dataUrl = 'program.json';
     var data = null;
 
-
-
     function loadData(callback){
 
         if (localStorage.getItem('speeltijden')) {
@@ -105,8 +103,6 @@ var timetable = function(utils){
     // var data = null;
     var modificationDate = null;
     var currentDay = 1;
-    var supportsTouch = false;
-
     var options = {
         width: 180 // width of 1 hour
     };
@@ -120,9 +116,6 @@ var timetable = function(utils){
     function init(gwoconfig){
 
         config = gwoconfig;
-
-        // check for touch devices. On touch devices will not use the jQuery drag
-        supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
         // build up the necessary divs & blocks
         nav = $('<div class="navigation"></div>'); // will hold the days of the week
