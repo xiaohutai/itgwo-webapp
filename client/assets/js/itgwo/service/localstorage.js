@@ -4,8 +4,8 @@
   var itgwo = angular.module('itgwo');
 
   itgwo.service('itgwo.service.localstorage', [
-    'config', '$filter', '$http',
-    function (config, $filter, $http) {
+    'config', '$filter', '$http', '$rootScope',
+    function (config, $filter, $http, $rootScope) {
 
       // http://html5demos.com/storage#view-source
 
@@ -41,7 +41,7 @@
 
         globalDebugLog += line;
 
-        this.debuglog = globalDebugLog;
+        $rootScope.debuglog = globalDebugLog;
         console.log(line);
 
       }
