@@ -4,8 +4,8 @@
   var itgwo = angular.module('itgwo');
 
   itgwo.controller('itgwo.controller.programma', [
-    '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
-    function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
+    '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
+    function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
 
       $scope.filter = "vr";
 
@@ -42,9 +42,9 @@
         $http
         .get(config.api.url + 'speeltijden?' + jQuery.param({ 'page[size]': 1000, 'sort': 'title' }), { cache: true })
         .then(function(result){
-          $scope.addLog('HTTP Get speeltijden');
+          itgwoServiceLocalstorage.addLog('HTTP Get speeltijden');
           $scope.speeltijden = result.data.data;
-          $scope.storeData('speeltijden', $scope.speeltijden);
+          itgwoServiceLocalstorage.storeData('speeltijden', $scope.speeltijden);
         })
         .catch(function(e) {
           itgwoServiceNotification.notification(e.data);
@@ -56,7 +56,7 @@
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
       // Haal de versie uit localstorage op.
-      $scope.berichten = $scope.getData('speeltijden');
+      $scope.berichten = itgwoServiceLocalstorage.getData('speeltijden');
 
     }
   ]);

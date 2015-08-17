@@ -5,8 +5,8 @@
 
   // Use this controller to set the title and config on every page.
   itgwo.controller('itgwo.controller.base', [
-    '$http', '$scope', '$state', '$stateParams', '$controller', '$location', '$rootScope', 'config', 'FoundationApi', 'itgwo.service.notification', 'itgwo.service.httpInterceptor', 'Piwik',
-    function ($http, $scope, $state, $stateParams, $controller, $location, $rootScope, config, FoundationApi, itgwoServiceNotification, itgwoServiceHttpInterceptor, Piwik) {
+    '$http', '$scope', '$state', '$stateParams', '$controller', '$location', '$rootScope', 'config', 'FoundationApi', 'itgwo.service.notification', 'itgwo.service.httpInterceptor', 'itgwo.service.localstorage', 'Piwik',
+    function ($http, $scope, $state, $stateParams, $controller, $location, $rootScope, config, FoundationApi, itgwoServiceNotification, itgwoServiceHttpInterceptor, itgwoServiceLocalstorage, Piwik) {
 
       // Set the title based on the route, otherwise overridde this in the
       // extending controller.
@@ -68,48 +68,8 @@
         return input;
       };
 
-      // http://html5demos.com/storage#view-source
-
-      $scope.storeData = function(key, value) {
-
-        // Stringify the data..
-        value = JSON.stringify(value);
-
-        $scope.addLog("LocalStorage Store " + key);
-
-        localStorage.setItem(key, value);
-
-      }
-
-      $scope.getData = function(key) {
-
-        if (localStorage.getItem(key)) {
-          var value = JSON.parse(localStorage.getItem(key));
-          $scope.addLog("LocalStorage Get HIT " + key);
-          return value;
-        } else {
-          $scope.addLog("LocalStorage Get MISS " + key);
-          return false;
-        }
-
-      }
-
-
-      $scope.addLog = function(line) {
-
-        var time = Date.create().format('{yy}-{MM}-{dd} {HH}:{mm}:{ss}');
-        var line = "[" + time + "] " + line + "\n";
-
-        globalDebugLog += line;
-
-        $scope.debuglog = globalDebugLog;
-        console.log(line);
-
-      }
-
-
-
       return $scope;
+
     }
   ]);
 

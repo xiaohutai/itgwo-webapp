@@ -4,13 +4,13 @@
   var itgwo = angular.module('itgwo');
 
   itgwo.controller('itgwo.controller.berichten', [
-    '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
-    function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
+    '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
+    function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
 
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
-      if ($scope.getData('berichten')) {
+      if (itgwoServiceLocalstorage.getData('berichten')) {
         getCachedBericht();
       } else {
         fetchRemoteBericht();
@@ -20,7 +20,7 @@
 
       // Haal een bericht op uit de cache.
       function getCachedBericht() {
-        $scope.berichten = $scope.getData('berichten');
+        $scope.berichten = itgwoServiceLocalstorage.getData('berichten');
 
         var bericht = findBericht($state.params.id, $scope.berichten);
         $scope.bericht = fixBericht(bericht);
@@ -34,9 +34,9 @@
         .get(config.api.url + 'berichten?' + jQuery.param({ 'page[size]': 10 }), { cache: true })
         .then(function(result){
 
-          $scope.addLog('HTTP Get berichten');
+          itgwoServiceLocalstorage.addLog('HTTP Get berichten');
           $scope.berichten = result.data.data;
-          $scope.storeData('berichten', $scope.berichten);
+          itgwoServiceLocalstorage.storeData('berichten', $scope.berichten);
 
           var bericht = findBericht($state.params.id, $scope.berichten);
           $scope.bericht = fixBericht(bericht);
