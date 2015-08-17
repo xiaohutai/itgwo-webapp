@@ -94,11 +94,13 @@
     <!-- access -->
     <access origin="http://twokings.eu" subdomains="true" />
     <access origin="http://youtube.com" subdomains="true" />
+    <access origin="https://youtube.com" subdomains="true" />
     <access origin="http://greatwideopen.nl" subdomains="true" />
     <access origin="http://intothegreatwideopen.nl" subdomains="true" />
     <access origin="http://embedly.com" subdomains="true" />
+    <access origin="https//embedly.com" subdomains="true" />
     <access origin="http://stats.twokings.nl" subdomains="true" />
-    
+
     <!--
     <access origin="http://api.fietsersbond.nl" subdomains="true" />
     <access origin="http://mqcdn.com" subdomains="true" />

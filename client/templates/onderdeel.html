@@ -11,7 +11,7 @@ title: Programmaonderdeel
         <!-- header -->
         <div class="grid-headerimage">
             <article>
-                <img ng-src="{{ onderdeel.attributes.image.thumbnail }}">
+                <img ng-src="{{ onderdeel.image.thumbnail }}">
 
             </article>
         </div>
@@ -21,18 +21,17 @@ title: Programmaonderdeel
 
             <div class="grid-content main">
                 <header class="special-header">
-                    <h1>{{ onderdeel.attributes.name }}</h1>
-                    <!-- <h2 ng-if="onderdeel.attributes.subtitle != ''">{{ onderdeel.attributes.subtitle }}</h2> -->
+                    <h1>{{ onderdeel.name }}</h1>
+                    <!-- <h2 ng-if="onderdeel.subtitle != ''">{{ onderdeel.subtitle }}</h2> -->
                 </header>
 
-                <div ng-bind-html='onderdeel.attributes.description'>
+                <div ng-bind-html='onderdeel.description'>
                 </div>
             </div>
 
-            <div class="grid-content video-container" ng-if="onderdeel.attributes.video.responsive" ng-bind-html="onderdeelVideo()">
-            </div>
+            <div class="responsive-video widescreen" ng-bind-html="onderdeelVideo()"></div>
 
-            <div class="grid-content embed-container" ng-if="onderdeel.attributes.embed" ng-bind-html="onderdeelEmbed()">
+            <div class="grid-content embed-container" ng-if="onderdeel.embed" ng-bind-html="onderdeelEmbed()">
             </div>
 
             <p>&nbsp;</p>
