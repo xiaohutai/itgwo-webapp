@@ -33,31 +33,6 @@
       //   return itgwoServiceHttpInterceptor.isLoading();
       // }
 
-      // --[ contenttype to route ]---------------------------------------------
-
-      $scope.contenttypeToRoute = function(contenttypeSlug) {
-        var lookup = {
-          'onderwerpen': 'onderwerp',
-          'programmas' : 'programmaItem',
-          'anekdotes' : 'anekdote',
-          'themas' : 'thema'
-        };
-
-        return lookup[contenttypeSlug];
-      }
-
-      // --[ contenttype to singular ]------------------------------------------
-
-      $scope.contenttypeToSingular = function(contenttypeSlug) {
-        var lookup = {
-          'onderwerpen': 'onderwerp',
-          'programmas' : 'programma',
-          'anekdotes' : 'anekdote',
-          'themas' : 'thema'
-        };
-
-        return lookup[contenttypeSlug];
-      }
 
       // --[ function range ]---------------------------------------------------
 
