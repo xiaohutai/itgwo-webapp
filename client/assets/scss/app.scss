@@ -106,6 +106,13 @@ p {
     font-family: Georgia, serif;
 }
 
+hr {
+    height: 1px;
+    border-top: 1px solid #000;
+    border-bottom: 0px;
+    margin: 6px 0 10px;
+}
+
 .title-bar.dark,
 .title-bar {
     border-bottom: 0px;

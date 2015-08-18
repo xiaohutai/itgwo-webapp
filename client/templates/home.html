@@ -22,11 +22,12 @@ title: ITGWO 2015
             <div class="grid-content content-berichten" ng-repeat="bericht in berichten">
                 <a ui-sref="bericht({ id: bericht.id })">
                     <article class="thema thema-{{ bericht.id }}">
-                        <img ng-src="{{ bericht.attributes.image.thumbnail }}" width="90" height="60">
+                        <img ng-src="{{ bericht.attributes.image.thumbnail }}" width="90" height="90">
                         <h2><!-- {{ bericht.attributes.datepublish | date : 'd MMM' }} --> <span ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}<span></h2>
                         <h1 class="">{{ bericht.attributes.title }}</h1>
                     </article>
                 </a>
+                <!-- <hr> -->
             </div>
 
             <p>&nbsp;</p>
