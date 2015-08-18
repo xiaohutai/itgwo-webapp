@@ -75,6 +75,10 @@
         text-transform: uppercase;
     }
 
+    li.is-active > a {
+        background-color: $menu-active;
+    }
+
     li.hoewerkt > a > span {
         font-size: 0.85em;
         text-transform: none;
@@ -111,7 +115,7 @@ hr {
     height: 1px;
     border-top: 1px solid #000;
     border-bottom: 0px;
-    margin: 6px 0 10px;
+    margin: 14px 5px 14px;
 }
 
 .title-bar.dark,
@@ -207,15 +211,19 @@ h1.logo {
 
 
 .page-home .content-berichten {
+
+    margin-bottom: 2px;
+
     article {
-        height: 102px;
+        height: 96px;
         border-bottom: none;
+        overflow: hidden;
     }
 
     img {
         float: left;
-        border: 1px solid desaturate(darken($itgwo-bg, 20), 20);
-        margin: 0 8px 4px 4px;
+        border: 1px solid desaturate(darken($itgwo-bg, 10), 20);
+        margin: 2px 10px 0px 4px;
     }
 
 
@@ -223,13 +231,13 @@ h1.logo {
         font-size: 1em;
         margin-top: 0;
         margin-bottom: 0;
-        line-height: 1.3em;
+        line-height: 19px;
     }
 
     h2 {
-        font-size: 0.8em;
-        line-height: 1.3em;
-        margin-bottom: 0;
+        font-size: 0.9em;
+        line-height: 19px;
+        margin: 0;
         color: #000;
     }
 
