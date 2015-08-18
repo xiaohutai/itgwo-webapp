@@ -29,10 +29,10 @@ title: Programmaonderdeel
                 </div>
             </div>
 
-            <div class="responsive-video widescreen" ng-if="onderdeel.video" ng-bind-html="onderdeelVideo()">
+            <div class="grid-content video-container" ng-if="onderdeel.video" ng-bind-html="onderdeel.video|embedvideo">
             </div>
 
-            <div class="grid-content embed-container" ng-if="onderdeel.embed" ng-bind-html="onderdeelEmbed()">
+            <div class="grid-content embed-container" ng-if="onderdeel.embed" ng-bind-html="onderdeel.embed|raw">
             </div>
 
             <p>&nbsp;</p>

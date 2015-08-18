@@ -16,8 +16,6 @@
         fetchRemoteBericht();
       }
 
-
-
       // Haal een bericht op uit de cache.
       function getCachedBericht() {
         $scope.berichten = itgwoServiceLocalstorage.getData('berichten');
@@ -59,17 +57,6 @@
         bericht.body = bericht.body.replace(/\/files\//g, 'http://www.intothegreatwideopen.nl/thumbs/576x576r/');
         bericht.body = bericht.body.replace(/\/programmaonderdeel\//g, 'http://www.intothegreatwideopen.nl/programmaonderdeel/');
 
-        if (bericht.video.url) {
-          // NO: https://www.youtube.com/watch?v=bIYNs2Gq8Vw
-          // OK: https://www.youtube-nocookie.com/embed/bIYNs2Gq8Vw
-
-          // $scope.onderdeel.video.url = $scope.onderdeel.video.url.replace('//cdn.embedly.com', 'https://cdn.embedly.com');
-          bericht.video.url = bericht.video.url.replace('www.youtube.com', 'www.youtube-nocookie.com');
-          bericht.video.url = bericht.video.url.replace('/watch?v=', '/embed/');
-        }
-
-        // console.log(bericht);
-
         return bericht;
 
       }
@@ -87,16 +74,6 @@
         }
 
       }
-
-      $scope.berichtVideo = function() {
-        var res = '<iframe width="854" height="480" scrolling="no" frameborder="0" allowfullscreen src="' + $scope.bericht.video.url + '"></iframe>';
-        return $sce.trustAsHtml(res);
-      };
-
-      $scope.berichtEmbed = function() {
-        return $sce.trustAsHtml($scope.bericht.embed);
-      };
-
 
     }
   ]);

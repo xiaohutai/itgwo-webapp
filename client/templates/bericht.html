@@ -31,10 +31,10 @@ title: Berichten
                 </div>
             </div>
 
-            <div class="responsive-video widescreen" ng-if="bericht.video" ng-bind-html="berichtVideo()">
+            <div class="grid-content video-container" ng-if="onderdeel.video" ng-bind-html="onderdeel.video|embedvideo">
             </div>
 
-            <div class="grid-content embed-container" ng-if="bericht.embed" ng-bind-html="berichtEmbed()">
+            <div class="grid-content embed-container" ng-if="bericht.embed" ng-bind-html="bericht.embed|raw">
             </div>
 
             <p>&nbsp;</p>
