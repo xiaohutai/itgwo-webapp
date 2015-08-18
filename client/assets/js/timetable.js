@@ -297,7 +297,6 @@ var timetable = function(utils){
                     title : locData.title
                 });
 
-
                 if (actsOnLocation.length) {
                     // Er zijn acts. Toon ze..
                     row.append(backgroundLayer);
@@ -306,6 +305,10 @@ var timetable = function(utils){
                     locations.append(location);
                 }
             }
+
+            // Make sure the #timetable container is tall enough.
+            var height = 70 + (60 * $(".locations .location").length);
+            $("#timetable").css('height', height + 'px');
 
             blocks.fadeIn(400);
         });
