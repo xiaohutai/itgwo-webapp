@@ -4,8 +4,8 @@
   var itgwo = angular.module('itgwo');
 
   itgwo.controller('itgwo.controller.berichten', [
-    '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
-    function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
+    '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
+    function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
 
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
@@ -59,7 +59,16 @@
         bericht.body = bericht.body.replace(/\/files\//g, 'http://www.intothegreatwideopen.nl/thumbs/576x576r/');
         bericht.body = bericht.body.replace(/\/programmaonderdeel\//g, 'http://www.intothegreatwideopen.nl/programmaonderdeel/');
 
-        // console.log(bericht.body);
+        if (bericht.video.url) {
+          // NO: https://www.youtube.com/watch?v=bIYNs2Gq8Vw
+          // OK: https://www.youtube-nocookie.com/embed/bIYNs2Gq8Vw
+
+          // $scope.onderdeel.video.url = $scope.onderdeel.video.url.replace('//cdn.embedly.com', 'https://cdn.embedly.com');
+          bericht.video.url = bericht.video.url.replace('www.youtube.com', 'www.youtube-nocookie.com');
+          bericht.video.url = bericht.video.url.replace('/watch?v=', '/embed/');
+        }
+
+        console.log(bericht);
 
         return bericht;
 
@@ -78,6 +87,15 @@
         }
 
       }
+
+      $scope.berichtVideo = function() {
+        var res = '<iframe width="854" height="480" scrolling="no" frameborder="0" allowfullscreen src="' + $scope.bericht.video.url + '"></iframe>';
+        return $sce.trustAsHtml(res);
+      };
+
+      $scope.berichtEmbed = function() {
+        return $sce.trustAsHtml($scope.bericht.embed);
+      };
 
 
     }

@@ -34,18 +34,6 @@
           itgwoServiceNotification.notification(e.data);
         });
 
-        $scope.onderdeelVideo = function() {
-
-          var res = '<iframe width="854" height="480" scrolling="no" frameborder="0" allowfullscreen src="' + $scope.onderdeel.video.url + '"></iframe>';
-
-          return $sce.trustAsHtml(res);
-        };
-
-        $scope.onderdeelEmbed = function() {
-          return $sce.trustAsHtml($scope.onderdeel.embed);
-        };
-
-
       } else {
 
         // --[ fetch programmas ]-----------------------------------------------
@@ -65,6 +53,15 @@
 
       }
 
+      $scope.onderdeelVideo = function() {
+        var res = '<iframe width="854" height="480" scrolling="no" frameborder="0" allowfullscreen src="' + $scope.onderdeel.video.url + '"></iframe>';
+        return $sce.trustAsHtml(res);
+      };
+
+      $scope.onderdeelEmbed = function() {
+        return $sce.trustAsHtml($scope.onderdeel.embed);
+      };
+
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
@@ -72,6 +69,7 @@
       $scope.berichten = itgwoServiceLocalstorage.getData('speeltijden');
 
     }
+
   ]);
 
 })();

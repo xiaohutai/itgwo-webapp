@@ -28,6 +28,12 @@ title: Berichten
                 </div>
             </div>
 
+            <div class="responsive-video widescreen" ng-if="bericht.video" ng-bind-html="berichtVideo()">
+            </div>
+
+            <div class="grid-content embed-container" ng-if="bericht.embed" ng-bind-html="berichtEmbed()">
+            </div>
+
             <p>&nbsp;</p>
 
         </div>
