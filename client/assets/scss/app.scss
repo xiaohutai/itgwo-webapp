@@ -208,25 +208,27 @@ h1.logo {
 
 .page-home .content-berichten {
     article {
-        height: 80px;
+        height: 102px;
         border-bottom: none;
     }
 
     img {
         float: left;
-        margin-right: 0.5em;
+        border: 1px solid desaturate(darken($itgwo-bg, 20), 20);
+        margin: 0 8px 4px 4px;
     }
 
 
     h1 {
         font-size: 1em;
         margin-top: 0;
+        margin-bottom: 0;
         line-height: 1.3em;
     }
 
     h2 {
         font-size: 0.8em;
-        line-height: 1.2em;
+        line-height: 1.3em;
         margin-bottom: 0;
         color: #000;
     }

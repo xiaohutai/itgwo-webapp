@@ -23,8 +23,13 @@ title: ITGWO 2015
                 <a ui-sref="bericht({ id: bericht.id })">
                     <article class="thema thema-{{ bericht.id }}">
                         <img ng-src="{{ bericht.attributes.image.thumbnail }}" width="90" height="90">
-                        <h2><!-- {{ bericht.attributes.datepublish | date : 'd MMM' }} --> <span ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}<span></h2>
                         <h1 class="">{{ bericht.attributes.title }}</h1>
+                        <h2><!-- {{ bericht.attributes.datepublish | date : 'd MMM' }} -->
+                        <span ng-if="bericht.attributes.subtitle != ''">{{ bericht.attributes.subtitle }}</span>
+                        <span ng-if="bericht.attributes.subtitle == ''">
+                            {{ bericht.attributes.teaser | striptags | limitTo : 128 }}…
+                        </span>
+                        </h2>
                     </article>
                 </a>
                 <!-- <hr> -->
@@ -41,9 +46,9 @@ title: ITGWO 2015
 var ath = addToHomescreen({
     // debug: 'android',           // activate debug mode in ios emulation
     skipFirstVisit: false,  // show at first access
-    startDelay: 0,          // display the message right away
+    startDelay: 5,          // display the message right away
     lifespan: 0,            // do not automatically kill the call out
-    displayPace: 0,         // do not obey the display pace
+    displayPace: 1440,         // do not obey the display pace
     privateModeOverride: true,  // show the message in private mode
     maxDisplayCount: 0      // do not obey the max display count
 });
