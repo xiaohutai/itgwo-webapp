@@ -120,13 +120,13 @@ hr {
     font-family: $font;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background: rgba(0, 0, 0, .1);
-    color: #000;
+    background: rgba(0, 0, 0, 1);
+    color: #fff;
 
     a,
     a:hover,
     a:active {
-        color: #000;
+        color: #fff;
         padding: 12px;
         margin-left: -12px;
     }
