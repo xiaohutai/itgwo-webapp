@@ -68,7 +68,7 @@
           bericht.video.url = bericht.video.url.replace('/watch?v=', '/embed/');
         }
 
-        console.log(bericht);
+        // console.log(bericht);
 
         return bericht;
 

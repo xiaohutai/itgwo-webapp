@@ -24,6 +24,9 @@ title: Berichten
                     <h2 ng-if="bericht.subtitle != ''">{{ bericht.subtitle }}</h2>
                 </header>
 
+                <div class="body" ng-bind-html='bericht.teaser'>
+                </div>
+
                 <div class="body" ng-bind-html='bericht.body'>
                 </div>
             </div>

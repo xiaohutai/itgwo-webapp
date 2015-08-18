@@ -28,6 +28,8 @@
             $scope.onderdeel.video.url = $scope.onderdeel.video.url.replace('/watch?v=', '/embed/');
           }
 
+          // console.log($scope.onderdeel);
+
           $rootScope.title = result.data.data.attributes.name;
         })
         .catch(function(e) {
