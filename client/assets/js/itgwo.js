@@ -50,7 +50,7 @@
           "date": "2015-09-06",
           "name": "Zondag",
           "shortname": "Zon",
-          "starttime": "2015-09-06T10:00:00+02:00",
+          "starttime": "2015-09-06T09:00:00+02:00",
           "endtime": "2015-09-07T03:00:00+02:00"
       }
     ],
@@ -59,57 +59,63 @@
       {
           "locationId": "sportveld",
           "title": "Sportveld",
-          "abbr": "SpVe",
-          "icon": ""
-      },
-      {
-          "locationId": "bospodium",
-          "title": "Bospodium",
-          "abbr": "BosP",
+          "abbr": "Sport<br>veld",
           "icon": ""
       },
       {
           "locationId": "fortweg",
           "title": "Fortweg",
-          "abbr": "FortW",
+          "abbr": "Fort<br>weg",
+          "icon": ""
+      },
+      {
+          "locationId": "bospodium",
+          "title": "Bospodium",
+          "abbr": "Bos<br>podium</small>",
           "icon": ""
       },
       {
           "locationId": "bolder-zaal",
           "title": "Bolder Zaal",
-          "abbr": "BolZ",
+          "abbr": "De<br>Bolder",
           "icon": ""
       },
       {
           "locationId": "bolder-cafe",
           "title": "Bolder Cafe",
-          "abbr": "BolC",
+          "abbr": "Bolder<br>Café",
           "icon": ""
       },
       {
-          "locationId": "podium-vlieland",
-          "title": "Podium Vlieland",
-          "abbr": "PoVl",
-          "icon": ""
-      },
-      {
-          "locationId": "strandtuin",
-          "title": "Strandtuin Weltevree",
-          "abbr": "StWe",
+          "locationId": "kerk",
+          "title": "Kerk",
+          "abbr": "Kerk",
           "icon": ""
       },
       {
           "locationId": "voetbalkooi",
           "title": "Voetbalkooi",
-          "abbr": "VoKo",
+          "abbr": "<em>Voetbal kooi</em>",
           "icon": ""
       },
       {
           "locationId": "dorpsstraat",
           "title": "Dorpsstraat",
-          "abbr": "DoSt",
+          "abbr": "<em>Dorps<br>straat</em>",
           "icon": ""
-      }
+      },
+      {
+          "locationId": "podium-vlieland",
+          "title": "Podium Vlieland",
+          "abbr": "Podium<br><small>Vlieland</em>",
+          "icon": ""
+      },
+      {
+          "locationId": "strandtuin",
+          "title": "Strandtuin Weltevree",
+          "abbr": "<em>Strand<br>tuin</em>",
+          "icon": ""
+      },
     ]
 
   });

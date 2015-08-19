@@ -66,20 +66,46 @@
         position: absolute;
         top: 20px;
         z-index: 10;
-        width: 60px;
+        width: 70px;
     }
     .locations .location {
         background-color: #fff;
-        height: 60px;
-        width: 60px;
-        line-height: 60px;
+        height: 56px;
+        width: 70px;
+        text-transform: uppercase;
+        font-size: 19px;
+        line-height: 21px;
         font-family: $font;
-        font-size: 24px;
-        text-align: center;
+        text-align: right;
         font-weight: bold;
-        color: #233033;
+        color: #333;
+        padding: 6px 2px 0 0;
         border-top: 1px solid #eceef1;
         border-right: 2px solid #eceef1;
+    }
+
+    .locations .location small {
+        font-size: 82%;
+        color: #333;
+    }
+
+    .locations .location em {
+        font-size: 14px;
+        line-height: 14px;
+        display: inline-block;
+        color: #333;
+        font-style: normal;
+    }
+
+    .locations .location.voetbalkooi,
+    .locations .location.dorpsstraat,
+    .locations .location.strandtuin  {
+        padding-top: 4px;
+        height: 36px;
+    }
+
+    .locations .location.kerk  {
+        padding-top: 17px;
     }
 
 }
@@ -95,7 +121,7 @@
         text-align: right;
         font-family: $font;
         font-size: 0.8em;
-        color: #999;
+        color: desaturate(darken($itgwo-bg, 60), 30);
     }
 
     .timeLayer .time {
@@ -109,7 +135,7 @@
 
     .row {
         position: relative;
-        height: 60px;
+        height: 56px;
         width: 100%;
     }
 
@@ -124,10 +150,12 @@
     .row .hour {
         display: inline-block;
         vertical-align: middle;
-        border-right: 1px solid #dfdfdf;
+        border-right: 1px solid desaturate(darken($itgwo-bg, 30), 30);
         height: 100%;
         text-align: right;
     }
+
+
 
     .layer {
         position: absolute;
@@ -138,7 +166,7 @@
     }
 
     .act {
-        border-radius: 4px;
+        border-radius: 1px;
         display: inline-block;
         vertical-align: middle;
         position: absolute;
@@ -149,18 +177,18 @@
         border-collapse: collapse;
         line-height: 52px;
         cursor: pointer;
-        border: 1px solid darken($blok-bands, 10);
+        border: 1px solid darken($blok-bands, 5);
     }
 
     .dj {
         background-color: $blok-dj;
-        border: 1px solid darken($blok-dj, 10);
+        border: 1px solid darken($blok-dj, 5);
     }
 
 
     .kunst {
         background-color: $blok-kunst;
-        border: 1px solid darken($blok-kunst, 10);
+        border: 1px solid darken($blok-kunst, 5);
     }
 
     .act-de-staat-1 {
@@ -205,6 +233,21 @@
 
     .act.favorite:hover {
         background-color: #F071A6;
+    }
+
+    .row.voetbalkooi,
+    .row.dorpsstraat,
+    .row.strandtuin,
+    .row.voetbalkooi .act,
+    .row.dorpsstraat .act,
+    .row.strandtuin .act  {
+        height: 36px;
+    }
+
+    .row.voetbalkooi .act .spanText,
+    .row.dorpsstraat .act .spanText,
+    .row.strandtuin .act .spanText  {
+        margin-top: -21px;
     }
 
 }

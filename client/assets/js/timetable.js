@@ -102,7 +102,7 @@ var timetable = function(utils){
     var root, container, scrollcontainer, locations, blocks, nav, popup = null;
     // var data = null;
     var modificationDate = null;
-    var currentDay = 1;
+    var currentDay = 4;
     var options = {
         width: 180 // width of 1 hour
     };
@@ -227,6 +227,7 @@ var timetable = function(utils){
                 row.css({
                     width: totalWidth + size.hour
                 });
+                row.addClass(locData.locationId);
 
                 // these layers will be on top of each other
                 backgroundLayer = $('<div class="layer"></div>');
@@ -296,6 +297,7 @@ var timetable = function(utils){
                 location.attr({
                     title : locData.title
                 });
+                location.addClass(locData.locationId);
 
                 if (actsOnLocation.length) {
                     // Er zijn acts. Toon ze..
@@ -307,7 +309,7 @@ var timetable = function(utils){
             }
 
             // Make sure the #timetable container is tall enough.
-            var height = 70 + (60 * $(".locations .location").length);
+            var height = 70 + (56 * $(".locations .location").length);
             $("#timetable").css('height', height + 'px');
 
             blocks.fadeIn(400);
@@ -337,7 +339,7 @@ var timetable = function(utils){
     }
 
     function getDay(){
-        return root.attr('data-day') || 1;
+        return root.attr('data-day') || currentDay;
     }
 
     function getDayLabel(day){
