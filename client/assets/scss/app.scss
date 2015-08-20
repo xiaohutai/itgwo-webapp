@@ -206,10 +206,6 @@ h1.logo {
     text-align: center;
 }
 
-
-
-
-
 .page-home .content-berichten {
 
     margin-bottom: 2px;
@@ -258,12 +254,13 @@ body.plattegrond .grid-block {
 
 // --[ Bericht item ]--------------------------------------------------------------
 
-.body.ng-binding {
+.page-bericht {
 
     p {
 
         a {
             text-decoration: underline;
+            color: #000;
         }
 
     }

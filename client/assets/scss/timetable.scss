@@ -69,17 +69,17 @@
         width: 70px;
     }
     .locations .location {
-        background-color: #fff;
+        background-color: #fef0ba;
         height: 56px;
         width: 70px;
         text-transform: uppercase;
-        font-size: 19px;
-        line-height: 21px;
+        font-size: 17px;
+        line-height: 19px;
         font-family: $font;
         text-align: right;
         font-weight: bold;
         color: #333;
-        padding: 6px 2px 0 0;
+        padding: 6px 4px 0 0;
         border-top: 1px solid #eceef1;
         border-right: 2px solid #eceef1;
     }
@@ -177,23 +177,18 @@
         border-collapse: collapse;
         line-height: 52px;
         cursor: pointer;
-        border: 1px solid darken($blok-bands, 5);
+        border: 1px solid darken($blok-bands, 2);
     }
 
     .dj {
         background-color: $blok-dj;
-        border: 1px solid darken($blok-dj, 5);
+        border: 1px solid darken($blok-dj, 2);
     }
 
 
     .kunst {
         background-color: $blok-kunst;
-        border: 1px solid darken($blok-kunst, 5);
-    }
-
-    .act-de-staat-1 {
-        transform: rotate(-3deg);
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        border: 1px solid darken($blok-kunst, 2);
     }
 
     .act-meindert-talma {
@@ -201,7 +196,7 @@
     }
 
     .act:hover {
-        background-color: #9ad7e3;
+        background-color: darken($blok-bands, 4);
     }
 
     .act .spanText {
