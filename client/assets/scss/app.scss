@@ -239,6 +239,30 @@ h1.logo {
 
 }
 
+.beta {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    z-index: 100;
+    width: 76px;
+    height: 42px;
+    padding-top: 3px;
+    text-align: center;
+    border: 1px solid desaturate(darken($itgwo-bg, 40), 20);
+    background-color: darken($itgwo-bg, 10);
+    transform: rotate(6deg);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+
+    a {
+        display: inline-block;
+        font-size: 0.75rem;
+        line-height: 1.1rem;
+        font-family: $font !important;
+        text-transform: uppercase;
+    }
+
+}
+
 
 // --[ Plattegrond ] ---------------
 

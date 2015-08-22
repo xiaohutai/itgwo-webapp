@@ -12,7 +12,7 @@ var utils = function(){
 
     function loadData(callback){
 
-        if (localStorage.getItem('speeltijden')) {
+        if (0 && localStorage.getItem('speeltijden')) {
             data = JSON.parse(localStorage.getItem('speeltijden'));
             console.log('speeltijden uit cache.');
             callback(data, 'success');
@@ -102,12 +102,15 @@ var timetable = function(utils){
     var root, container, scrollcontainer, locations, blocks, nav, popup = null;
     // var data = null;
     var modificationDate = null;
-    var currentDay = 4;
+    var currentDay = new Date().getDay() - 3;
     var options = {
         width: 180 // width of 1 hour
     };
 
     var config = null
+
+    console.log('current day: ', currentDay);
+
 
 
     var dragging = false;
@@ -216,6 +219,7 @@ var timetable = function(utils){
             }
             blocks.append( timeLayer );
 
+
             locations.html('');
 
             // loop over all locations
@@ -311,6 +315,22 @@ var timetable = function(utils){
             // Make sure the #timetable container is tall enough.
             var height = 70 + (56 * $(".locations .location").length);
             $("#timetable").css('height', height + 'px');
+
+            // Show the "current time", perhaps? (on the day itself, and 'after midnight' on the previous day)
+            if (currentDay == (new Date().getDay() - 4) || currentDay == (new Date().getDay() - 3)) {
+                var nowDiv =  $('<div class="now"></div>');
+                var startTime = new Date();
+                var left = ( (startTime - dayStartTime) / 60000 ) + (14 * 24 * 60);
+                console.log('starttijd: ' , startTime, dayStartTime, left);
+
+                if (left > 0 && left < 1200) {
+                    nowDiv.css({
+                        left: left * size.minute,
+                    });
+                }
+            }
+            blocks.append(nowDiv);
+
 
             blocks.fadeIn(400);
         });
