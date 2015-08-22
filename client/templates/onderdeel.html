@@ -12,7 +12,6 @@ title: Programmaonderdeel
         <div class="grid-headerimage">
             <article>
                 <img ng-src="{{ onderdeel.image.thumbnail }}">
-
             </article>
         </div>
 
@@ -21,9 +20,16 @@ title: Programmaonderdeel
 
             <div class="grid-content main">
                 <header class="special-header">
-                    <h1>{{ onderdeel.name }}</h1>
+                    <h1>{{ onderdeel.name }} - {{ onderdeel.id }} </h1>
                     <!-- <h2 ng-if="onderdeel.subtitle != ''">{{ onderdeel.subtitle }}</h2> -->
+
                 </header>
+
+                <p>
+                <span ng-repeat="speeltijd in speeltijden" ng-if="speeltijd.attributes.programmaonderdelen == onderdeel.id">
+                    <i class="fa fa-clock-o"></i> {{ speeltijd.attributes.starttijd | date : 'EEEE H:mm' }} - {{ speeltijd.attributes.speellokatie }}<br>
+                </span>
+                </p>
 
                 <div ng-bind-html='onderdeel.description'>
                 </div>
