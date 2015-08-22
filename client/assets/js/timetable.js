@@ -335,8 +335,8 @@ var timetable = function(utils){
                         left: left * size.minute,
                     });
                 }
+                blocks.append(nowDiv);
             }
-            blocks.append(nowDiv);
 
 
             blocks.fadeIn(400);
