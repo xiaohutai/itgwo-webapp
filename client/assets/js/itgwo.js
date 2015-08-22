@@ -13,7 +13,7 @@
     },
 
     app: {
-      version: '0.3α'
+      version: '0.3.1 β'
     },
 
     api: {
@@ -27,14 +27,14 @@
           "name": "Donderdag",
           "shortname": "Don",
           "starttime": "2015-09-03T17:00:00+02:00",
-          "endtime": "2015-09-04T04:00:00+02:00"
+          "endtime": "2015-09-04T03:00:00+02:00"
       },
       {
           "day": 2,
           "date": "2015-09-04",
           "name": "Vrijdag",
           "shortname": "Vrij",
-          "starttime": "2015-09-04T12:00:00+02:00",
+          "starttime": "2015-09-04T09:00:00+02:00",
           "endtime": "2015-09-05T03:00:00+02:00"
       },
       {
@@ -43,7 +43,7 @@
           "name": "Zaterdag",
           "shortname": "Zat",
           "starttime": "2015-09-05T09:00:00+02:00",
-          "endtime": "2015-09-06T01:00:00+02:00"
+          "endtime": "2015-09-06T03:00:00+02:00"
       },
       {
           "day": 4,
