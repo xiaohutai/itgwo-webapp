@@ -18,8 +18,10 @@ title: Programma
 
         <!-- grid for navigation -->
         <div class="grid-block small-up-2 medium-up-3 large-up-3">
-            <div class="grid-content content-act {{ speeltijd.attributes.starttijd | date : 'EEE' }}" ng-repeat="speeltijd in speeltijden"
-            ng-if="filter == (speeltijd.attributes.starttijd | date : 'EEE') || filter == 'alle'">
+            <div class="grid-content content-act {{ speeltijd.attributes.starttijd | date : 'EEE' }}"
+            ng-repeat="speeltijd in speeltijden"
+            ng-if="(filter == (speeltijd.attributes.starttijd | date : 'EEE') || filter == 'alle')
+                && (speeltijd.attributes.programmaonderdelen != 0)">
 
                 <a ui-sref="onderdeel({ id: speeltijd.attributes.programmaonderdelen })">
                     <article class="thema thema-{{ speeltijd.id }}" style="background: url({{ speeltijd.attributes.image.thumbnail }}); background-size: 100%;">
@@ -28,7 +30,7 @@ title: Programma
                     <div class="caption">
                         <!-- <img src="{{ bericht.attributes.image.thumbnail }}" width="100" height="100"> -->
                         <h2><i class="fa fa-clock-o"></i> {{ speeltijd.attributes.starttijd | date : 'EEE H:mm' }} - {{ speeltijd.attributes.speellokatie }}</h2>
-                        <h1 class="">{{ speeltijd.attributes.title }}</h1>
+                        <h1 class="">{{ speeltijd.attributes.title }} - {{ speeltijd.id }}</h1>
                     </div>
                     </article>
                 </a>

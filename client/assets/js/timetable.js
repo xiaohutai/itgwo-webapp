@@ -265,11 +265,18 @@ var timetable = function(utils){
                         width: ( (endTime - startTime) / 60000 ) * size.minute
                     });
                     act.attr({
-                        'data-programmaonderdelen' :  actData.programmaonderdelen,
                         'title' : actData.title,
-                        'href' : '#!/onderdeel/' + actData.programmaonderdelen,
-                        'ui-sref': "onderdeel({ id: " + actData.programmaonderdelen + " })"
                     });
+
+                    if (actData.programmaonderdelen != 0) {
+                        act.attr({
+                            'data-programmaonderdelen' :  actData.programmaonderdelen,
+                            'href' : '#!/onderdeel/' + actData.programmaonderdelen,
+                            'ui-sref': "onderdeel({ id: " + actData.programmaonderdelen + " })"
+                        });
+                    }
+
+
                     // act.click(onShowProgramItem);
 
                     // we pack the name of the act in yet another div, for alignment
