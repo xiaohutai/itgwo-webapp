@@ -7,7 +7,14 @@
     '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
     function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
 
-      $scope.filter = "vr";
+      var today = new Date().getDay() - 3;
+      var days = {1: 'do', 2: 'vr', 3: 'za', 4: 'zo' }
+
+      if (today >= 1 && today <= 4) {
+        $scope.filter = days[today];
+      } else {
+        $scope.filter = "alle";
+      }
 
       if ($state.params.id) {
 
