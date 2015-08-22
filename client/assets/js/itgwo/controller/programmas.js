@@ -25,7 +25,7 @@
           $scope.onderdeel = result.data.data.attributes;
           // Larger image..
           $scope.onderdeel.image.thumbnail = $scope.onderdeel.image.thumbnail.replace('240x240', '752x564');
-
+          $scope.onderdeel.id = result.data.data.id;
           $rootScope.title = result.data.data.attributes.name;
         })
         .catch(function(e) {
@@ -55,7 +55,7 @@
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
       // Haal de versie uit localstorage op.
-      $scope.berichten = itgwoServiceLocalstorage.getData('speeltijden');
+      $scope.speeltijden = itgwoServiceLocalstorage.getData('speeltijden');
 
     }
 
