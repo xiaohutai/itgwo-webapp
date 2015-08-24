@@ -14,6 +14,11 @@ title: Debug
             <div class="grid-content main">
                 <p>Welkom op het supergeheime debug scherm! Whooo, spoooky!</p>
 
+                <ul>
+                <li>Berichten: {{ 0 + berichten.length }} items - bijgewerkt: {{ berichten_timestamp | date : 'EEEE H:mm'  }}.</li>
+                <li>Speeltijden: {{ 0 + speeltijden.length }} items - bijgewerkt: {{ speeltijden_timestamp | date : 'EEEE H:mm'  }}.</li>
+                <li>Onderdelen: {{ 0 + onderdelen.length }} items - bijgewerkt: {{ onderdelen_timestamp | date : 'EEEE H:mm'  }}.</li>
+
 <textarea class='debuglog'>
 {{ debuglog }}
 </textarea>

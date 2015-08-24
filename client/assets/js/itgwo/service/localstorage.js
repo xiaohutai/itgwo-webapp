@@ -17,6 +17,7 @@
         this.addLog("LocalStorage Store " + key);
 
         localStorage.setItem(key, value);
+        localStorage.setItem(key + '_timestamp', new Date());
 
       }
 
@@ -24,6 +25,7 @@
 
         if (localStorage.getItem(key)) {
           var value = JSON.parse(localStorage.getItem(key));
+          $rootScope[key + '_timestamp'] = new Date(localStorage.getItem(key + '_timestamp'));
           this.addLog("LocalStorage Get HIT " + key);
           return value;
         } else {

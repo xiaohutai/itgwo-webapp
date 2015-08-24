@@ -13,6 +13,10 @@
 
       itgwoServiceLocalstorage.getData('test');
 
+      $scope.berichten = itgwoServiceLocalstorage.getData('berichten');
+      $scope.speeltijden = itgwoServiceLocalstorage.getData('speeltijden');
+      $scope.onderdelen = itgwoServiceLocalstorage.getData('onderdelen');
+
     }
   ]);
 
