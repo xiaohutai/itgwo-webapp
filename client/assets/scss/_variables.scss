@@ -7,12 +7,12 @@ $menu-active: rgb(255, 235, 160);
 $fa-font-path:        "../fonts";
 $font: 'Roboto Condensed', sans-serif;
 
-$blok-bands: rgb(20, 96, 124);
-$blok-dj: lighten(desaturate($blok-bands, 12), 12);
+$blok-bands: rgb(20, 106, 184);
+$blok-dj: lighten(desaturate($blok-bands, 15), 15);
 $blok-tussen-dj: desaturate(lighten($blok-bands, 38), 33);
 
-$blok-kunst: desaturate(lighten($blok-bands, 30), 50);
-$blok-film: lighten(rgb(77, 114, 110), 20); // desaturate(lighten($blok-bands, 50), 60);
+$blok-kunst: lighten(rgb(244, 110, 130), 8);  // desaturate(lighten($blok-bands, 30), 50);
+$blok-film: lighten(rgb(77, 114, 110), 15); // desaturate(lighten($blok-bands, 50), 60);
 $blok-anders: desaturate(lighten($blok-film, 20), 5);
 
 // #fe6c78

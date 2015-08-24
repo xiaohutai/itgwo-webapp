@@ -102,16 +102,22 @@ var timetable = function(utils){
     var root, container, scrollcontainer, locations, blocks, nav, popup = null;
     // var data = null;
     var modificationDate = null;
-    var currentDay = new Date().getDay() - 3;
+    var currentDay = new Date("2015-08-24 12:00:00").getDay() - 3;
     var options = {
         width: 180 // width of 1 hour
     };
 
     var config = null
 
+    if (currentDay == -3) {
+        // zondag..
+        currentDay = 4;
+    } else if (currentDay < 1) {
+        // terugvallen op donderdag..
+        currentDay = 1;
+    }
+
     console.log('current day: ', currentDay);
-
-
 
     var dragging = false;
     var mql = null;
