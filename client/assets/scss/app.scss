@@ -75,7 +75,8 @@
         text-transform: uppercase;
     }
 
-    li.is-active > a {
+    li.is-active > a,
+    li > a:hover {
         background-color: $menu-active;
     }
 
