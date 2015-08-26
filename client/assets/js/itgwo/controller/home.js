@@ -20,6 +20,15 @@
         itgwoServiceNotification.notification(e.data);
       });
 
+      // --[ fetch speeltijden. We kunnen ze maar vast hebben ]--------------------------
+      $http
+      .get(config.api.url + 'speeltijden?' + jQuery.param({ 'page[size]': 1000, 'sort': 'title' }), { cache: true })
+      .then(function(result){
+        itgwoServiceLocalstorage.addLog('HTTP pre-Get speeltijden');
+        itgwoServiceLocalstorage.storeData('speeltijden', result.data.data);
+      });
+
+
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
