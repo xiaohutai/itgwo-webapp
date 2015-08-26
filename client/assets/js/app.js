@@ -52,7 +52,8 @@ window.addEventListener('load', function(e) {
     if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
       // Browser downloaded a new app cache.
       if (confirm('Een nieuwe versie van deze webapp is beschikbaar. Wil je updaten?')) {
-        window.location.reload();
+        // window.location.reload();
+        window.location.href = '/';
       }
     } else {
       // Manifest didn't changed. Nothing new to server.

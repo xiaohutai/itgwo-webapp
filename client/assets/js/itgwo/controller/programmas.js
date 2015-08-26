@@ -7,7 +7,8 @@
     '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
     function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
 
-      var today = new Date().getDay() - 3;
+      var date = new Date();
+      var today = date.getDay() - 3;
       var days = {1: 'do', 2: 'vr', 3: 'za', 4: 'zo' }
 
       if (today >= 1 && today <= 4) {

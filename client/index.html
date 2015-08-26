@@ -21,8 +21,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-title" content="ITGWO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   </head>
   <body zf-esc-close class="{{$state.current.name}}">
+
+  <!-- deze wrapper is ervoor om te voorkomen dat je "uit beeld kunt swipen" -->
+  <div id="wrapper" style="overflow: hidden">
 
     <zf-notification-set id="notifications" position="top-left">
     </zf-notification-set>
@@ -98,6 +102,8 @@
   <!-- Piwik -->
   <ngp-piwik ngp-set-js-url="http://stats.twokings.nl/piwik.js" ngp-set-tracker-url="http://stats.twokings.nl/piwik.php" ngp-set-site-id="6"> </ngp-piwik>
   <!-- End Piwik Code -->
+
+</div>
 
   </body>
 </html>
