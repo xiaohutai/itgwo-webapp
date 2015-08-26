@@ -5,6 +5,17 @@
 @import "font-awesome.scss";
 @import "addtohomescreen.scss";
 
+// Font
+
+@font-face {
+    font-family: 'roboto_condensedregular';
+    src: url('../fonts/robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('../fonts/robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 // --[ off-canvas exit overlay ]------------------------------------------------
 // Functionality inspired from Foundation 5. Shows when opening the off-canvas
 // menu. User is then always forced to close it. Also easier to hit than the
