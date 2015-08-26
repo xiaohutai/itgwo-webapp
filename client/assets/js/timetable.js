@@ -102,7 +102,8 @@ var timetable = function(utils){
     var root, container, scrollcontainer, locations, blocks, nav, popup = null;
     // var data = null;
     var modificationDate = null;
-    var currentDay = new Date("2015-08-24 12:00:00").getDay() - 3;
+    var date = new Date()
+    var currentDay = date.getDay() - 3;
     var options = {
         width: 180 // width of 1 hour
     };
@@ -117,7 +118,7 @@ var timetable = function(utils){
         currentDay = 1;
     }
 
-    console.log('current day: ', currentDay);
+    console.log('current day is: ', currentDay);
 
     var dragging = false;
     var mql = null;
