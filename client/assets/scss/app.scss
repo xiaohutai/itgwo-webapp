@@ -255,7 +255,7 @@ h1.logo {
     position: absolute;
     right: 5px;
     top: 7px;
-    z-index: 100;
+    z-index: 200;
     width: 76px;
     height: 42px;
     padding-top: 3px;
@@ -284,6 +284,47 @@ body.plattegrond .grid-block {
 
     .panzoom-parent {
         width: 100%;
+    }
+
+}
+
+a.legenda-button {
+    position: absolute;
+    width: 94px;
+    height: 34px;
+    right: 2px;
+    top: 18px;
+    z-index: 90;
+    background: rgba(0,0,0,.4);
+    padding: 9px 4px 0;
+}
+
+#legendaPanel {
+
+    a {
+        font-size: 1rem;
+    }
+
+    div {
+        padding: 40px 6px 4px 12px;
+
+        ol li {
+            font-size: 0.85rem;
+            line-height: 1.1rem;
+        }
+
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    ol {
+        margin-left: 27px;
     }
 
 }
