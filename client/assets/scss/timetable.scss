@@ -213,6 +213,14 @@
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
+    .heart {
+        position: absolute;
+        right: 3px;
+        top: -16px;
+        color: #F66;
+        transform: rotate(8deg);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
 
     .dj {
         background-color: $blok-dj;

@@ -103,7 +103,7 @@ var timetable = function(utils){
     // var data = null;
     var modificationDate = null;
     var date = new Date()
-    var currentDay = date.getDay() - 3;
+    var currentDay = 3; // date.getDay() - 3;
     var options = {
         width: 180 // width of 1 hour
     };
@@ -303,6 +303,11 @@ var timetable = function(utils){
 
                     // Voeg de slug als extra class toe.
                     act.addClass('act-' + actData.slug);
+
+                    if (actData.slug == "torres" || actData.slug == "sophia" || actData.slug == "kenny-b") {
+                        var heart = $('<span class="heart"><i class="fa fa-heart"></i></span>');
+                        act.append( heart );
+                    }
 
                     act.append( name );
                     actsLayer.append( act );
