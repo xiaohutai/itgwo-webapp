@@ -11,40 +11,13 @@
 
       this.storeData = function(key, value) {
 
-        // Stringify the data..
-        value = JSON.stringify(value);
-
-        this.addLog("LocalStorage Store " + key);
-
-        localStorage.setItem(key, value);
-        localStorage.setItem(key + '_timestamp', new Date());
-
       }
 
       this.getData = function(key) {
 
-        if (localStorage.getItem(key)) {
-          var value = JSON.parse(localStorage.getItem(key));
-          $rootScope[key + '_timestamp'] = new Date(localStorage.getItem(key + '_timestamp'));
-          this.addLog("LocalStorage Get HIT " + key);
-          return value;
-        } else {
-          this.addLog("LocalStorage Get MISS " + key);
-          return false;
-        }
-
       }
 
-
       this.addLog = function(line) {
-
-        var time = Date.create().format('{yy}-{MM}-{dd} {HH}:{mm}:{ss}');
-        var line = "[" + time + "] " + line + "\n";
-
-        globalDebugLog += line;
-
-        $rootScope.debuglog = globalDebugLog;
-        console.log(line);
 
       }
 

@@ -43,6 +43,26 @@
         return input;
       };
 
+
+      $scope.findOnderdeel = function(id, onderdelen) {
+
+        console.log('findOnderdeel');
+
+        for (var i = 0; i <= onderdelen.length; i += 1) {
+          // console.log(onderdelen[i]);
+          if (onderdelen[i]['id'] == id) {
+            var onderdeel = onderdelen[i].attributes;
+
+            // Larger image..
+            onderdeel.image.thumbnail = onderdeel.image.thumbnail.replace('240x240', '752x564');
+            onderdeel['uid'] = onderdelen[i]['id'];
+
+            return onderdeel;
+          }
+        }
+
+      };
+
       return $scope;
 
     }

@@ -21,34 +21,32 @@
 
         // --[ fetch single programma ]-----------------------------------------
         $http
-        .get(config.api.url + 'programmaonderdelen/' + $state.params.id, { cache: true })
+        .get(config.api.url + 'programmaonderdelen?' + jQuery.param({ 'page[size]': 1000, 'sort': 'name' }), { cache: true })
         .then(function(result){
-          $scope.onderdeel = result.data.data.attributes;
-          // Larger image..
-          $scope.onderdeel.image.thumbnail = $scope.onderdeel.image.thumbnail.replace('240x240', '752x564');
-          $scope.onderdeel.id = result.data.data.id;
-          $rootScope.title = result.data.data.attributes.name;
-        })
-        .catch(function(e) {
-          itgwoServiceNotification.notification(e.data);
+          localforage.setItem('onderdelen', result.data.data).then(function(value) {
+            console.log('localForage set onderdelen:', value.length);
+            localforage.setItem('onderdelen_timestamp', new Date());
+          });
+          $scope.onderdeel = $scope.findOnderdeel($state.params.id, result.data.data);
+          $rootScope.title = $scope.onderdeel.name;
         });
 
       } else {
 
-        // --[ fetch programmas ]-----------------------------------------------
+        // --[ fetch speeltijden ]-----------------------------------------------
 
         // update bolt_speeltijden AS s SET s.image = (select p.image from bolt_programmaonderdelen as p where p.id = s.programmaonderdelen)
 
         $http
         .get(config.api.url + 'speeltijden?' + jQuery.param({ 'page[size]': 1000, 'sort': 'title' }), { cache: true })
         .then(function(result){
-          itgwoServiceLocalstorage.addLog('HTTP Get speeltijden');
           $scope.speeltijden = result.data.data;
-          itgwoServiceLocalstorage.storeData('speeltijden', $scope.speeltijden);
-        })
-        .catch(function(e) {
-          itgwoServiceNotification.notification(e.data);
+          localforage.setItem('speeltijden', result.data.data).then(function(value) {
+            console.log('localForage set speeltijden:', value.length);
+            localforage.setItem('speeltijden_timestamp', new Date());
+          });
         });
+
 
       }
 
@@ -56,7 +54,20 @@
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
       // Haal de versie uit localstorage op.
-      $scope.speeltijden = itgwoServiceLocalstorage.getData('speeltijden');
+      localforage.getItem('speeltijden').then(function(value) {
+        console.log('localForage get speeltijden:', value.length)
+        $scope.speeltijden = value;
+        $scope.$apply();
+      });
+
+      if ($state.params.id) {
+        localforage.getItem('onderdelen').then(function(value) {
+          console.log('localForage get onderdelen:', value.length)
+          $scope.onderdeel = $scope.findOnderdeel($state.params.id, value);
+          $rootScope.title = $scope.onderdeel.name;
+          $scope.$apply();
+        });
+      }
 
     }
 

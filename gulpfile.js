@@ -50,7 +50,8 @@ var paths = {
     // 'bower_components/angular-i18n/angular-locale_en-gb.js',
     'bower_components/angular-i18n/angular-locale_nl-nl.js', // determine what the best way is to dynamically load locales files.
     '!bower_components/foundation-apps/js/angular/app.js',
-    'bower_components/angular-piwik/angular-piwik.js'
+    'bower_components/angular-piwik/angular-piwik.js',
+    'bower_components/localforage/dist/localforage.min.js'
   ],
   // These files are for your app's JavaScript
   appJS: [

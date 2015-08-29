@@ -12,27 +12,36 @@
       $http
       .get(config.api.url + 'berichten?' + jQuery.param({ 'page[size]': 10 }), { cache: true })
       .then(function(result){
-        itgwoServiceLocalstorage.addLog('HTTP Get berichten');
         $scope.berichten = result.data.data;
-        itgwoServiceLocalstorage.storeData('berichten', $scope.berichten);
-      })
-      .catch(function(e) {
-        itgwoServiceNotification.notification(e.data);
+        localforage.setItem('berichten', result.data.data).then(function(value) {
+          console.log('localForage set berichten:', value.length);
+          localforage.setItem('berichten_timestamp', new Date());
+        });
+      // })
+      // .catch(function(e) {
+      //   itgwoServiceNotification.notification(e.data);
       });
 
       // --[ fetch speeltijden. We kunnen ze maar vast hebben ]--------------------------
       $http
       .get(config.api.url + 'speeltijden?' + jQuery.param({ 'page[size]': 1000, 'sort': 'title' }), { cache: true })
       .then(function(result){
-        itgwoServiceLocalstorage.addLog('HTTP pre-Get speeltijden');
-        itgwoServiceLocalstorage.storeData('speeltijden', result.data.data);
+        localforage.setItem('speeltijden', result.data.data).then(function(value) {
+          console.log('localForage set speeltijden:', value.length);
+          localforage.setItem('speeltijden_timestamp', new Date());
+        });
       });
 
 
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
-      $scope.berichten = itgwoServiceLocalstorage.getData('berichten');
+      localforage.getItem('berichten').then(function(value) {
+        console.log('localForage get berichten:', value.length)
+        $scope.berichten = value;
+        $scope.$apply();
+      });
+
 
 
     }
