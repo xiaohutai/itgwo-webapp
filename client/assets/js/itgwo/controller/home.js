@@ -32,6 +32,16 @@
         });
       });
 
+      // --[ fetch programmaonderdelen. We kunnen ze maar vast hebben ]--------------------------
+      $http
+      .get(config.api.url + 'programmaonderdelen?' + jQuery.param({ 'page[size]': 1000, 'sort': 'name' }), { cache: true })
+      .then(function(result){
+        localforage.setItem('onderdelen', result.data.data).then(function(value) {
+          console.log('localForage set onderdelen:', value.length);
+          localforage.setItem('onderdelen_timestamp', new Date());
+        });
+      });
+
 
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
