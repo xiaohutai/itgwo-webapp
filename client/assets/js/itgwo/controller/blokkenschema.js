@@ -7,11 +7,20 @@
     '$scope', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification',
     function ($scope, $controller, $state, $http, $rootScope, config, itgwoServiceNotification) {
 
-      // Toon het blokkenschema
-      timetable.init(config);
-
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
+
+
+      // Toon het blokkenschema
+
+      localforage.getItem('favs').then(function(favs) {
+        if (favs == null) {
+          favs = [];
+        }
+        timetable.init(config, favs);
+      });
+
+
     }
   ]);
 

@@ -12,6 +12,16 @@ title: Programmaonderdeel
         <div class="grid-headerimage">
             <article>
                 <img ng-src="{{ onderdeel.image.thumbnail }}">
+                    <span ng-if="favs[onderdeel.uid]">
+                        <a href="#" ng-click="removeFavorite(onderdeel.uid)" class="heart-fav">
+                            <i class="fa fa-heart"></i>
+                        </a>
+                    </span>
+                    <span ng-if="!favs[onderdeel.uid]">
+                        <a href="#" ng-click="addFavorite(onderdeel.uid, onderdeel.name)" class="heart-no-fav">
+                            <i class="fa fa-heart-o"></i>
+                        </a>
+                    </span>
             </article>
         </div>
 

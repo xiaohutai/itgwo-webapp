@@ -60,6 +60,13 @@
         $scope.$apply();
       });
 
+      localforage.getItem('favs').then(function(value) {
+        console.log('localForage get favs:', value.length)
+        $scope.favs = value;
+        $scope.$apply();
+      });
+
+
       if ($state.params.id) {
         localforage.getItem('onderdelen').then(function(value) {
           console.log('localForage get onderdelen:', value.length)

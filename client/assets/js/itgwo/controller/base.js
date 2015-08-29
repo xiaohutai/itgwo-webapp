@@ -63,6 +63,46 @@
 
       };
 
+
+      $scope.addFavorite = function(id, name) {
+
+        localforage.getItem('favs').then(function(favs) {
+          if (favs == null) {
+            favs = [];
+          }
+          favs[id] = name;
+          localforage.setItem('favs', favs).then(function(value) {
+            console.log('favorite added:', id, name);
+            $scope.favs = value;
+            $scope.$apply();
+          });
+        });
+
+      };
+
+      $scope.removeFavorite = function(id) {
+        localforage.getItem('favs').then(function(favs) {
+          if (favs == null) {
+            favs = [];
+          }
+          delete favs[id];
+          localforage.setItem('favs', favs).then(function(value) {
+            console.log('favorite removed:', id);
+            $scope.favs = value;
+            $scope.$apply();
+          });
+        });
+      };
+
+      $scope.randomRotate = function(seed) {
+        var x = Math.sin(seed) * 10000;
+        x = x - Math.floor(x);
+
+        // console.log(x-0.5, Math.pow((9 * x - 4.5), 2));
+        return Math.pow((9 * x - 4.5), 2);
+
+      };
+
       return $scope;
 
     }

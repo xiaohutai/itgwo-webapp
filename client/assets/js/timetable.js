@@ -3,66 +3,6 @@
  * and is used with permission. Modifications for ITGWO, by Bob den Otter - bob@twokings.nl
  */
 
-var utils = function(){
-
-    // var dataUrl = '/blokkenschema/program.json';
-    var dataUrl = 'http://programma.greatwideopen.nl/json/speeltijden?page[size]=400';
-    //var dataUrl = 'program.json';
-    var data = null;
-
-    function loadData(callback){
-
-        if (0 && localStorage.getItem('speeltijden')) {
-            data = JSON.parse(localStorage.getItem('speeltijden'));
-            console.log('speeltijden uit cache.');
-            callback(data, 'success');
-        } else {
-            $.getJSON(dataUrl, null, function(json, status){
-                data = json.data;
-
-                // Store data in localStorage..
-                if (status == 'success') {
-                    localStorage.setItem('speeltijden', JSON.stringify(data));
-                }
-
-                console.log('speeltijden opgehaald.');
-
-                // Callback..
-                callback(data, status);
-
-            });
-        }
-    }
-
-
-    function getProgram(day, config){
-        day = day || currentDay;
-
-        var program = [];
-
-        for (i=0; i < data.length; i++) {
-            if (data[i].attributes.starttijd) {
-
-                start = new Date( Date.parse(data[i].attributes.starttijd) );
-                lower = new Date( Date.parse(config.dates[day-1].starttime) );
-                upper = new Date( Date.parse(config.dates[day-1].endtime) );
-                if (lower < start && start < upper  ) {
-                    program.push(data[i].attributes);
-                }
-            }
-        }
-
-        return program;
-
-    }
-
-    return {
-        loadData : loadData,
-        getProgram : getProgram
-    }
-
-}();
-
 
 function Finder(){}
 
@@ -97,18 +37,25 @@ Finder.findBy = function (data, prop, val){
 
 
 
-var timetable = function(utils){
+var timetable = function(){
 
     var root, container, scrollcontainer, locations, blocks, nav, popup = null;
     // var data = null;
     var modificationDate = null;
     var date = new Date()
-    var currentDay = 3; // date.getDay() - 3;
+    var currentDay = date.getDay() - 3;
     var options = {
         width: 180 // width of 1 hour
     };
 
-    var config = null
+
+
+    // var dataUrl = '/blokkenschema/program.json';
+    var dataUrl = 'http://programma.greatwideopen.nl/json/speeltijden?page[size]=400';
+    //var dataUrl = 'program.json';
+    var data = null;
+    var config = null;
+    var favs = null;
 
     if (currentDay == -3) {
         // zondag..
@@ -123,9 +70,10 @@ var timetable = function(utils){
     var dragging = false;
     var mql = null;
 
-    function init(gwoconfig){
+    function init(gwoconfig, gwofavs){
 
         config = gwoconfig;
+        favs = gwofavs;
 
         // build up the necessary divs & blocks
         nav = $('<div class="navigation"></div>'); // will hold the days of the week
@@ -151,7 +99,37 @@ var timetable = function(utils){
             mql.addListener( onMediaQuery );
         }
 
-        utils.loadData(onLoadDataResult);
+        localforage.getItem('speeltijden').then(function(value) {
+            if (value == undefined) {
+                loadData(onLoadDataResult);
+            } else {
+                data = value;
+                console.log('localForage get speeltijden:', value.length);
+                onLoadDataResult(value, 'success');
+            }
+        });
+
+
+    }
+
+
+    function loadData(callback){
+
+        $.getJSON(dataUrl, null, function(json, status){
+            data = json.data;
+
+            // Store data in localStorage..
+            if (status == 'success') {
+                localStorage.setItem('speeltijden', JSON.stringify(data));
+            }
+
+            console.log('speeltijden opgehaald.');
+
+            // Callback..
+            callback(data, status);
+
+        });
+
     }
 
     function onLoadDataResult(data, status){
@@ -163,6 +141,28 @@ var timetable = function(utils){
         } else {
             alert('De informatie voor het blokkenschema kan op dit moment niet geladen worden.');
         }
+    }
+
+
+    function getProgram(day, config){
+        day = day || currentDay;
+
+        var program = [];
+
+        for (i=0; i < data.length; i++) {
+            if (data[i].attributes.starttijd) {
+
+                start = new Date( Date.parse(data[i].attributes.starttijd) );
+                lower = new Date( Date.parse(config.dates[day-1].starttime) );
+                upper = new Date( Date.parse(config.dates[day-1].endtime) );
+                if (lower < start && start < upper  ) {
+                    program.push(data[i].attributes);
+                }
+            }
+        }
+
+        return program;
+
     }
 
     function setup(day, time){
@@ -197,7 +197,7 @@ var timetable = function(utils){
         size = sizes();
 
         // get program and start time of current day
-        dayData = utils.getProgram(day, config);
+        dayData = getProgram(day, config);
         dayStartTime = new Date( config.dates[day-1]['starttime'] );
         dayEndTime = new Date( config.dates[day-1]['endtime'] );
         totalHours = Math.ceil( (dayEndTime - dayStartTime) / 3600000 );
@@ -304,7 +304,7 @@ var timetable = function(utils){
                     // Voeg de slug als extra class toe.
                     act.addClass('act-' + actData.slug);
 
-                    if (actData.slug == "torres" || actData.slug == "sophia" || actData.slug == "kenny-b") {
+                    if (favs[actData.programmaonderdelen]) {
                         var heart = $('<span class="heart"><i class="fa fa-heart"></i></span>');
                         heart.css({ 'transform': 'rotate(' + (40 * Math.random() - 20) + 'deg)'});
                         act.append( heart );
@@ -340,7 +340,7 @@ var timetable = function(utils){
             if (currentDay == (new Date().getDay() - 4) || currentDay == (new Date().getDay() - 3)) {
                 var nowDiv =  $('<div class="now"></div>');
                 var startTime = new Date();
-                var left = ( (startTime - dayStartTime) / 60000 ) + (14 * 24 * 60);
+                var left = ( (startTime - dayStartTime) / 60000 ) + (7 * 24 * 60);
                 console.log('starttijd: ' , startTime, dayStartTime, left);
 
                 if (left > 0 && left < 1200) {
@@ -422,5 +422,5 @@ var timetable = function(utils){
         getDayLabel : getDayLabel
     }
 
-}(utils);
+}();
 

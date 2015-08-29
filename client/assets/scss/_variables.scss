@@ -7,6 +7,8 @@ $menu-active: rgb(255, 235, 160);
 $fa-font-path:        "../fonts";
 $font: 'roboto_condensedregular', sans-serif;
 
+$heart-color: #C22;
+
 $blok-bands: rgb(20, 106, 184);
 $blok-dj: lighten(desaturate($blok-bands, 15), 15);
 $blok-tussen-dj: desaturate(lighten($blok-bands, 38), 33);

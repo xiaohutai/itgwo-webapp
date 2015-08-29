@@ -217,7 +217,7 @@
         position: absolute;
         right: 3px;
         top: -16px;
-        color: #F66;
+        color: lighten($heart-color, 10);
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     }
 

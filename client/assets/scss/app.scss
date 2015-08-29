@@ -352,6 +352,33 @@ a.legenda-button {
 }
 
 
+
+// --[ Onderdeel ]--------------------------------------------------------------
+
+.page-onderdeel {
+
+    .heart-fav {
+        color: $heart-color;
+        position: absolute;
+        right: 30px;
+        font-size: 2em;
+        top: 30px;
+        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .heart-no-fav {
+        color: #FFF;
+        position: absolute;
+        right: 30px;
+        font-size: 2em;
+        top: 30px;
+        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
+
+}
+
+
 // --[ Programma ]--------------------------------------------------------------
 
 
@@ -360,6 +387,35 @@ a.legenda-button {
 
 
     padding-right: 6px;
+
+    .heart-fav {
+        color: lighten($heart-color, 10);
+        position: absolute;
+        right: 10px;
+        top: -30px;
+        font-size: 4rem;
+        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+
+        i {
+            font-size: 1.2rem;
+        }
+
+    }
+
+    .heart-no-fav {
+        color: #FFF;
+        position: absolute;
+        right: 10px;
+        top: -30px;
+        font-size: 4rem;
+        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+
+        i {
+            font-size: 1.2rem;
+        }
+
+    }
+
 
 
     .navigation {
@@ -423,7 +479,7 @@ a.legenda-button {
         }
 
         span {
-            color: rgba(0, 0, 0, 0);
+            // color: rgba(0, 0, 0, 0);
         }
 
         h1 {

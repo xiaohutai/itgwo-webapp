@@ -26,7 +26,12 @@ title: Programma
                 <a ui-sref="onderdeel({ id: speeltijd.attributes.programmaonderdelen })">
                     <article class="thema thema-{{ speeltijd.id }}" style="background-image: url({{ speeltijd.attributes.image.thumbnail }});">
 
-                    <span>Dit moet je hier laten staan, Peter. Ja, echt! Als je dit weghaalt en het is een week later ineens stuk, dan ga ik het niet voor je fixen!</span>
+                    <span ng-if="favs[speeltijd.attributes.programmaonderdelen]" class="heart-fav" style="transform: rotate({{ randomRotate(speeltijd.id) }}deg);">
+                       <i class="fa fa-heart"></i>
+                    </span>
+
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>
+
                     <div class="caption">
                         <!-- <img src="{{ bericht.attributes.image.thumbnail }}" width="100" height="100"> -->
                         <h2><i class="fa fa-clock-o"></i> {{ speeltijd.attributes.starttijd | date : 'EEE H:mm' }} - {{ speeltijd.attributes.speellokatie }}</h2>
