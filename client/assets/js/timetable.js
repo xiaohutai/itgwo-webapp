@@ -306,6 +306,7 @@ var timetable = function(utils){
 
                     if (actData.slug == "torres" || actData.slug == "sophia" || actData.slug == "kenny-b") {
                         var heart = $('<span class="heart"><i class="fa fa-heart"></i></span>');
+                        heart.css({ 'transform': 'rotate(' + (40 * Math.random() - 20) + 'deg)'});
                         act.append( heart );
                     }
 
