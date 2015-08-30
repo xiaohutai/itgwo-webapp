@@ -65,7 +65,7 @@ var timetable = function(){
         currentDay = 1;
     }
 
-    console.log('current day is: ', currentDay);
+    // console.log('current day is: ', currentDay);
 
     var dragging = false;
     var mql = null;
@@ -342,11 +342,11 @@ var timetable = function(){
             $("#timetable").css('height', height + 'px');
 
             // Show the "current time", perhaps? (on the day itself, and 'after midnight' on the previous day)
-            if (currentDay == (new Date().getDay() - 4) || currentDay == (new Date().getDay() - 3)) {
+            if (new Date().getDay() == 0 || currentDay == (new Date().getDay() - 4) || currentDay == (new Date().getDay() - 3)) {
                 var nowDiv =  $('<div class="now"></div>');
                 var startTime = new Date();
                 var left = ( (startTime - dayStartTime) / 60000 ) + (7 * 24 * 60);
-                console.log('starttijd: ' , startTime, dayStartTime, left);
+                // console.log('starttijd: ' , startTime, dayStartTime, left);
 
                 if (left > 0 && left < 1200) {
                     nowDiv.css({

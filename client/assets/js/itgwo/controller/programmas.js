@@ -11,6 +11,13 @@
       var today = date.getDay() - 3;
       var days = {1: 'do', 2: 'vr', 3: 'za', 4: 'zo' }
 
+      // Zondag..
+      if (today == -3) {
+        today = 4;
+      }
+
+      console.log('today: ', today);
+
       if (today >= 1 && today <= 4) {
         $scope.filter = days[today];
       } else {
