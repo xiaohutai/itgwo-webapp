@@ -342,7 +342,9 @@ var timetable = function(){
             $("#timetable").css('height', height + 'px');
 
             // Show the "current time", perhaps? (on the day itself, and 'after midnight' on the previous day)
-            if (new Date().getDay() == 0 || currentDay == (new Date().getDay() - 4) || currentDay == (new Date().getDay() - 3)) {
+            if ( (currentDay == 4 && new Date().getDay() == 0) ||
+                    currentDay == (new Date().getDay() - 4) ||
+                    currentDay == (new Date().getDay() - 3)) {
                 var nowDiv =  $('<div class="now"></div>');
                 var startTime = new Date();
                 var left = ( (startTime - dayStartTime) / 60000 ) + (7 * 24 * 60);
