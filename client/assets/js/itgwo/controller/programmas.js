@@ -86,7 +86,7 @@
 
 
 
-      $scope.findOnderdeel = function(id, onderdelen) {
+      function findOnderdeel(id, onderdelen) {
 
         console.log('findOnderdeel');
 
