@@ -43,6 +43,8 @@ var globalDebugLog = "";
 
 })();
 
+// https://dzone.com/articles/home-screen-web-apps-android
+navigator.standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight<40)
 
 // http://www.html5rocks.com/en/tutorials/appcache/beginner/#toc-updating-cache
 // Check if a new cache is available on page load.
