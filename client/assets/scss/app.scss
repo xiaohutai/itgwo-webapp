@@ -97,6 +97,15 @@
         letter-spacing: 0.5px;
     }
 
+    li.ganaar > a > span {
+        font-size: 0.85em;
+        text-transform: none;
+        letter-spacing: 0px;
+    }
+    li.ganaar > a {
+        padding-right: 0;
+    }
+
 }
 
 #logo {
@@ -121,6 +130,10 @@ h3 {
 
 p, li {
     font-family: Georgia, serif;
+}
+
+li > small {
+    font-size: 0.85rem;
 }
 
 hr {
@@ -522,7 +535,7 @@ a.legenda-button {
 
 .twokingslogo {
     width: 80px;
-    margin: 0 auto 12px;
+    margin: 0 auto 4px;
 }
 
 

@@ -34,7 +34,7 @@
     <zf-offcanvas id="menu" position="left" class="detached">
 
       <div class="offcanvas-footer">
-          <a ui-sref="debug" zf-toggle="menu" class="debuglink">debug - {{ config.app.version }}</a>
+          <a ui-sref="debug" zf-toggle="menu" class="debuglink">Versie {{ config.app.version }}</a>
           <img src="./assets/img/logo-twokings.svg" alt="Two Kings" width="80" class="twokingslogo">
       </div>
 
@@ -67,6 +67,11 @@
           <li ui-sref-active="is-active" class="hoewerkt">
             <a zf-toggle="menu" ui-sref="hoewerkt">
               <i class="fa fa-fw fa-cloud-download"></i> &nbsp;&nbsp; <span>Hoe werkt deze webapp?</span>
+            </a>
+          </li>
+          <li ui-sref-active="is-active" class="ganaar">
+            <a href="http://www.intothegreatwideopen.nl">
+              <i class="fa fa-fw fa-hand-o-right"></i> &nbsp;&nbsp; <span>Naar <u>intothegreatwideopen.nl</u></span>
             </a>
           </li>
         </ul>
