@@ -83,7 +83,7 @@
 
       $scope.clearLocalForage = function() {
 
-        if (confirm("Zeker weten?")) {
+        if (confirm("Zeker weten? Je 'Favorieten' worden ook gereset!!")) {
           localforage.clear(function(){
             $scope.onderdelen = [];
             $scope.berichten = [];
