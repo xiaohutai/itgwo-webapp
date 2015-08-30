@@ -15,13 +15,27 @@ title: Debug
                 <p>Welkom op het supergeheime debug scherm! Whooo, spoooky!</p>
 
                 <ul>
-                <li>Berichten: {{ 0 + berichten.length }} items - bijgewerkt: {{ berichten_timestamp | date : 'EEEE H:mm'  }}.</li>
-                <li>Speeltijden: {{ 0 + speeltijden.length }} items - bijgewerkt: {{ speeltijden_timestamp | date : 'EEEE H:mm'  }}.</li>
-                <li>Onderdelen: {{ 0 + onderdelen.length }} items - bijgewerkt: {{ onderdelen_timestamp | date : 'EEEE H:mm'  }}.</li>
+                <li>
+                    <small>
+                        Berichten: {{ 0 + berichten.length }} items - bijgewerkt: {{ berichten_timestamp | date : 'EEEE H:mm'  }}.
+                    </small>
+                </li>
+                <li>
+                    <small>
+                        Speeltijden: {{ 0 + speeltijden.length }} items - bijgewerkt: {{ speeltijden_timestamp | date : 'EEEE H:mm'  }}.
+                    </small>
+                </li>
+                <li>
+                    <small>
+                        Onderdelen: {{ 0 + onderdelen.length }} items - bijgewerkt: {{ onderdelen_timestamp | date : 'EEEE H:mm'  }}.
+                    </small>
+                </li>
 
-<textarea class='debuglog'>
-{{ debuglog }}
-</textarea>
+                </ul>
+
+
+                <button class="button" ng-click="clearLocalForage();">Wis alle cache.</button>
+
 
             </div>
 

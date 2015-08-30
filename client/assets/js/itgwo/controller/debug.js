@@ -11,11 +11,36 @@
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
 
-      itgwoServiceLocalstorage.getData('test');
+      localforage.getItem('berichten').then(function(value) {
+        console.log('localForage get berichten:', value.length)
+        $scope.berichten = value;
+        localforage.getItem('berichten_timestamp').then(function(value) {
+          $scope.berichten_timestamp = value;
+          $scope.$apply();
+        });
+      });
 
-      $scope.berichten = itgwoServiceLocalstorage.getData('berichten');
-      $scope.speeltijden = itgwoServiceLocalstorage.getData('speeltijden');
-      $scope.onderdelen = itgwoServiceLocalstorage.getData('onderdelen');
+
+      localforage.getItem('onderdelen').then(function(value) {
+        console.log('localForage get onderdelen:', value.length)
+        $scope.onderdelen = value;
+        localforage.getItem('onderdelen_timestamp').then(function(value) {
+          $scope.onderdelen_timestamp = value;
+          $scope.$apply();
+        });
+      });
+
+
+      localforage.getItem('speeltijden').then(function(value) {
+        console.log('localForage get speeltijden:', value.length)
+        $scope.speeltijden = value;
+        localforage.getItem('speeltijden_timestamp').then(function(value) {
+          $scope.speeltijden_timestamp = value;
+          $scope.$apply();
+        });
+      });
+
+
 
     }
   ]);

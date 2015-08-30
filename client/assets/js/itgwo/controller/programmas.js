@@ -27,7 +27,7 @@
             console.log('localForage set onderdelen:', value.length);
             localforage.setItem('onderdelen_timestamp', new Date());
           });
-          $scope.onderdeel = $scope.findOnderdeel($state.params.id, result.data.data);
+          $scope.onderdeel = findOnderdeel($state.params.id, result.data.data);
           $rootScope.title = $scope.onderdeel.name;
         });
 
@@ -70,14 +70,38 @@
       if ($state.params.id) {
         localforage.getItem('onderdelen').then(function(value) {
           console.log('localForage get onderdelen:', value.length)
-          $scope.onderdeel = $scope.findOnderdeel($state.params.id, value);
+          $scope.onderdeel = findOnderdeel($state.params.id, value);
           $rootScope.title = $scope.onderdeel.name;
           $scope.$apply();
         });
       }
 
+
+
+
+      $scope.findOnderdeel = function(id, onderdelen) {
+
+        console.log('findOnderdeel');
+
+        for (var i = 0; i <= onderdelen.length; i += 1) {
+          // console.log(onderdelen[i]);
+          if (onderdelen[i]['id'] == id) {
+            var onderdeel = onderdelen[i].attributes;
+
+            // Larger image..
+            onderdeel.image.thumbnail = onderdeel.image.thumbnail.replace('240x240', '752x564');
+            onderdeel['uid'] = onderdelen[i]['id'];
+
+            return onderdeel;
+          }
+        }
+
+      };
+
+
+
+
+
     }
-
   ]);
-
 })();

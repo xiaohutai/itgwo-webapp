@@ -44,27 +44,14 @@
       };
 
 
-      $scope.findOnderdeel = function(id, onderdelen) {
-
-        console.log('findOnderdeel');
-
-        for (var i = 0; i <= onderdelen.length; i += 1) {
-          // console.log(onderdelen[i]);
-          if (onderdelen[i]['id'] == id) {
-            var onderdeel = onderdelen[i].attributes;
-
-            // Larger image..
-            onderdeel.image.thumbnail = onderdeel.image.thumbnail.replace('240x240', '752x564');
-            onderdeel['uid'] = onderdelen[i]['id'];
-
-            return onderdeel;
-          }
-        }
-
-      };
-
-
       $scope.addFavorite = function(id, name) {
+
+        // Alleen favoriten als op je homescreen..
+        // https://dzone.com/articles/home-screen-web-apps-android
+        if (!window.navigator.standalone) {
+          alert('Om favorieten toe te kunnen voegen, moet je de webapp op je homescreen zetten.');
+          return false;
+        }
 
         localforage.getItem('favs').then(function(favs) {
           if (favs == null) {
@@ -93,6 +80,19 @@
           });
         });
       };
+
+      $scope.clearLocalForage = function() {
+
+        if (confirm("Zeker weten?")) {
+          localforage.clear(function(){
+            $scope.onderdelen = [];
+            $scope.berichten = [];
+            $scope.speeltijden = [];
+            $scope.$apply();
+            alert("Cache leeg!");
+          });
+        }
+      }
 
       $scope.randomRotate = function(seed) {
         var x = Math.sin(seed) * 10000;

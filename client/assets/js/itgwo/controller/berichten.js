@@ -10,19 +10,23 @@
       // --[ extend base controller ]-------------------------------------------
       angular.extend(this, $controller('itgwo.controller.base', { $scope: $scope }));
 
-      if (itgwoServiceLocalstorage.getData('berichten')) {
-        getCachedBericht();
-      } else {
-        fetchRemoteBericht();
-      }
+
+      localforage.getItem('berichten').then(function(berichten) {
+        if (berichten == null) {
+          fetchRemoteBericht();
+        } else {
+          getCachedBericht(berichten);
+        }
+      });
 
       // Haal een bericht op uit de cache.
-      function getCachedBericht() {
-        $scope.berichten = itgwoServiceLocalstorage.getData('berichten');
+      function getCachedBericht(berichten) {
+        $scope.berichten = berichten;
 
         var bericht = findBericht($state.params.id, $scope.berichten);
         $scope.bericht = fixBericht(bericht);
         $rootScope.title = bericht.title;
+        $scope.$apply();
       }
 
       // Haal een bericht op, als we 'm nog niet in de cache hebben.
@@ -32,16 +36,15 @@
         .get(config.api.url + 'berichten?' + jQuery.param({ 'page[size]': 10 }), { cache: true })
         .then(function(result){
 
-          itgwoServiceLocalstorage.addLog('HTTP Get berichten');
           $scope.berichten = result.data.data;
-          itgwoServiceLocalstorage.storeData('berichten', $scope.berichten);
+          localforage.setItem('berichten', $scope.berichten).then(function(value){
+            console.log('localForage set berichten:', value.length);
+            localforage.setItem('berichten_timestamp', new Date());
+          });
 
           var bericht = findBericht($state.params.id, $scope.berichten);
           $scope.bericht = fixBericht(bericht);
           $rootScope.title = bericht.title;
-        })
-        .catch(function(e) {
-          itgwoServiceNotification.notification(e.data);
         });
 
       }

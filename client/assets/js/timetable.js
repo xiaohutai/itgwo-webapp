@@ -115,15 +115,20 @@ var timetable = function(){
 
     function loadData(callback){
 
+        console.log('HTTP get speeltijden');
+
         $.getJSON(dataUrl, null, function(json, status){
             data = json.data;
 
             // Store data in localStorage..
             if (status == 'success') {
-                localStorage.setItem('speeltijden', JSON.stringify(data));
+                localforage.setItem('speeltijden', data).then(function(value){
+                  console.log('localForage set speeltijden:', value.length);
+                  localforage.setItem('speeltijden_timestamp', new Date());
+                });
             }
 
-            console.log('speeltijden opgehaald.');
+
 
             // Callback..
             callback(data, status);
