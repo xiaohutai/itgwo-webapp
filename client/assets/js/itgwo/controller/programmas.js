@@ -7,21 +7,39 @@
     '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
     function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
 
-      var date = new Date();
-      var today = date.getDay() - 3;
-      var days = {1: 'do', 2: 'vr', 3: 'za', 4: 'zo' }
+      // Storing in $rootScope is generally not a good idea... It is a better
+      // idea to make a service/factory instead. But $watch is nice as well (for
+      // now), every time you change a variable you can execute a function.
+      $scope.$watch('filter', function(){
+        $rootScope.programmaFilter = $scope.filter;
+      });
 
-      // Zondag..
-      if (today == -3) {
-        today = 4;
-      }
+      // Only used the stored filter in $rootScope when the back button is used.
+      if ( $rootScope.programmaFilter !== undefined
+           && ($rootScope.previousRoute == 'onderdeel' || $state.current.name == 'onderdeel'))
+      {
 
-      console.log('today: ', today);
+        $scope.filter = $rootScope.programmaFilter;
 
-      if (today >= 1 && today <= 4) {
-        $scope.filter = days[today];
       } else {
-        $scope.filter = "alle";
+
+        var date = new Date();
+        var today = date.getDay() - 3;
+        var days = {1: 'do', 2: 'vr', 3: 'za', 4: 'zo' }
+
+        // Zondag..
+        if (today == -3) {
+          today = 4;
+        }
+
+        console.log('today: ', today);
+
+        if (today >= 1 && today <= 4) {
+          $scope.filter = days[today];
+        } else {
+          $scope.filter = "alle";
+        }
+
       }
 
       if ($state.params.id) {
