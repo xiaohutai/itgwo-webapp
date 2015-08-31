@@ -13,7 +13,7 @@
     },
 
     app: {
-      version: '0.4.10 β'
+      version: '0.4.11 β'
     },
 
     api: {

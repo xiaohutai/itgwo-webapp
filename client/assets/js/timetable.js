@@ -48,8 +48,6 @@ var timetable = function(){
         width: 180 // width of 1 hour
     };
 
-
-
     // var dataUrl = '/blokkenschema/program.json';
     var dataUrl = 'http://programma.greatwideopen.nl/json/speeltijden?page[size]=400';
     //var dataUrl = 'program.json';
