@@ -16,6 +16,20 @@
 }
 
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot');
+  src: url('#{$fa-font-path}/fontawesome-webfont.eot') format('embedded-opentype'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff2') format('woff2'),
+    url('#{$fa-font-path}/fontawesome-webfont.woff') format('woff'),
+    url('#{$fa-font-path}/fontawesome-webfont.ttf') format('truetype'),
+    url('#{$fa-font-path}/fontawesome-webfont.svg') format('svg');
+//  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 // --[ off-canvas exit overlay ]------------------------------------------------
 // Functionality inspired from Foundation 5. Shows when opening the off-canvas
 // menu. User is then always forced to close it. Also easier to hit than the
