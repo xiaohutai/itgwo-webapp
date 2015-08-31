@@ -15,7 +15,9 @@
       });
 
       // Only used the stored filter in $rootScope when the back button is used.
-      if ( $rootScope.programmaFilter !== undefined && $rootScope.previousRoute === 'onderdeel' ) {
+      if ( $rootScope.programmaFilter !== undefined
+           && ($rootScope.previousRoute == 'onderdeel' || $state.current.name == 'onderdeel'))
+      {
 
         $scope.filter = $rootScope.programmaFilter;
 
