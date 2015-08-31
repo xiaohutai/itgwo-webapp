@@ -8,6 +8,11 @@
     '$http', '$scope', '$state', '$stateParams', '$controller', '$location', '$rootScope', 'config', 'FoundationApi', 'itgwo.service.notification', 'itgwo.service.httpInterceptor', 'itgwo.service.localstorage', 'Piwik',
     function ($http, $scope, $state, $stateParams, $controller, $location, $rootScope, config, FoundationApi, itgwoServiceNotification, itgwoServiceHttpInterceptor, itgwoServiceLocalstorage, Piwik) {
 
+      // Useful for checking where we came from.
+      $rootScope.$on('$locationChangeStart', function() {
+        $rootScope.previousRoute = $state.current.name;
+      });
+
       // Set the title based on the route, otherwise overridde this in the
       // extending controller.
       $rootScope.title = $state.current.data.vars.title;
