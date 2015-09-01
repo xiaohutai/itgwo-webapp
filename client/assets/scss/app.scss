@@ -649,3 +649,75 @@ a.legenda-button {
         box-shadow: 0 2.5em 0 0 #ffffff;
     }
 }
+
+
+// --[ Fixes for Windows Mobile / Internet Explorer 11 and Edge ]---------------
+// Add a max-width to flex items.
+
+.grid-container {
+    width: 100%;
+}
+
+// Proper fix for ZURB is to add the following rule in `components/_grid.scss`
+//
+//     max-width: percentage(1 / $up);
+//
+// Like so:
+//
+//     @mixin grid-layout($up) {
+//       flex-flow: row wrap;
+//       overflow: visible;
+//       list-style-type: none;
+//
+//       > li, > div, > section {
+//         padding: 0 1rem 1rem;
+//         flex: 0 0 percentage(1 / $up);
+//         max-width: percentage(1 / $up);
+//       }
+//     }
+//
+
+@include breakpoint(small) {
+    .small-up-1 > .grid-content {
+        max-width: 100%;
+    }
+    .small-up-2 > .grid-content {
+        max-width: 50%;
+    }
+    .small-up-3 > .grid-content {
+        max-width: 33.33333%;
+    }
+    .small-up-4 > .grid-content {
+        max-width: 25%;
+    }
+}
+
+@include breakpoint(medium) {
+    .medium-up-1 > .grid-content {
+        max-width: 100%;
+    }
+    .medium-up-2 > .grid-content {
+        max-width: 50%;
+    }
+    .medium-up-3  > .grid-content {
+        max-width: 33.33333%;
+    }
+    .medium-up-4 > .grid-content {
+        max-width: 25%;
+    }
+}
+
+@include breakpoint(large) {
+    .large-up-1 > .grid-content {
+        max-width: 100%;
+    }
+    .large-up-2 > .grid-content {
+        max-width: 50%;
+    }
+    .large-up-3 > .grid-content {
+        max-width: 33.33333%;
+    }
+    .large-up-4 > .grid-content {
+        max-width: 25%;
+    }
+}
