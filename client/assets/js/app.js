@@ -44,7 +44,25 @@ var globalDebugLog = "";
 })();
 
 // https://dzone.com/articles/home-screen-web-apps-android
-navigator.standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight<80);
+// http://stackoverflow.com/questions/5063489/how-can-you-get-the-css-pixel-device-pixel-ratio
+navigator.standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight< (40 * window.devicePixelRatio));
+
+// http://stackoverflow.com/questions/9926504/how-do-i-check-windows-phone-useragent-with-javascript
+// if (navigator.userAgent.match(/Windows Phone/i)) {
+//   if (window.external.msIsSiteMode()) {
+//     alert("voor derk ja!");
+//   } else {
+//     alert("voor derk nee:");
+//   }
+// }
+
+
+// alert("Standalone: " + navigator.standalone
+//     + "\n - DPR: " + window.devicePixelRatio
+//     + "\n - scr.hei: " + screen.height
+//     + "\n - clientHeight: " + document.documentElement.clientHeight );
+
+
 
 // http://www.html5rocks.com/en/tutorials/appcache/beginner/#toc-updating-cache
 // Check if a new cache is available on page load.
