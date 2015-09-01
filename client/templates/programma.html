@@ -19,17 +19,17 @@ title: Programma
         <!-- grid for navigation -->
         <div class="grid-block small-up-2 medium-up-3 large-up-3">
             <div class="grid-content content-act {{ ::speeltijd.attributes.starttijd | date : 'EEE' }}"
-            ng-repeat="speeltijd in speeltijden"
+            ng-repeat="speeltijd in speeltijden track by speeltijd.id"
             ng-if="(filter == (speeltijd.attributes.starttijd | date : 'EEE') || filter == 'alle')
                 && (speeltijd.attributes.programmaonderdelen != 0)">
 
                 <a ui-sref="onderdeel({ id: speeltijd.attributes.programmaonderdelen })">
                     <article class="thema thema-{{ ::speeltijd.id }}"
-                        ng-style="backgroundImage"
+                        ng-style="::backgroundImage"
                         ng-init="backgroundImage = { 'background-image' : 'url(' + speeltijd.attributes.image.thumbnail + ')' }">
 
                     <span ng-if="favs[speeltijd.attributes.programmaonderdelen]" class="heart-fav"
-                        ng-style="randomRotation"
+                        ng-style="::randomRotation"
                         ng-init="randomRotation = { 'transform': 'rotate(' + randomRotate(speeltijd.id) + 'deg)' }">
                        <i class="fa fa-heart"></i>
                     </span>
