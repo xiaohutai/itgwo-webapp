@@ -11,7 +11,9 @@ title: Berichten
         <!-- header -->
         <div class="grid-headerimage">
             <article>
-                <img ng-src="{{ bericht.image.thumbnail }}" width="752" height="564">
+                <div style="background-image: url({{ bericht.image.thumbnail }}); background-size: cover; min-height: 240px;">
+                    <img ng-src="{{ bericht.image.large }}" width="752" height="564">
+                </div>
             </article>
         </div>
 

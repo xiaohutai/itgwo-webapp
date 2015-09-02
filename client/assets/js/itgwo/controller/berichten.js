@@ -53,7 +53,7 @@
       function fixBericht(bericht) {
 
         // Larger image..
-        bericht.image.thumbnail = bericht.image.thumbnail.replace('240x240', '752x564');
+        bericht.image.large = bericht.image.thumbnail.replace('240x240', '752x564');
 
         // Replace '/files/' for a thumbnail.
 
