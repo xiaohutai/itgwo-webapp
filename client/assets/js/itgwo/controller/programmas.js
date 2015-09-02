@@ -114,7 +114,7 @@
             var onderdeel = onderdelen[i].attributes;
 
             // Larger image..
-            onderdeel.image.thumbnail = onderdeel.image.thumbnail.replace('240x240', '752x564');
+            onderdeel.image.large = onderdeel.image.thumbnail.replace('240x240', '752x564');
             onderdeel['uid'] = onderdelen[i]['id'];
 
             return onderdeel;
