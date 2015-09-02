@@ -119,7 +119,7 @@
       {
           "locationId": "waddenvereniging",
           "title": "Waddenvereniging",
-          "abbr": "<em>Wadden<br>vereniging</em>",
+          "abbr": "<em>Wadden<br>ver.</em>",
           "icon": ""
       },
     ]
