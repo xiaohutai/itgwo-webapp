@@ -116,6 +116,12 @@
           "abbr": "<em>Strand<br>tuin</em>",
           "icon": ""
       },
+      {
+          "locationId": "waddenvereniging",
+          "title": "Waddenvereniging",
+          "abbr": "<em>Wadden<br>vereniging</em>",
+          "icon": ""
+      },
     ]
 
   });

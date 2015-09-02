@@ -99,6 +99,7 @@
 
         .location.voetbalkooi,
         .location.dorpsstraat,
+        .location.waddenvereniging,
         .location.strandtuin  {
             padding-top: 4px;
             height: 36px;
@@ -277,15 +278,18 @@
     .row.voetbalkooi,
     .row.dorpsstraat,
     .row.strandtuin,
+    .row.waddenvereniging,
     .row.voetbalkooi .act,
     .row.dorpsstraat .act,
-    .row.strandtuin .act  {
+    .row.strandtuin .act,
+    .row.waddenvereniging .act  {
         height: 36px;
     }
 
     .row.voetbalkooi .act .spanText,
     .row.dorpsstraat .act .spanText,
-    .row.strandtuin .act .spanText  {
+    .row.strandtuin .act .spanText,
+    .row.waddenvereniging .act .spanText  {
         margin-top: -21px;
     }
 
