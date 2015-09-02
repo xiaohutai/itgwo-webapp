@@ -12,7 +12,7 @@ title: Debug
         <div class="grid-block small-up-1 large-up-2">
 
             <div class="grid-content main">
-                <p>Welkom op het supergeheime debug scherm! Whooo, spoooky!</p>
+                <p>Welkom op het supergeheime debug scherm! Whooo, spoooky! - Versie {{ config.app.version }}</p>
 
                 <ul>
                 <li>
@@ -35,6 +35,10 @@ title: Debug
 
 
                 <button class="button" ng-click="clearLocalForage();">Wis alle cache.</button>
+
+
+                <button class="button" ng-click="checkStandalone(config.app.version);">Ben ik Standalone?</button>
+
 
 
             </div>

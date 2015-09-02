@@ -99,6 +99,23 @@
         }
       }
 
+      $scope.checkStandalone = function(version) {
+
+        var standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight< (40 * window.devicePixelRatio));
+
+        var score = screen.height-document.documentElement.clientHeight;
+        var dpr = window.devicePixelRatio;
+
+        alert("Versie: " + version + "\n" +
+          "Standalone: " + standalone + "\n" +
+          "Score: " + score + "\n" +
+          "Height: " + screen.height + " - " + document.documentElement.clientHeight + "\n" +
+          "DPR: " + dpr + "\n"
+          );
+
+
+      }
+
       $scope.randomRotate = function(seed) {
         var x = Math.sin(seed) * 10000;
         x = x - Math.floor(x);
