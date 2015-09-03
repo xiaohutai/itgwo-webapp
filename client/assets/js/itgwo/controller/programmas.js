@@ -4,8 +4,8 @@
   var itgwo = angular.module('itgwo');
 
   itgwo.controller('itgwo.controller.programma', [
-    '$scope', '$sce', '$controller', '$state','$http', '$rootScope', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
-    function ($scope, $sce, $controller, $state, $http, $rootScope, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
+    '$scope', '$sce', '$controller', '$state','$http', '$rootScope', '$window', '$timeout', 'config', 'itgwo.service.notification', 'itgwo.service.localstorage',
+    function ($scope, $sce, $controller, $state, $http, $rootScope, $window, $timeout, config, itgwoServiceNotification, itgwoServiceLocalstorage) {
 
       // Storing in $rootScope is generally not a good idea... It is a better
       // idea to make a service/factory instead. But $watch is nice as well (for
@@ -72,6 +72,25 @@
           });
         });
 
+        // --[ track scroll position between pages ]------------------------------
+        // This is specifically for the programme overview ONLY.
+
+        // Add this function only once... could probably be neater.
+        if ($rootScope.trackScrollPosition != true) {
+          $rootScope.$on('$locationChangeSuccess', function() {
+            // console.log($rootScope.scrollPosCache);
+            var position = $rootScope.scrollPosCache[$window.location.href] || 0;
+            $timeout(function() {
+              $('[ui-view] :first').scrollTop(position);
+            }, 0);
+          });
+          $rootScope.trackScrollPosition = true;
+        }
+
+        $scope.$on("$destroy", function() {
+          $rootScope.scrollPosCache = $rootScope.scrollPosCache || [];
+          $rootScope.scrollPosCache[$window.location.href] = $('[ui-view] :first').scrollTop();
+        });
 
       }
 
