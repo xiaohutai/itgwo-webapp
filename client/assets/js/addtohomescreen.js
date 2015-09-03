@@ -191,7 +191,7 @@ ath.OSVersion = _ua.match(/(OS|Android) (\d+[_\.]\d+)/);
 ath.OSVersion = ath.OSVersion && ath.OSVersion[2] ? +ath.OSVersion[2].replace('_', '.') : 0;
 
 // Aanpassing door Bob: screen height truc er bij, voor Android, schmandroid.
-ath.isStandalone = ('standalone' in window.navigator && window.navigator.standalone); //  || (screen.height-document.documentElement.clientHeight<120);
+ath.isStandalone = navigator.standalone || (screen.height-document.documentElement.clientHeight < (75 * window.devicePixelRatio));
 
 // console.log("ath.isStandalone:", ath.isStandalone);
 

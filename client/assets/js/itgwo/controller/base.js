@@ -101,7 +101,7 @@
 
       $scope.checkStandalone = function(version) {
 
-        var standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight< (40 * window.devicePixelRatio));
+        var standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight < (75 * window.devicePixelRatio));
 
         var score = screen.height-document.documentElement.clientHeight;
         var dpr = window.devicePixelRatio;

@@ -45,7 +45,7 @@ var globalDebugLog = "";
 
 // https://dzone.com/articles/home-screen-web-apps-android
 // http://stackoverflow.com/questions/5063489/how-can-you-get-the-css-pixel-device-pixel-ratio
-navigator.standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight< (40 * window.devicePixelRatio));
+navigator.standalone = navigator.standalone || (screen.height-document.documentElement.clientHeight < (75 * window.devicePixelRatio));
 
 // http://stackoverflow.com/questions/9926504/how-do-i-check-windows-phone-useragent-with-javascript
 // if (navigator.userAgent.match(/Windows Phone/i)) {
