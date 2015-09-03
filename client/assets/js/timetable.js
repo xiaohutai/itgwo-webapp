@@ -345,19 +345,22 @@ var timetable = function(){
                     currentDay == (new Date().getDay() - 3)) {
                 var nowDiv =  $('<div class="now"></div>');
                 var startTime = new Date();
-                var left = ( (startTime - dayStartTime) / 60000 ) + (7 * 24 * 60);
-                // console.log('starttijd: ' , startTime, dayStartTime, left);
+                var left = ( (startTime - dayStartTime) / 60000 );
+                console.log('starttijd: ' , startTime, dayStartTime, left);
 
                 if (left > 0 && left < 1200) {
                     nowDiv.css({
                         left: left * size.minute,
                     });
+                    blocks.append(nowDiv);
+                    window.setTimeout(function() {
+                        $('.scroll-container').scrollLeft( left * size.minute - 80);
+                    }, 200);
                 }
-                blocks.append(nowDiv);
             }
 
 
-            blocks.fadeIn(400);
+            blocks.fadeIn(100);
         });
     }
 
