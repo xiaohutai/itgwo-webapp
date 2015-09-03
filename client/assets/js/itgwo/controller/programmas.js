@@ -79,7 +79,8 @@
         if ($rootScope.trackScrollPosition != true) {
           $rootScope.$on('$locationChangeSuccess', function() {
             // console.log($rootScope.scrollPosCache);
-            var position = $rootScope.scrollPosCache[$window.location.href] || 0;
+            var position = $rootScope.scrollPosCache ? $rootScope.scrollPosCache[$window.location.href] || 0 : 0;
+
             $timeout(function() {
               $('[ui-view] :first').scrollTop(position);
             }, 0);
