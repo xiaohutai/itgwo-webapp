@@ -215,39 +215,6 @@
 
   // --[ Directives ]-----------------------------------------------------------
 
-  itgwo.directive("getThema",
-    ['$http', '$filter', 'config', '$state',
-    function($http, $filter, config, $state) {
-
-    return {
-      template: '<span class="label">{{ thema }}</span>', // TODO: make these things nice with includes?
-      scope: {
-        onderwerpSlug: "=getThema"
-      },
-      link: function(scope, element, attrs) {
-
-        var key = $filter('key');
-        var value = $filter('value');
-        var slug = $filter('slug');
-
-        $http
-        .get(config.api.url + 'onderwerpen/' + scope.onderwerpSlug, { cache: true })
-        .then(function(result) {
-
-          var themaName = value(result.data.data.attributes.taxonomy.themas);
-          var themaId = slug(key(result.data.data.attributes.taxonomy.themas));
-          scope.thema = themaName;
-          element[0].href = $state.href('thema', { id : themaId });
-
-        }, function(err) {
-          scope.thema = "Unknown";
-          scope.url = "#";
-        });
-      }
-    }
-  }]);
-
-
   // Generic back button.
   itgwo.directive('backButton', ['$window', function ($window) {
     return {
@@ -259,6 +226,5 @@
       }
     };
   }]);
-
 
 })();
